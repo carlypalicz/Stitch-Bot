@@ -101,7 +101,7 @@ client.on('message', async (message) => {
             }
 
             else if (args[i].includes('<:') && args[i].includes('>')){
-                //its a server-specific emote, but not a stitch emote
+                //its a server-specific emote, but not a stitch emote :0)
                 output += find_non_stitch_emote(args[i], '');
             }
 
