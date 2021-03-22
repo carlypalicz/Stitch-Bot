@@ -81,7 +81,7 @@ client.on('message', async (message) => {
         let z1 = rand < .5;
 
         const member = await message.guild.member(message.author);
-        const name = member ? member.nickname : message.author.username;
+        const name = member.nickname ? member.nickname : message.author.username;
 
         let greeting = "Hey ";
         greeting += name;
