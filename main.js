@@ -80,7 +80,7 @@ client.on('message', async (message) => {
         let rand = Math.random();
         let z1 = rand < .5;
 
-        if (message.channel.type === 'dm'){
+        if (message.guild == null){
             const name = "thx for the dm";
         }
 
