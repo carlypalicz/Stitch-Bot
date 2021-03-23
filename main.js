@@ -145,7 +145,9 @@ client.on('message', async (message) => {
             }
         }
 
-        message.delete();
+        if (message.guild != null){
+            message.delete();
+        }
         message.channel.send(greeting);
         message.channel.send(output);
     }
