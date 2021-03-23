@@ -120,7 +120,7 @@ client.on('message', async (message) => {
                     }
                 }
             }
-            output += ' ';
+            output += ' | ';
         }
         message.delete();
         message.channel.send(greeting);
@@ -138,9 +138,16 @@ function find_stitch_emote(arg, partial_output){
     let cur_char = arg.charAt(index);
 
     while (cur_char != '<' && index <= arg.length) { //spit back out any non-emote chars
-        output += cur_char;
-        index++;
-        cur_char = arg.charAt(index);
+        if (cur_char === '|'){
+            //skip
+            index++;
+            cur_char = arg.charAt(index);
+        }
+        else {
+            output += cur_char;
+            index++;
+            cur_char = arg.charAt(index);
+        }
     }
 
     //now we should be at a <
@@ -168,9 +175,16 @@ function find_non_stitch_emote(arg, partial_output){
     let cur_char = arg.charAt(index);
 
     while (cur_char != '<' && index <= arg.length){
-        output += cur_char;
-        index++;
-        cur_char = arg.charAt(index);
+        if (cur_char === '|'){
+            //skip
+            index++;
+            cur_char = arg.charAt(index);
+        }
+        else {
+            output += cur_char;
+            index++;
+            cur_char = arg.charAt(index);
+        }
     }
 
     //at a <
