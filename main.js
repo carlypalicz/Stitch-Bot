@@ -105,6 +105,7 @@ client.on('message', async (message) => {
                 //if thats the case, then grab the substring from 0 to the >, and match it with its letter
                 //if it doesnt have a match, output it as is i guess ?? thats an unlikely edge case
                 //remove that emote id from the string, and do the same checks on the rest of the string
+                console.log("stitch emote found");
                 outputting_stitch = false;
                 add_space = true;
                 output += find_stitch_emote(args[i], '');
@@ -170,6 +171,9 @@ client.on('message', async (message) => {
 });
 
 function find_stitch_emote(arg, partial_output){
+    console.log("partial output is ");
+    console.log(partial_output);
+
     if (arg.length === 0){
         return partial_output;
     }
@@ -192,7 +196,9 @@ function find_stitch_emote(arg, partial_output){
     }
 
     //now we should be at a <
-    if (arg.length > 12 && arg.substring(index, index+10) === '<:stitch_' && arg.includes('>')){
+    if (arg.length > 12 && arg.substring(index, index+9) === '<:stitch_' && arg.includes('>')){
+        console.log("should be at a <");
+        console.log(arg.substring(index));
         let emote_code = arg.substring(index, arg.indexOf('>')+1);
         if (emote_code.includes('stitch_z1') || emote_code.includes('stitch_z2')){
             output += 'z';
