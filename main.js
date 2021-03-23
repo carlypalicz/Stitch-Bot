@@ -123,7 +123,9 @@ client.on('message', async (message) => {
                     }
                 }
             }
-            output = stitch ? output + ' ' : output + ' | ';
+            if (i != args.length - 1){
+                output = stitch ? output + ' ' : output + ' | ';
+            }
         }
         message.delete();
         message.channel.send(greeting);
