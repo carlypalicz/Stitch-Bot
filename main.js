@@ -80,9 +80,9 @@ client.on('message', async (message) => {
         let rand = Math.random();
         let z1 = rand < .5;
 
-        const member = await message.guild.member(message.author);
-        const name = member.nickname ? member.nickname : message.author.username;
-
+        //const member = await message.guild.member(message.author);
+        //const name = member.nickname ? member.nickname : message.author.username;
+        const name = "NoNameForU";
         let greeting = "Hey ";
         greeting += name;
         greeting += ", your stitch translation is: \n";
