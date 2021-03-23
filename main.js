@@ -111,7 +111,10 @@ client.on('message', async (message) => {
                 stitch = false;
                 for (let j = 0; j < args[i].length; j++){
                     cur_char = args[i].charAt(j).toLowerCase();
-                    if (!alphabet[cur_char] && cur_char != 'z' && cur_char != 'Z'){
+                    if (cur_char === '|'){
+                        //skip lol
+                    }
+                    else if (!alphabet[cur_char] && cur_char != 'z' && cur_char != 'Z'){
                         output += cur_char;
                     }
                     else if (cur_char === 'z' || cur_char === 'Z'){
