@@ -124,12 +124,10 @@ client.on('message', async (message) => {
                 }
             }
             if (i != args.length - 1){
-                output = stitch ? output + ' ' : output + ' | ';
+                output = (stitch ? (output + ' | ') : (output + ' '));
             }
         }
-        if (!stitch){
-            output.replace(' | ', ' ');
-        }
+
         message.delete();
         message.channel.send(greeting);
         message.channel.send(output);
