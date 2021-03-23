@@ -72,7 +72,7 @@ client.on('message', async (message) => {
     const command = args.shift().toLowerCase(); //the command to be executed, args is now the message minus the command
 
     if (command === 'introduce'){
-        intro = "Hi! I'm Stitch Bot! I can help you translate in and out of Covey's Stitch Cipher. To use this bot, enter one of the following commands:\n\n\t !translate to translate in and out of stitch \n\t !introduce to read this message again \n\nTranslations can be copy/pasted for easy communication throughout the server. Stitch Bot was made by discord user carlycries#3691 - please report any issues with or suggestions for the bot to her, or ask a mod to reach out to her for you! Do not use Stitch Bot as a way to spread any hate or harmful words, I'm meant to be a fun addition to the server and I want to be able to stay!";
+        intro = "Hi! I'm Stitch Bot! I can help you translate in and out of Covey's Stitch Cipher. To use this bot, enter one of the following commands:\n\n\t !translate to translate in and out of stitch \n\t !abcs to see the key for Stitch \n\t !introduce to read this message again \n\nTranslations can be copy/pasted for easy communication throughout the server. Stitch Bot was made by discord user carlycries#3691 - please report any issues with or suggestions for the bot to her, or ask a mod to reach out to her for you! Do not use Stitch Bot as a way to spread any hate or harmful words, I'm meant to be a fun addition to the server and I want to be able to stay!";
         message.channel.send(intro);
     }
 
@@ -155,7 +155,7 @@ client.on('message', async (message) => {
     else if (command === "abcs"){
         output = "Learn Stitch with me!\n";
         Object.keys(alphabet).map(function(key, index) {
-            if (key.length > 1){
+            if (key.length > 2){
                 output += key;
                 output += ' : ';
                 output += alphabet[key];
