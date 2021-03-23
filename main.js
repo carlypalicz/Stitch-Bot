@@ -100,12 +100,14 @@ client.on('message', async (message) => {
                 //if it doesnt have a match, output it as is i guess ?? thats an unlikely edge case
                 //remove that emote id from the string, and do the same checks on the rest of the string
                 outputting_stitch = false;
+                add_space = true;
                 output += find_stitch_emote(args[i], '');
             }
 
             else if (args[i].includes('<:') && args[i].includes('>')){
                 //its a server-specific emote, but not a stitch emote :0)
                 output += find_non_stitch_emote(args[i], '');
+                add_space = true;
             }
 
             else if (args[i].length === 1 && args[i] === '|'){
@@ -113,6 +115,7 @@ client.on('message', async (message) => {
                 outputting_stitch = false;
             }
             else {
+                add_space = true;
                 outputting_stitch = true;
                 for (let j = 0; j < args[i].length; j++){
                     cur_char = args[i].charAt(j).toLowerCase();
