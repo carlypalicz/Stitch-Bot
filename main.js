@@ -111,9 +111,6 @@ client.on('message', async (message) => {
                 stitch = false;
                 for (let j = 0; j < args[i].length; j++){
                     cur_char = args[i].charAt(j).toLowerCase();
-                    if (cur_char === '|'){
-                        break;
-                    }
                     else if (!alphabet[cur_char] && cur_char != 'z' && cur_char != 'Z'){
                         output += cur_char;
                     }
@@ -129,6 +126,9 @@ client.on('message', async (message) => {
             if (i != args.length - 1){
                 output = stitch ? output + ' ' : output + ' | ';
             }
+        }
+        if (!stitch){
+            output.replace(' | ', ' ');
         }
         message.delete();
         message.channel.send(greeting);
