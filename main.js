@@ -127,7 +127,7 @@ client.on('message', async (message) => {
                 }
             }
             if (i != args.length - 1){
-                output = stitch ? output + ' ' : output + ' | ';
+                output = stitch ? output + ' ' : output + '| ';
             }
         }
         message.delete();
