@@ -154,12 +154,15 @@ client.on('message', async (message) => {
 
     else if (command === "abcs"){
         output = "Learn Stitch with me!\n";
-        Object.keys(alphabet).map(function(key, index) {
+        alph_array = Object.keys(alphabet);
+        alph_array.map(function(key, index) {
             if (key.length > 2){
                 output += key;
                 output += ' : ';
                 output += alphabet[key];
-                output += ', ';
+                if (index != alph_array.length -1) {
+                    output += ', ';
+                }
             }
         });
         message.channel.send(output);
