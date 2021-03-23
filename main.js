@@ -81,7 +81,7 @@ client.on('message', async (message) => {
         let z1 = rand < .5;
         let name = '';
         if (message.guild == null){
-            name += 'thx for the dm';
+            name = message.author.username;
         }
 
         else {
