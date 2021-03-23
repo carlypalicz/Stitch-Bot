@@ -89,6 +89,7 @@ client.on('message', async (message) => {
         let output = '';
         let cur_char = '';
         let outputting_stitch = false;
+        let add_space = true;
 
         for (let i = 0; i < args.length; i++){
             if (args[i].includes('<:') && args[i].includes('_stitch') && args[i].includes('>')){
@@ -107,6 +108,10 @@ client.on('message', async (message) => {
                 output += find_non_stitch_emote(args[i], '');
             }
 
+            else if (args[i].length === 1 && args[i] === '|'){
+                add_space = false;
+                outputting_stitch = false;
+            }
             else {
                 outputting_stitch = true;
                 for (let j = 0; j < args[i].length; j++){
@@ -123,8 +128,12 @@ client.on('message', async (message) => {
                     }
                 }
             }
-            if (i != args.length - 1){
+            if ((i != args.length - 1) && outputting_stitch){
+                output += ' | ';
                 output = (outputting_stitch ? (output + ' | ') : (output + ' '));
+            }
+            else if (add_space){
+                output += ' ';
             }
         }
 
