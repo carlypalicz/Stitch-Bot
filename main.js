@@ -112,7 +112,7 @@ client.on('message', async (message) => {
                 for (let j = 0; j < args[i].length; j++){
                     cur_char = args[i].charAt(j).toLowerCase();
                     if (cur_char === '|'){
-                        //skip lol
+                        break;
                     }
                     else if (!alphabet[cur_char] && cur_char != 'z' && cur_char != 'Z'){
                         output += cur_char;
@@ -127,7 +127,7 @@ client.on('message', async (message) => {
                 }
             }
             if (i != args.length - 1){
-                output = stitch ? output + ' ' : output + '| ';
+                output = stitch ? output + ' ' : output + ' | ';
             }
         }
         message.delete();
