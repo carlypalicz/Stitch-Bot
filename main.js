@@ -130,7 +130,6 @@ client.on('message', async (message) => {
             }
             if ((i != args.length - 1) && outputting_stitch){
                 output += ' | ';
-                output = (outputting_stitch ? (output + ' | ') : (output + ' '));
             }
             else if (add_space){
                 output += ' ';
