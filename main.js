@@ -88,6 +88,7 @@ client.on('message', async (message) => {
         greeting += ", your stitch translation is: \n";
         let output = '';
         let cur_char = '';
+        let stitch = false;
 
         for (let i = 0; i < args.length; i++){
             if (args[i].includes('<:') && args[i].includes('_stitch') && args[i].includes('>')){
@@ -97,6 +98,7 @@ client.on('message', async (message) => {
                 //if thats the case, then grab the substring from 0 to the >, and match it with its letter
                 //if it doesnt have a match, output it as is i guess ?? thats an unlikely edge case
                 //remove that emote id from the string, and do the same checks on the rest of the string
+                stitch = true;
                 output += find_stitch_emote(args[i], '');
             }
 
@@ -106,6 +108,7 @@ client.on('message', async (message) => {
             }
 
             else {
+                stitch = false;
                 for (let j = 0; j < args[i].length; j++){
                     cur_char = args[i].charAt(j).toLowerCase();
                     if (!alphabet[cur_char] && cur_char != 'z' && cur_char != 'Z'){
@@ -120,7 +123,7 @@ client.on('message', async (message) => {
                     }
                 }
             }
-            output += ' | ';
+            output = stitch ? output + ' ' : output + ' | ';
         }
         message.delete();
         message.channel.send(greeting);
