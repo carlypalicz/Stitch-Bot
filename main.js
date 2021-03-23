@@ -5,60 +5,60 @@ const client = new Discord.Client();
 const prefix = '!';
 
 const alphabet={
-    'a': ['<:a_stitch:823344398409662484>'],
-    'b': ['<:b_stitch:823348619926569010>'],
-    'c': ['<:c_stitch:823348666374029332>'],
-    'd': ['<:d_stitch:823348742735921182>'],
-    'e': ['<:e_stitch:823348742970277909>'],
-    'f': ['<:f_stitch:823348743146307653>'],
-    'g': ['<:g_stitch:823348743260340224>'],
-    'h': ['<:h_stitch:823348743474118656>'],
-    'i': ['<:i_stitch:823350913108410408>'],
-    'j': ['<:j_stitch:823351325919281202>'],
-    'k': ['<:k_stitch:823351386288553994>'],
-    'l': ['<:l_stitch:823351541238071336>'],
-    'm': ['<:m_stitch:823351598574862358>'],
-    'n': ['<:n_stitch:823351741093118034>'],
-    'o': ['<:o_stitch:823351822788853829>'],
-    'p': ['<:p_stitch:823351898198769704>'],
-    'q': ['<:q_stitch:823352133104959538>'],
-    'r': ['<:r_stitch:823352331818500096>'],
-    's': ['<:s_stitch:823352508985901059>'],
-    't': ['<:t_stitch:823352588468224010>'],
-    'u': ['<:u_stitch:823352744840265808>'],
-    'v': ['<:v_stitch:823352910711750716>'],
-    'w': ['<:w_stitch:823352996829593650>'],
-    'x': ['<:x_stitch:823354927241625651>'],
-    'y': ['<:y_stitch:823355006518165514>'],
-    'z1': ['<:z1_stitch:823360282741964830>'],
-    'z2': ['<:z2_stitch:823361048798953493>'],
-    '<:a_stitch:823344398409662484>': ['a'],
-    '<:b_stitch:823348619926569010>': ['b'],
-    '<:c_stitch:823348666374029332>': ['c'],
-    '<:d_stitch:823348742735921182>': ['d'],
-    '<:e_stitch:823348742970277909>': ['e'],
-    '<:f_stitch:823348743146307653>': ['f'],
-    '<:g_stitch:823348743260340224>': ['g'],
-    '<:h_stitch:823348743474118656>': ['h'],
-    '<:i_stitch:823350913108410408>': ['i'],
-    '<:j_stitch:823351325919281202>': ['j'],
-    '<:k_stitch:823351386288553994>': ['k'],
-    '<:l_stitch:823351541238071336>': ['l'],
-    '<:m_stitch:823351598574862358>': ['m'],
-    '<:n_stitch:823351741093118034>': ['n'],
-    '<:o_stitch:823351822788853829>': ['o'],
-    '<:p_stitch:823351898198769704>': ['p'],
-    '<:q_stitch:823352133104959538>': ['q'],
-    '<:r_stitch:823352331818500096>': ['r'],
-    '<:s_stitch:823352508985901059>': ['s'],
-    '<:t_stitch:823352588468224010>': ['t'],
-    '<:u_stitch:823352744840265808>': ['u'],
-    '<:v_stitch:823352910711750716>': ['v'],
-    '<:w_stitch:823352996829593650>': ['w'],
-    '<:x_stitch:823354927241625651>': ['x'],
+    'a': ['<:stitch_a:823344398409662484>'],
+    'b': ['<:stitch_b:823348619926569010>'],
+    'c': ['<:stitch_c:823348666374029332>'],
+    'd': ['<:stitch_d:823348742735921182>'],
+    'e': ['<:stitch_e:823348742970277909>'],
+    'f': ['<:stitch_f:823348743146307653>'],
+    'g': ['<:stitch_g:823348743260340224>'],
+    'h': ['<:stitch_h:823348743474118656>'],
+    'i': ['<:stitch_i:823350913108410408>'],
+    'j': ['<:stitch_j:823351325919281202>'],
+    'k': ['<:stitch_k:823351386288553994>'],
+    'l': ['<:stitch_l:823351541238071336>'],
+    'm': ['<:stitch_m:823351598574862358>'],
+    'n': ['<:stitch_n:823351741093118034>'],
+    'o': ['<:stitch_o:823351822788853829>'],
+    'p': ['<:stitch_p:823351898198769704>'],
+    'q': ['<:stitch_q:823352133104959538>'],
+    'r': ['<:stitch_r:823352331818500096>'],
+    's': ['<:stitch_s:823352508985901059>'],
+    't': ['<:stitch_t:823352588468224010>'],
+    'u': ['<:stitch_u:823352744840265808>'],
+    'v': ['<:stitch_v:823352910711750716>'],
+    'w': ['<:stitch_w:823352996829593650>'],
+    'x': ['<:stitch_x:823354927241625651>'],
+    'y': ['<:stitch_y:823355006518165514>'],
+    'z1': ['<:stitch_z1:823360282741964830>'],
+    'z2': ['<:stitch_z2:823361048798953493>'],
+    '<:stitch_a:823344398409662484>': ['a'],
+    '<:stitch_b:823348619926569010>': ['b'],
+    '<:stitch_c:823348666374029332>': ['c'],
+    '<:stitch_d:823348742735921182>': ['d'],
+    '<:stitch_e:823348742970277909>': ['e'],
+    '<:stitch_f:823348743146307653>': ['f'],
+    '<:stitch_g:823348743260340224>': ['g'],
+    '<:stitch_h:823348743474118656>': ['h'],
+    '<:stitch_i:823350913108410408>': ['i'],
+    '<:stitch_j:823351325919281202>': ['j'],
+    '<:stitch_k:823351386288553994>': ['k'],
+    '<:stitch_l:823351541238071336>': ['l'],
+    '<:stitch_m:823351598574862358>': ['m'],
+    '<:stitch_n:823351741093118034>': ['n'],
+    '<:stitch_o:823351822788853829>': ['o'],
+    '<:stitch_p:823351898198769704>': ['p'],
+    '<:stitch_q:823352133104959538>': ['q'],
+    '<:stitch_r:823352331818500096>': ['r'],
+    '<:stitch_s:823352508985901059>': ['s'],
+    '<:stitch_t:823352588468224010>': ['t'],
+    '<:stitch_u:823352744840265808>': ['u'],
+    '<:stitch_v:823352910711750716>': ['v'],
+    '<:stitch_w:823352996829593650>': ['w'],
+    '<:stitch_x:823354927241625651>': ['x'],
     '<:y_stitch:823355006518165514>': ['y'],
-    '<:z1_stitch:823360282741964830>': ['z'],
-    '<:z2_stitch:823361048798953493>': ['z']
+    '<:stitch_z1:823360282741964830>': ['z'],
+    '<:stitch_z2:823361048798953493>': ['z']
 };
 
 client.once('ready', () => {
@@ -98,7 +98,7 @@ client.on('message', async (message) => {
         let add_space = true;
 
         for (let i = 0; i < args.length; i++){
-            if (args[i].includes('<:') && args[i].includes('_stitch') && args[i].includes('>')){
+            if (args[i].includes('<:') && args[i].includes('stitch_') && args[i].includes('>')){
                 //except for extreme edge cases, this means they sent in a cipher emote and want it translated back into plaintext
                 //then args[i] contains stitch character - BUT, it could also contain normal text, gotta check
                 //check if first two chars are <:, and if chars 3-11 are _stitch
@@ -192,9 +192,9 @@ function find_stitch_emote(arg, partial_output){
     }
 
     //now we should be at a <
-    if (arg.length > 12 && arg.substring(index, index+2) === '<:' && arg.substring(index+3, index+12).includes('_stitch:') && arg.includes('>')){
+    if (arg.length > 12 && arg.substring(index, index+10) === '<:stitch_' && arg.includes('>')){
         let emote_code = arg.substring(index, arg.indexOf('>')+1);
-        if (emote_code.includes('z1_stitch') || emote_code.includes('z2_stitch')){
+        if (emote_code.includes('stitch_z1') || emote_code.includes('stitch_z2')){
             output += 'z';
         }
         else {
