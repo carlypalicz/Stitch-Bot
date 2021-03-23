@@ -79,14 +79,14 @@ client.on('message', async (message) => {
     else if (command === 'translate'){
         let rand = Math.random();
         let z1 = rand < .5;
-
+        let name = '';
         if (message.guild == null){
-            const name = "thx for the dm";
+            name += 'thx for the dm';
         }
 
         else {
             const member = await message.guild.member(message.author);
-            const name = member.nickname ? member.nickname : message.author.username;
+            name = member.nickname ? member.nickname : message.author.username;
         }
 
         let greeting = "Hey ";
