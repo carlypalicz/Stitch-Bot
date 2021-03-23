@@ -151,6 +151,19 @@ client.on('message', async (message) => {
         message.channel.send(greeting);
         message.channel.send(output);
     }
+
+    else if (command === "abcs"){
+        output = "Learn Stitch with me!\n";
+        Object.keys(alphabet).map(function(key, index) {
+            if (key.length > 1){
+                output += key;
+                output += ' : ';
+                output += alphabet[key];
+                output += ', ';
+            }
+        });
+        message.channel.send(output);
+    }
 });
 
 function find_stitch_emote(arg, partial_output){
