@@ -91,7 +91,6 @@ client.on('message', async (message) => {
 
         let greeting = "Hey ";
         greeting += name;
-        greeting += ", your stitch translation is: \n";
         let output = '';
         let cur_char = '';
         let outputting_stitch = false;
@@ -147,6 +146,12 @@ client.on('message', async (message) => {
 
         if (message.guild != null){
             message.delete();
+        }
+        if (output === ''){
+            output += " I didn't notice anything to translate! Please follow the !translate command up with some english or stitch"
+        }
+        else {
+            greeting += ", your stitch translation is: \n";
         }
         message.channel.send(greeting);
         message.channel.send(output);
