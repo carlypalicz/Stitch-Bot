@@ -148,7 +148,7 @@ client.on('message', async (message) => {
             message.delete();
         }
         if (output === ''){
-            greeting += ", I didn't notice anything to translate! Please follow the !translate command up with some english or stitch"
+            greeting += ", I didn't see anything for me to translate! Please follow the !translate command with some English or Stitch. For example, !translate the quick brown fox jumped over the lazy dog"
         }
         else {
             greeting += ", your stitch translation is: \n";
