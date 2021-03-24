@@ -149,12 +149,16 @@ client.on('message', async (message) => {
         }
         if (output === ''){
             greeting += ", I didn't see anything for me to translate! Please follow the !translate command with some English or Stitch. For example, !translate the quick brown fox jumped over the lazy dog"
+            message.channel.send(greeting);
+
         }
         else {
             greeting += ", your stitch translation is: \n";
+            message.channel.send(greeting);
+            message.channel.send(output);
+
+
         }
-        message.channel.send(greeting);
-        message.channel.send(output);
     }
 
     else if (command === "abcs"){
