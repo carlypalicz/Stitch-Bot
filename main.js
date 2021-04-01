@@ -139,7 +139,7 @@ client.on('message', async (message) => {
 
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247698375376896')){ //sammy
             roasted = true;
-            praised = true; //for now i guess
+            praised = true;
             message.channel.send("Hey " + name + ", Sammy Jammy may seem like a good leader, but have you considered that FREDDY is shaped like a friend?? Think about THAT while reading your translation: ");
         }
 
