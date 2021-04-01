@@ -66,6 +66,7 @@ client.once('ready', () => {
 });
 
 client.on('message', async (message) => {
+
     if(!message.content.startsWith(prefix) || message.author.bot) return; //ensures message is a command, and not sent by a bot
 
     const args = message.content.slice(prefix.length).split(/ +/); //splits the message into an array
@@ -93,8 +94,11 @@ client.on('message', async (message) => {
             const member = await message.guild.member(message.author);
             name = member.nickname ? member.nickname : message.author.username;
         }
+
+    console.log("Command executed by: " + name);
+    console.log(args.join(' '));
+
         if (name === 'Definitely Not Ylcoveysux' || name ==='Coveysux'){
-            console.log(args.join(' '));
             message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I need a nap, just do it yourself.");
             message.delete();
             return;
