@@ -89,7 +89,7 @@ client.on('message', async (message) => {
             name = member.nickname ? member.nickname : message.author.username;
         }
 
-        if (name === 'ylcarly' || name ==='carlycries#3691'){
+        if (name === 'ylcarly' || name ==='carlycries'){
             message.channel.send("what the fuck bro");
         }
 
