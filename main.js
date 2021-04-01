@@ -80,6 +80,7 @@ client.on('message', async (message) => {
         let rand = Math.random();
         let z1 = rand < .5;
         let name = '';
+
         if (message.guild == null){
             name = message.author.username;
         }
@@ -91,6 +92,7 @@ client.on('message', async (message) => {
 
         if (name === 'ylcarly' || name ==='carlycries'){
             message.channel.send("what the fuck bro");
+            return;
         }
 
         let greeting = "Hey ";
