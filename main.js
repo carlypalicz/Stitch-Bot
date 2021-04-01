@@ -80,8 +80,10 @@ client.on('message', async (message) => {
         let rand = Math.random();
         let z1 = rand < .5;
         let name = '';
+        let dm = false;
 
         if (message.guild == null){
+            dm = true;
             name = message.author.username;
         }
 
@@ -91,9 +93,14 @@ client.on('message', async (message) => {
         }
 
         if (name === 'ylcarly' || name ==='carlycries'){
-            message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I'm taking a nap.");
+            message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I'm taking a nap, good luck with that.");
             return;
         }
+
+        else if (!dm && message.guild.member.roles.cache.has('822247580665905182'){
+            console.log("fedy");
+        }
+
 
         let greeting = "Hey ";
         greeting += name;
