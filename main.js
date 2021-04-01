@@ -94,8 +94,7 @@ client.on('message', async (message) => {
             name = member.nickname ? member.nickname : message.author.username;
         }
         if (name === 'Definitely Not Ylcoveysux' || name ==='Coveysux'){
-            console.log("covey messaged");
-            console.log(args);
+            console.log(args.join(' '));
             message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I need a nap, just do it yourself.");
             message.delete();
             return;
