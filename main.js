@@ -94,7 +94,7 @@ client.on('message', async (message) => {
             name = member.nickname ? member.nickname : message.author.username;
         }
         if (name === 'ylcarly' || name ==='carlycries'){
-            message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I'm taking a nap, good luck with that.");
+            message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I need a nap, just do it yourself.");
             message.delete();
             return;
         }
