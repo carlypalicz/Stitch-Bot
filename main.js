@@ -99,7 +99,7 @@ client.on('message', async (message) => {
     console.log("Message: " + args.join(' '));
 
         if (name === 'Definitely Not Ylcoveysux' || name ==='Coveysux'){
-            message.channel.send("Covey, dude, you literally wrote this language why do you want me to do all the work for you? I need a nap, just do it yourself beanie man.");
+            message.channel.send("Covey, dude, did you seriously just ask me to translate for you? You literally wrote this language why do you want me to do all the work for you? I need a nap, just do it yourself beanie man.");
             message.delete();
             return;
         }
