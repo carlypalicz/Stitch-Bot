@@ -86,7 +86,6 @@ client.on('message', async (message) => {
 
         if (message.guild == null){
             dm = true;
-	@@ -99,17 +100,25 @@ client.on('message', async (message) => {
         }
 
         else if (!dm && !roasted && message.member.roles.cache.has('822247580665905182')){ //freddy
