@@ -106,13 +106,13 @@ client.on('message', async (message) => {
         }
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822315139784245300')){ //brandon
             roasted = true;
-            message.channel.send("Sorry " + name + " but I refuse to help someone who thinks someone that can't swim would make a good president");
+            message.channel.send("Sorry " + name + " but I refuse to help a person who thinks someone that can't even swim would make a good president");
             message.delete();
             return;
         }
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822314936737857577')){ //penny
             roasted = true;
-            message.channel.send(name + "wtf you - you would vote for p*nny?!? :nauseated_face: She literally killed harris....you should help yourself before you ask me for help.");
+            message.channel.send(name + " wtf you - you would vote for p*nny?!? :nauseated_face: She literally killed harris....you should help yourself before you ask me for help.");
             message.delete();
             return;
         }
