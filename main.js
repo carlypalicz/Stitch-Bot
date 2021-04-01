@@ -96,7 +96,7 @@ client.on('message', async (message) => {
         }
 
     console.log("Command executed by: " + name);
-    console.log(args.join(' '));
+    console.log("Message: " + args.join(' '));
 
         if (name === 'Definitely Not Ylcoveysux' || name ==='Coveysux'){
             message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I need a nap, just do it yourself.");
