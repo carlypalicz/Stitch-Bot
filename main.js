@@ -113,8 +113,9 @@ client.on('message', async (message) => {
         }
 
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822314936737857577')){ //penny
+            console.log("penny");
             roasted = true;
-            message.channel.send('You - you would vote for p*nny?!? :nauseated_face: She literally killed harris....you should help yourself before you ask me for help.');
+            message.channel.send("You - you would vote for p*nny?!? :nauseated_face: She literally killed harris....you should help yourself before you ask me for help.");
             return;
         }
 
