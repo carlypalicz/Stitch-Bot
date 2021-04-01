@@ -91,7 +91,7 @@ client.on('message', async (message) => {
         }
 
         if (name === 'ylcarly' || name ==='carlycries'){
-            message.channel.send("what the fuck bro");
+            message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I'm taking a nap.");
             return;
         }
 
