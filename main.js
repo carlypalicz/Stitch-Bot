@@ -82,6 +82,7 @@ client.on('message', async (message) => {
         let name = '';
         let dm = false;
         let roasted = false;
+        let praised = true;
 
         if (message.guild == null){
             dm = true;
@@ -99,17 +100,25 @@ client.on('message', async (message) => {
         }
 
         else if (!dm && !roasted && message.member.roles.cache.has('822247580665905182')){ //freddy
-            message.channel.send("You are an absolute legend for voting for Freddy! Shronky will bless you with good luck");
+            let praised = true;
+            let msg = 'OMG ';
+            msg += name;
+            message.channel.send(", you are an absolute legend for voting for Freddy! Shronky will bless you with good luck");
         }
 
-        else if (!dm && !roasted && message.member.roles.cache.has('822315139784245300')){ //brandon
+        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822315139784245300')){ //brandon
             message.channel.send("Sorry but I refuse to help someone who thinks someone that can't swim would make a good president");
             return;
         }
 
 
+    if (praised){
+        let greeting = '';
+    }
+    else {
         let greeting = "Hey ";
         greeting += name;
+    }
         let output = '';
         let cur_char = '';
         let outputting_stitch = false;
