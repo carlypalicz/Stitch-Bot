@@ -128,6 +128,11 @@ client.on('message', async (message) => {
             praised = true; //for now i guess
             message.channel.send("Hey " + name + ", I love her too, but not even in her WILDEST dreams would Alex win the election....vote for Freddy!!! I offer you in return the following translation: ");
         }
+        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247340039340042')){ //harris
+            roasted = true;
+            praised = true; //for now i guess
+            message.channel.send("Hey " + name + ", I love Harris but I heard his uncle is the principle...resist nepotism and vote FREDDY! Oh, and your translation is: ");
+        }
 
 
         let greeting = "Hey ";
