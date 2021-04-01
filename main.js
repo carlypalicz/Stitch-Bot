@@ -79,35 +79,47 @@ client.on('message', async (message) => {
     else if (command === 'translate'){
         let rand = Math.random();
         let z1 = rand < .5;
-         let name = '';
+        let name = '';
         let dm = false;
         let roasted = false;
         let praised = false;
 
         if (message.guild == null){
             dm = true;
+            name = message.author.username;
+        }
+
+        else {
+            const member = await message.guild.member(message.author);
+            name = member.nickname ? member.nickname : message.author.username;
+        }
+
+        if (name === 'Ylcoveysux' || name ==='coveysux'){
+            message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I'm taking a nap, good luck with that.");
+            return;
         }
 
         else if (!dm && !roasted && message.member.roles.cache.has('822247580665905182')){ //freddy
-            let praised = true;
+            praised = true;
             let msg = 'OMG ';
             msg += name;
-            message.channel.send(", you are an absolute legend for voting for Freddy! Shronky will bless you with good luck");
+            message.channel.send(msg + ', you are an absolute legend for voting for Freddy! Shronky will bless you with good luck! Your stitch translation is:');
         }
 
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822315139784245300')){ //brandon
+            roasted = true;
             message.channel.send("Sorry but I refuse to help someone who thinks someone that can't swim would make a good president");
             return;
         }
 
+        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822314936737857577')){ //penny
+            roasted = true;
+            message.channel.send("You - you would vote for p*nny?!? :nauseated_face: She literally killed harris....you should help yourself before you ask me for help.");
+            return;
+        }
 
-    if (praised){
-        let greeting = '';
-    }
-    else {
         let greeting = "Hey ";
         greeting += name;
-    }
         let output = '';
         let cur_char = '';
         let outputting_stitch = false;
