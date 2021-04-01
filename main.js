@@ -89,6 +89,10 @@ client.on('message', async (message) => {
             name = member.nickname ? member.nickname : message.author.username;
         }
 
+        if (name === 'ylcarly' || name ==='carlycries#3691'){
+            message.channel.send("what the fuck bro");
+        }
+
         let greeting = "Hey ";
         greeting += name;
         let output = '';
@@ -149,7 +153,7 @@ client.on('message', async (message) => {
         }
         if (output === ''){
             greeting += ", I didn't see anything for me to translate! Please follow the !translate command with some English or Stitch. For example, !translate the quick brown fox jumped over the lazy dog"
-            message.channel.send(greeting);
+            message.channel.send({greeting});
 
         }
         else {
