@@ -123,6 +123,12 @@ client.on('message', async (message) => {
             praised = true; //for now i guess
             message.channel.send("Hey " + name + ", who has two thumbs and deserves to win the election?.......not Ben lol. Anyway, I guess your translation is: ");
         }
+        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822259365984993330')){ //alex
+            roasted = true;
+            praised = true; //for now i guess
+            message.channel.send("Hey " + name + ", I love her too, but not even in her WILDEST dreams would Alex win the election....vote for Freddy!!! I offer you in return the following translation: ");
+        }
+
 
         let greeting = "Hey ";
         greeting += name;
