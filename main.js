@@ -103,7 +103,7 @@ client.on('message', async (message) => {
             let praised = true;
             let msg = 'OMG ';
             msg += name;
-            message.channel.send(", you are an absolute legend for voting for Freddy! Shronky will bless you with good luck");
+            message.channel.send(", you are an absolute legend for voting for Freddy! Shronky will bless you with good luck! Your stitch translation is:");
         }
 
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822315139784245300')){ //brandon
@@ -112,13 +112,10 @@ client.on('message', async (message) => {
         }
 
 
-    if (praised){
-        let greeting = '';
-    }
-    else {
+
+
         let greeting = "Hey ";
         greeting += name;
-    }
         let output = '';
         let cur_char = '';
         let outputting_stitch = false;
@@ -180,12 +177,14 @@ client.on('message', async (message) => {
             message.channel.send({greeting});
 
         }
-        else {
+        else if (!praised){
             greeting += ", your stitch translation is: \n";
             message.channel.send(greeting);
             message.channel.send(output);
+        }
 
-
+        else {
+            message.channel.send(output);
         }
     }
 
