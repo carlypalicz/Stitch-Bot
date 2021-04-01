@@ -93,31 +93,26 @@ client.on('message', async (message) => {
             const member = await message.guild.member(message.author);
             name = member.nickname ? member.nickname : message.author.username;
         }
-
         if (name === 'Ylcoveysux' || name ==='coveysux'){
             message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I'm taking a nap, good luck with that.");
             return;
         }
-
         else if (!dm && !roasted && message.member.roles.cache.has('822247580665905182')){ //freddy
             praised = true;
             let msg = 'OMG ';
             msg += name;
             message.channel.send(msg + ', you are an absolute legend for voting for Freddy! Shronky will bless you with good luck! Your stitch translation is:');
         }
-
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822315139784245300')){ //brandon
             roasted = true;
             message.channel.send("Sorry but I refuse to help someone who thinks someone that can't swim would make a good president");
             return;
         }
-
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822314936737857577')){ //penny
             roasted = true;
             message.channel.send("You - you would vote for p*nny?!? :nauseated_face: She literally killed harris....you should help yourself before you ask me for help.");
             return;
         }
-
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247070660165652')){ //ben
             roasted = true;
             praised = true; //for now i guess
@@ -133,7 +128,11 @@ client.on('message', async (message) => {
             praised = true; //for now i guess
             message.channel.send("Hey " + name + ", I love Harris but I heard his uncle is the principle...resist nepotism and vote FREDDY! Oh, and your translation is: ");
         }
-
+        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247698375376896')){ //sammy
+            roasted = true;
+            praised = true; //for now i guess
+            message.channel.send("Hey " + name + ", Sammy Jammy may seem like a good leader, but have you considered that FREDDY is shaped like a friend?? Think about THAT while reading your translation: ");
+        }
 
         let greeting = "Hey ";
         greeting += name;
