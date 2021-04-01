@@ -104,6 +104,7 @@ client.on('message', async (message) => {
 
         else if (!dm && !roasted && message.member.roles.cache.has('822315139784245300')){ //brandon
             message.channel.send("Sorry but I refuse to help someone who thinks someone that can't swim would make a good president");
+            return;
         }
 
 
