@@ -93,7 +93,7 @@ client.on('message', async (message) => {
             const member = await message.guild.member(message.author);
             name = member.nickname ? member.nickname : message.author.username;
         }
-        if (name === 'ylcarly' || name ==='carlycries'){
+        if (name === 'Definitely Not Ylcoveysux' || name ==='Coveysux'){
             message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I need a nap, just do it yourself.");
             message.delete();
             return;
@@ -106,13 +106,13 @@ client.on('message', async (message) => {
         }
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822315139784245300')){ //brandon
             roasted = true;
-            message.channel.send("Sorry but I refuse to help someone who thinks someone that can't swim would make a good president");
+            message.channel.send("Sorry " + name + " but I refuse to help someone who thinks someone that can't swim would make a good president");
             message.delete();
             return;
         }
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822314936737857577')){ //penny
             roasted = true;
-            message.channel.send("You - you would vote for p*nny?!? :nauseated_face: She literally killed harris....you should help yourself before you ask me for help.");
+            message.channel.send(name + "wtf you - you would vote for p*nny?!? :nauseated_face: She literally killed harris....you should help yourself before you ask me for help.");
             message.delete();
             return;
         }
