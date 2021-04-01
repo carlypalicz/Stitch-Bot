@@ -97,7 +97,7 @@ client.on('message', async (message) => {
             return;
         }
 
-        else if (!dm && message.guild.member.roles.cache.has('822247580665905182')){
+        else if (!dm && message.member.roles.cache.has('822247580665905182')){
             console.log("fedy");
         }
 
