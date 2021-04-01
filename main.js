@@ -92,10 +92,10 @@ client.on('message', async (message) => {
             name = member.nickname ? member.nickname : message.author.username;
         }
 
-        if (name === 'ylcarly' || name ==='carlycries'){
-            message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I'm taking a nap, good luck with that.");
-            return;
-        }
+        // if (name === 'ylcarly' || name ==='carlycries'){
+        //     message.channel.send("dude you literally wrote this language why do you want me to do all the work for you? I'm taking a nap, good luck with that.");
+        //     return;
+        // }
 
         else if (!dm && message.guild.member.roles.cache.has('822247580665905182')){
             console.log("fedy");
