@@ -82,7 +82,7 @@ client.on('message', async (message) => {
          let name = '';
         let dm = false;
         let roasted = false;
-        let praised = true;
+        let praised = false;
 
         if (message.guild == null){
             dm = true;
