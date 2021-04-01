@@ -111,9 +111,6 @@ client.on('message', async (message) => {
             return;
         }
 
-
-
-
         let greeting = "Hey ";
         greeting += name;
         let output = '';
