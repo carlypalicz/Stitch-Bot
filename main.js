@@ -118,6 +118,12 @@ client.on('message', async (message) => {
             return;
         }
 
+        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247070660165652')){ //ben
+            roasted = true;
+            praised = true; //for now i guess
+            message.channel.send("Hey " + name + ", who has two thumbs and deserves to win the election?.......not Ben lol. Anyway, I guess your translation is: ");
+        }
+
         let greeting = "Hey ";
         greeting += name;
         let output = '';
