@@ -103,7 +103,7 @@ client.on('message', async (message) => {
             let praised = true;
             let msg = 'OMG ';
             msg += name;
-            message.channel.send(", you are an absolute legend for voting for Freddy! Shronky will bless you with good luck! Your stitch translation is:");
+            message.channel.send(msg + ', you are an absolute legend for voting for Freddy! Shronky will bless you with good luck! Your stitch translation is:');
         }
 
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822315139784245300')){ //brandon
