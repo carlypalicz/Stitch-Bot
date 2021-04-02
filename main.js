@@ -61,7 +61,27 @@ const alphabet={
     '<:stitch_z2:823361048798953493>': ['z']
 };
 
-// const quotes = ['JOIN THE DISCOOOORD','I\'m in me mums car! Broom Broom!','Just smile through the feels:\')','Fuck the system, and do what you want','Fox head. Fox head. Fuck head. Fox head. Fox head.','You guys are the art.','Where did my teeth go?','Oh, shut up, fridge.','Please HELP ME, I''m gonna die:D','Everything is possible, and there are no rules or answers to anything.','FUCK OFF THOMPSON I\'LL LONG NECK DECK YOU!','Fuck you, hurdle.','Middle finger to it all. Fuck you!','Sometimes Bird Daddy just fuckin freaks out, y\'know?','Do you wanna be SASSY with me tonight?','What\'s my opinion on the color orange? NOT A THIIIING!','GOOD LUCK BESTIES','I think I finally broke the discord','I was born....and I lived...and now I\'m still living.','The discord is just basically a place where I can receive cyber bullying.','I decided a long time ago that I deserve to be bullied.','I\'ll simp for bird daddy'];
+const quotes [
+    "JOIN THE DISCOOOORD",
+    "I\'m in me mums car! Broom Broom",
+    "Just smile through the feels:\'",
+    "Fuck the system, and do what you wan",
+    "Fox head. Fox head. Fuck head. Fox head. Fox head",
+    "You guys are the art",
+    "Where did my teeth go",
+    "Oh, shut up, fridge",
+    "Please HELP ME, I''m gonna die:",
+    "Everything is possible, and there are no rules or answers to anything",
+    "FUCK OFF THOMPSON I\'LL LONG NECK DECK YOU",
+    "Fuck you, hurdle.','Middle finger to it all. Fuck you",
+    "Sometimes Bird Daddy just fuckin freaks out, y\'know",
+    "Do you wanna be SASSY with me tonight",
+    "What\'s my opinion on the color orange? NOT A THIIIING",
+    "GOOD LUCK BESTIES','I think I finally broke the discor",
+    "I was born....and I lived...and now I\'m still living",
+    "The discord is just basically a place where I can receive cyber bullying",
+    "I decided a long time ago that I deserve to be bullied",
+    "I\'ll simp for bird daddy"];
 
 client.once('ready', () => {
     console.log('Stitch Bot is online');
@@ -113,12 +133,6 @@ client.on('message', async (message) => {
 
     console.log("Command executed by: " + name);
     console.log("Message: " + args.join(' '));
-
-        if (name === 'Definitely Not Ylcoveysux' || name ==='Coveysux'){
-            message.channel.send("Covey, dude, did you seriously just ask me to translate for you? You literally wrote this language why do you want me to do all the work for you? I need a nap, just do it yourself beanie man.");
-            message.delete();
-            return;
-        }
 
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247070660165652')){ //ben
             roasted = true;
