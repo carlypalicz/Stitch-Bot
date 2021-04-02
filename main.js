@@ -109,7 +109,7 @@ client.on('message', async (message) => {
         if (args.length === 0){
             let output = "Sorry " + name + ", I didn't see anything for me to translate! Please follow the !translate command with some English or Stitch. For example, !translate the quick brown fox jumped over the lazy dog"
             message.channel.send(output);
-            break;
+            return;
         }
 
         if (!dm && !roasted && !praised && message.member.roles.cache.has('822247070660165652')){ //ben
