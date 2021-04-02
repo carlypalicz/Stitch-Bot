@@ -107,9 +107,9 @@ client.on('message', async (message) => {
     console.log("Message: " + args.join(' '));
 
         if (args.length === 0){
-            let output = "Sorry " + name + ", I didn't see anything for me to translate! Please follow the !translate command with some English or Stitch. For example, !translate the quick brown fox jumped over the lazy dog"
+            let no_empty = "Sorry " + name + ", I didn't see anything for me to translate! Please follow the !translate command with some English or Stitch. For example, !translate the quick brown fox jumped over the lazy dog"
             console.log("first block");
-            message.channel.send(output);
+            message.channel.send(no_empty);
             messsage.delete();
             return;
         }
