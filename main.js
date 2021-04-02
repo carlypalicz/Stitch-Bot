@@ -77,6 +77,14 @@ client.on('message', async (message) => {
         message.channel.send(intro);
     }
 
+    else if (command === 'ylapples'){
+        let output = '';
+        for (let i = 0; i < 11; i++){
+            output += '<:ylapples:826531088188440588>';
+        }
+        message.channel.send(output);
+    }
+
     else if (command === 'translate'){
         let rand = Math.random();
         let z1 = rand < .5;
