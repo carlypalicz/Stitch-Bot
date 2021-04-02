@@ -84,6 +84,7 @@ client.on('message', async (message) => {
         }
         message.channel.send(output);
     }
+
     else if (command === 'translate'){
         let rand = Math.random();
         let z1 = rand < .5;
