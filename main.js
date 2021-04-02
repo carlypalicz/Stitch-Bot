@@ -109,8 +109,8 @@ client.on('message', async (message) => {
         if (args.length === 0 && message.guild != null){
             let no_empty = "Sorry " + name + ", I didn't see anything for me to translate! Please follow the !translate command with some English or Stitch. For example, !translate the quick brown fox jumped over the lazy dog"
             console.log("first block");
-            message.channel.send(no_empty);
             messsage.delete();
+            message.channel.send(no_empty);
             return;
         }
 
