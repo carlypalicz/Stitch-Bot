@@ -142,6 +142,11 @@ client.on('message', async (message) => {
             praised = true;
             message.channel.send("Hey " + name + ", Sammy Jammy may seem like a good leader, but have you considered that FREDDY is shaped like a friend?? Think about THAT while reading your translation: ");
         }
+        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822259019351326730')){ //j+j
+            roasted = true;
+            praised = true;
+            message.channel.send("Seriously " + name + "? You'd put your trust in Jack and Jake? We all know they can be a little two-faced.....vote Freddy instead! I guess I'll translate FOR you since you don't seem very bright:");
+        }
 
         let greeting = "Hey ";
         greeting += name;
