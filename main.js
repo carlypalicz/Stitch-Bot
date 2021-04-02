@@ -216,6 +216,7 @@ client.on('message', async (message) => {
             message.delete();
         }
         if (output === ''){
+            console.log("empty otutput");
             greeting += ", I didn't see anything for me to translate! Please follow the !translate command with some English or Stitch. For example, !translate the quick brown fox jumped over the lazy dog"
             message.channel.send({greeting});
         }
