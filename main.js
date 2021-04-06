@@ -63,6 +63,13 @@ const alphabet={
 
 client.once('ready', () => {
     console.log('Stitch Bot is online');
+    client.user.setPresence({
+        status: 'available',
+        activity: {
+            name: 'Harris defeat Scammy Jammy',
+            type: 'WATCHING',
+        }
+    })
 });
 
 
@@ -299,6 +306,3 @@ function find_non_stitch_emote(arg, partial_output){
 }
 
 client.login(process.env.STITCH_BOT_SECRET);
-client.setActivity("Harris defeat Sammy Jammy", {
-    type: 'WATCHING'
-});
