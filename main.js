@@ -134,7 +134,9 @@ client.on('message', async (message) => {
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247698375376896')){ //sammy
             roasted = true;
             praised = true;
-            message.channel.send("Uhhhh " + name + ", Scammy Jammy, really? She's the devil herself, even Covey doesn't want her to win. But if you vote for HARRIS and he'll get a tattoo of Jamie and Harris kissing!!! Think about THAT while reading your translation: ");
+            message.channel.send("Uhhhh " + name + ", Scammy Jammy, really? She's the devil herself, even Covey doesn't want her to win. But if you vote for HARRIS he'll get a tattoo of Jamie and Harris kissing!!! Think about THAT while you translate your own messages smh");
+            message.delete();
+            return;
         }
         else if (!dm && !roasted && message.member.roles.cache.has('822247580665905182')){ //freddy
             praised = true;
