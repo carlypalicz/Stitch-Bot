@@ -121,7 +121,7 @@ client.on('message', async (message) => {
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247340039340042')){ //harris
             roasted = true;
             praised = true; //for now i guess
-            message.channel.send("OMG " + name + "!! You are an aboluste LEGEND for voting Harris for the election.Shronky will bless you with good luck!!! Your stitch translation is: ");
+            message.channel.send("OMG " + name + "!! You are an aboluste LEGEND for voting Harris for the election. Shronky will bless you with good luck!!! Your stitch translation is: ");
         }
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247698375376896')){ //sammy
             roasted = true;
