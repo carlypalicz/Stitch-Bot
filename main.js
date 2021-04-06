@@ -65,6 +65,11 @@ client.once('ready', () => {
     console.log('Stitch Bot is online');
 });
 
+client.user.setActivity("Harris defeat Sammy Jammy", {
+    type: 'WATCHING'
+});
+
+
 client.on('message', async (message) => {
 
     if(!message.content.startsWith(prefix) || message.author.bot) return; //ensures message is a command, and not sent by a bot
