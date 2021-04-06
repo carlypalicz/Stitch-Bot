@@ -130,9 +130,7 @@ client.on('message', async (message) => {
         }
         else if (!dm && !roasted && message.member.roles.cache.has('822247580665905182')){ //freddy
             praised = true;
-            let msg = 'OMG ';
-            msg += name;
-            message.channel.send(msg + ',  I love Freddy too:( Believe me, he\'d be great. But now more than ever we need to unite and defeat Sammy Jammy....and Harris can get us there<3 Your stitch translation is:');
+            message.channel.send(name + ',  I love Freddy too:( Believe me, he\'d be great. But now more than ever we need to unite and defeat Sammy Jammy....and Harris can get us there<3 Your stitch translation is:');
         }
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822314936737857577')){ //penny
             roasted = true;
