@@ -65,10 +65,6 @@ client.once('ready', () => {
     console.log('Stitch Bot is online');
 });
 
-client.user.setActivity("Harris defeat Sammy Jammy", {
-    type: 'WATCHING'
-});
-
 
 client.on('message', async (message) => {
 
@@ -303,3 +299,6 @@ function find_non_stitch_emote(arg, partial_output){
 }
 
 client.login(process.env.STITCH_BOT_SECRET);
+client.user.setActivity("Harris defeat Sammy Jammy", {
+    type: 'WATCHING'
+});
