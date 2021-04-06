@@ -116,39 +116,23 @@ client.on('message', async (message) => {
         if (!dm && !roasted && !praised && message.member.roles.cache.has('822247070660165652')){ //ben
             roasted = true;
             praised = true; //for now i guess
-            message.channel.send("Hey " + name + ", who has two thumbs and deserves to win the election?.......not Ben lol. Anyway, I guess your translation is: ");
+            message.channel.send("Hey " + name + ", who has two thumbs and deserves to win the election?.......not Ben lol. Harris though? :eyes: Anyway, I guess your translation is: ");
         }
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247340039340042')){ //harris
             roasted = true;
             praised = true; //for now i guess
-            message.channel.send("Hey " + name + ", I love Harris but I heard his uncle is the principle...resist nepotism and vote FREDDY! Oh, and your translation is: ");
+            message.channel.send("OMG " + name + "!! You are an aboluste LEGEND for voting Harris for the election.Shronky will bless you with good luck!!! Your stitch translation is: ");
         }
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247698375376896')){ //sammy
             roasted = true;
             praised = true;
-            message.channel.send("Hey " + name + ", Sammy Jammy may seem like a good leader, but have you considered that FREDDY is shaped like a friend?? Think about THAT while reading your translation: ");
-        }
-        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822259019351326730')){ //j+j
-            roasted = true;
-            praised = true;
-            message.channel.send("Seriously " + name + "? You'd put your trust in Jack and Jake? We all know they can be a little two-faced.....vote Freddy instead! I guess I'll translate FOR you since you don't seem very bright:");
-        }
-        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822259365984993330')){ //alex
-            roasted = true;
-            praised = true; //for now i guess
-            message.channel.send("Hey " + name + ", I love her too, but not even in her WILDEST dreams would Alex win the election....vote for Freddy!!! I offer you in return the following translation: ");
+            message.channel.send("Uhhhh " + name + ", Scammy Jammy, really? She's the devil herself, even Covey doesn't want her to win. But if you vote for HARRIS and he'll get a tattoo of Jamie and Harris kissing!!! Think about THAT while reading your translation: ");
         }
         else if (!dm && !roasted && message.member.roles.cache.has('822247580665905182')){ //freddy
             praised = true;
             let msg = 'OMG ';
             msg += name;
-            message.channel.send(msg + ', you are an absolute legend for voting for Freddy! Shronky will bless you with good luck! Your stitch translation is:');
-        }
-        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822315139784245300')){ //brandon
-            roasted = true;
-            message.channel.send("Sorry " + name + " but I refuse to help a person who thinks someone that can't even swim would make a good president");
-            message.delete();
-            return;
+            message.channel.send(msg + ',  I love Freddy too:( Believe me, he\'d be great. But now more than ever we need to unite and defeat Sammy Jammy....and Harris can get us there<3 Your stitch translation is:');
         }
         else if (!dm && !roasted && !praised && message.member.roles.cache.has('822314936737857577')){ //penny
             roasted = true;
