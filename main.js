@@ -100,6 +100,7 @@ client.on('message', async (message) => {
         let dm = false;
         let roasted = false;
         let praised = false;
+        let lee = false;
 
         if (message.guild == null){
             dm = true;
@@ -122,31 +123,32 @@ client.on('message', async (message) => {
         }
 
         if (message.author.username === "Tardisintheair"){
+            lee = true;
             message.channel.send("Hi Lee! I know you voted for Harris so you get a free pass to wear Ben colors<3 Thanks for being SWAG!!!! Here's your translation: ")
         }
 
-        if (!dm && !roasted && !praised && message.member.roles.cache.has('822247070660165652')){ //ben
+        if (!lee && !dm && !roasted && !praised && message.member.roles.cache.has('822247070660165652')){ //ben
             roasted = true;
             praised = true; //for now i guess
             message.channel.send("Hey " + name + ", who has two thumbs and deserves to win the election?.......not Ben lol. Harris though? :eyes: Anyway, I guess your translation is: ");
         }
-        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247340039340042')){ //harris
+        else if (!lee && !dm && !roasted && !praised && message.member.roles.cache.has('822247340039340042')){ //harris
             roasted = true;
             praised = true; //for now i guess
             message.channel.send("OMG " + name + "!! You are an aboluste LEGEND for voting Harris for the election. Shronky will bless you with good luck!!! Your stitch translation is: ");
         }
-        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822247698375376896')){ //sammy
+        else if (!lee && !dm && !roasted && !praised && message.member.roles.cache.has('822247698375376896')){ //sammy
             roasted = true;
             praised = true;
             message.channel.send("Uhhhh " + name + ", Scammy Jammy, really? She's the devil herself, even Covey doesn't want her to win. But if you vote for HARRIS he'll get a tattoo of Jamie and Harris kissing!!! Think about THAT while you translate your own messages smh");
             message.delete();
             return;
         }
-        else if (!dm && !roasted && message.member.roles.cache.has('822247580665905182')){ //freddy
+        else if (!lee && !dm && !roasted && message.member.roles.cache.has('822247580665905182')){ //freddy
             praised = true;
             message.channel.send(name + ',  I love Freddy too:( Believe me, he\'d be great. But now more than ever we need to unite and defeat Sammy Jammy....and Harris can get us there<3 Your stitch translation is:');
         }
-        else if (!dm && !roasted && !praised && message.member.roles.cache.has('822314936737857577')){ //penny
+        else if (!lee && !dm && !roasted && !praised && message.member.roles.cache.has('822314936737857577')){ //penny
             roasted = true;
             message.channel.send(name + " wtf you - you would vote for p*nny?!? :nauseated_face: She literally killed harris....you should help yourself before you ask me for help.");
             message.delete();
