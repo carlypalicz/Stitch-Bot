@@ -121,6 +121,10 @@ client.on('message', async (message) => {
             return;
         }
 
+        if (message.author.username === "Tardisintheair"){
+            message.channel.send("Hi Lee! I know you voted for Harris so you get a free pass to wear Ben colors<3 Thanks for being SWAG!!!! Here's your translation: ")
+        }
+
         if (!dm && !roasted && !praised && message.member.roles.cache.has('822247070660165652')){ //ben
             roasted = true;
             praised = true; //for now i guess
