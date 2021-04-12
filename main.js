@@ -109,6 +109,7 @@ client.on('message', async (message) => {
 
         message.channel.send(exampleEmbed);
     }
+
     else if (command === 'translate'){
         let rand = Math.random();
         let z1 = rand < .5;
@@ -245,22 +246,22 @@ client.on('message', async (message) => {
         }
     }
 
-//     else if (command === "abcs"){
-//         output = "Learn Stitch with me!\n";
-//         alph_array = Object.keys(alphabet);
-//         alph_array.map(function(key, index) {
-//             if (key.length > 2){
-//                 output += key;
-//                 output += ' : ';
-//                 output += alphabet[key];
-//                 if (index != alph_array.length -1) {
-//                     output += ', ';
-//                 }
-//             }
-//         });
-//         message.channel.send(output);
-//     }
-// });
+    // else if (command === "abcs"){
+    //     output = "Learn Stitch with me!\n";
+    //     alph_array = Object.keys(alphabet);
+    //     alph_array.map(function(key, index) {
+    //         if (key.length > 2){
+    //             output += key;
+    //             output += ' : ';
+    //             output += alphabet[key];
+    //             if (index != alph_array.length -1) {
+    //                 output += ', ';
+    //             }
+    //         }
+    //     });
+    //     message.channel.send(output);
+    // }
+});
 
 function find_stitch_emote(arg, partial_output){
     if (arg.length === 0){
