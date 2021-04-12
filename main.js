@@ -108,6 +108,23 @@ client.on('message', async (message) => {
                 { name: 'G', value: '<:stitch_g:823348743260340224>', inline: true },
                 { name: 'H', value: '<:stitch_h:823348743474118656>', inline: true },
                 { name: 'I', value: '<:stitch_i:823350913108410408>', inline: true },
+                { name: 'J', value: '<:stitch_j:823351325919281202>', inline: true },
+                { name: 'K', value: '<:stitch_k:823351386288553994>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
 
             )
             .setTimestamp()
