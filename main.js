@@ -99,7 +99,7 @@ client.on('message', async (message) => {
             .setTitle('Learn Stitch with me!')
             .setDescription('A: <:stitch_a:823344398409662484>\tB: <:stitch_b:823348619926569010>')
             .addFields(
-                { name: 'A\tB\tC', value:'<:stitch_a:823344398409662484>\t<:stitch_a:823344398409662484>\t<:stitch_a:823344398409662484>'},
+                { name: 'A\t B \tC', value:'<:stitch_a:823344398409662484>\t<:stitch_a:823344398409662484>\t<:stitch_a:823344398409662484>'},
                 // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
                 // { name: 'B', value: '<:stitch_b:823348619926569010>', inline: true },
                 // { name: 'C', value: '<:stitch_c:823348666374029332>', inline: true },
