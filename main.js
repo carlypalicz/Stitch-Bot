@@ -93,6 +93,10 @@ client.on('message', async (message) => {
         message.channel.send(output);
     }
 
+    else if (command === 'table'){
+        message.channel.send("hehe", {files: ["stitch_table.png"]});
+    }
+
     else if (command === 'test'){
         const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
