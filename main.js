@@ -106,9 +106,10 @@ client.on('message', async (message) => {
                 { name: 'E', value: '<:stitch_e:823348742970277909>', inline: true },
                 { name: 'F', value: '<:stitch_f:823348743146307653>', inline: true },
                 { name: 'G', value: '<:stitch_g:823348743260340224>', inline: true },
+                { name: 'H', value: '<:stitch_h:823348743474118656>', inline: true },
+                { name: 'I', value: '<:stitch_i:823350913108410408>', inline: true },
 
             )
-            .addField('Inline field title', 'Some value here', true)
             .setTimestamp()
             //.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
