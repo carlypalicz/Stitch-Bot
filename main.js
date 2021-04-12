@@ -97,7 +97,7 @@ client.on('message', async (message) => {
         const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Learn Stitch with me!')
-            .setDescription('Some description here')
+            .setDescription('Some description here does this make it more than three maybe')
             .addFields(
                 { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
                 { name: 'B', value: '<:stitch_b:823348619926569010>', inline: true },
@@ -110,8 +110,8 @@ client.on('message', async (message) => {
                 { name: 'I', value: '<:stitch_i:823350913108410408>', inline: true },
                 { name: 'J', value: '<:stitch_j:823351325919281202>', inline: true },
                 { name: 'K', value: '<:stitch_k:823351386288553994>', inline: true },
-                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'L', value: '<:stitch_l:823351541238071336>', inline: true },
+                { name: 'M', value: '<:stitch_m:823351598574862358>', inline: true },
                 { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
                 { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
                 { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
