@@ -101,6 +101,12 @@ client.on('message', async (message) => {
             .addFields(
                 { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
                 { name: 'B', value: '<:stitch_b:823348619926569010>', inline: true },
+                { name: 'C', value: '<:stitch_c:823348666374029332>', inline: true },
+                { name: 'D', value: '<:stitch_d:823348742735921182>', inline: true },
+                { name: 'E', value: '<:stitch_e:823348742970277909>', inline: true },
+                { name: 'F', value: '<:stitch_f:823348743146307653>', inline: true },
+                { name: 'G', value: '<:stitch_g:823348743260340224>', inline: true },
+
             )
             .addField('Inline field title', 'Some value here', true)
             .setTimestamp()
