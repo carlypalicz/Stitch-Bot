@@ -103,7 +103,7 @@ client.on('message', async (message) => {
             .setTitle('Learn Stitch With Me!')
             .setDescription('Here\'s a handy chart to help you learn stitch! Make note of the pattern in the letters to help you learn.')
             //.addField('Inline field title', 'Some value here', true)
-            .setImage('https://github.com/carlypalicz/Stitch-Bot/blob/master/stitch_table.png')
+            .setImage('https://github.com/carlypalicz/Stitch-Bot/blob/master/stitch_table.png?raw=true')
             .setTimestamp()
             .setFooter('type !introduce for help using Stitch Bot');
 
