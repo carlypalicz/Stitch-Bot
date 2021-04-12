@@ -100,40 +100,12 @@ client.on('message', async (message) => {
     else if (command === 'test'){
         const exampleEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
-            .setTitle('Learn Stitch with me!')
-            .setDescription('A: <:stitch_a:823344398409662484>\tB: <:stitch_b:823348619926569010>')
-            .addFields(
-                { name: 'A    B    C    D    E    F', value:'<:stitch_a:823344398409662484>\t<:stitch_b:823348619926569010>\t<:stitch_c:823348666374029332>\t<:stitch_d:823348742735921182>\t<:stitch_e:823348742970277909>\t<:stitch_f:823348743146307653>'},
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'B', value: '<:stitch_b:823348619926569010>', inline: true },
-                // { name: 'C', value: '<:stitch_c:823348666374029332>', inline: true },
-                // { name: 'D', value: '<:stitch_d:823348742735921182>', inline: true },
-                // { name: 'E', value: '<:stitch_e:823348742970277909>', inline: true },
-                // { name: 'F', value: '<:stitch_f:823348743146307653>', inline: true },
-                // { name: 'G', value: '<:stitch_g:823348743260340224>', inline: true },
-                // { name: 'H', value: '<:stitch_h:823348743474118656>', inline: true },
-                // { name: 'I', value: '<:stitch_i:823350913108410408>', inline: true },
-                // { name: 'J', value: '<:stitch_j:823351325919281202>', inline: true },
-                // { name: 'K', value: '<:stitch_k:823351386288553994>', inline: true },
-                // { name: 'L', value: '<:stitch_l:823351541238071336>', inline: true },
-                // { name: 'M', value: '<:stitch_m:823351598574862358>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-                // { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
-
-            )
+            .setTitle('Learn Stitch With Me!')
+            .setDescription('Here\'s a handy chart to help you learn stitch! Make note of the pattern in the letters to help you learn.')
+            //.addField('Inline field title', 'Some value here', true)
+            .setImage('stitch_table.png')
             .setTimestamp()
-            //.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+            .setFooter('type !introduce for help using Stitch Bot');
 
         message.channel.send(exampleEmbed);
     }
