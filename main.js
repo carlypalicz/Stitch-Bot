@@ -99,10 +99,8 @@ client.on('message', async (message) => {
             .setTitle('Learn Stitch with me!')
             .setDescription('Some description here')
             .addFields(
-                { name: 'Regular field title', value: 'Some value here' },
-                { name: '\u200B', value: '\u200B' },
-                { name: 'Inline field title', value: 'Some value here', inline: true },
-                { name: 'Inline field title', value: 'Some value here', inline: true },
+                { name: 'A', value: '<:stitch_a:823344398409662484>', inline: true },
+                { name: 'B', value: '<:stitch_b:823348619926569010>', inline: true },
             )
             .addField('Inline field title', 'Some value here', true)
             .setTimestamp()
