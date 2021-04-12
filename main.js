@@ -99,7 +99,7 @@ client.on('message', async (message) => {
 
     else if (command === 'test'){
         const exampleEmbed = new Discord.MessageEmbed()
-            .setColor('#0099ff')
+            .setColor('#A91B0D')
             .setTitle('Learn Stitch With Me!')
             .setDescription('Here\'s a handy chart to help you learn stitch! Make note of the pattern in the letters to help you learn.')
             //.addField('Inline field title', 'Some value here', true)
