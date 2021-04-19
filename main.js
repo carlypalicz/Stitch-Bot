@@ -199,10 +199,6 @@ client.on('message', async (message) => {
             message.channel.send(greeting);
             message.channel.send(output);
         }
-
-        else {
-            message.channel.send(output);
-        }
     }
 
     // else if (command === "abcs"){
