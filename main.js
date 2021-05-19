@@ -132,13 +132,6 @@ var intros = [
     "Never forget this - it could come in handy one day: "
 ];
 
-
-console.log(quotes.length);
-
-for (i = 0; i < quotes.length; i++){
-    console.log(quotes[i]);
-}
-
 client.once('ready', () => {
     console.log('Stitch Bot is online');
     client.user.setPresence({
@@ -189,7 +182,7 @@ client.on('message', async (message) => {
         output += "Covey told me to tell you: "
         let rand = Math.floor(Math.random()*57);
         let rand2 = Math.floor(Math.random()*8);
-        message.channel.send(intros[rand2] + quotes[rand]);
+        message.channel.send(output + intros[rand2] + quotes[rand]);
     }
 
     else if (command === 'translate'){
