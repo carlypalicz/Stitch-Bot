@@ -63,7 +63,7 @@ const alphabet={
     '<:stitch_z2:823361048798953493>': ['z']
 };
 
-let quotes = [];
+var quotes = [];
 
 lineReader.eachLine('cov-quotes.txt', function(line) {
     quotes.push("testing");
