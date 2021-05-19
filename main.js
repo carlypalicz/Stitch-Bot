@@ -67,7 +67,10 @@ let quotes = [];
 
 lineReader.eachLine('cov-quotes.txt', function(line) {
     quotes.push("testing");
+    console.log(line);
 });
+
+console.log(quotes.length);
 
 for (i = 0; i < quotes.length; i++){
     console.log(quotes[i]);
