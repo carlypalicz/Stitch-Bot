@@ -169,7 +169,7 @@ client.on('message', async (message) => {
     else if (command === 'quote'){
         let covhappy = "<:covhappy:826907997682663474> ";
         let rand = Math.floor(Math.random()*57);
-        message.channel.send(covhappy + "*\"" + quotes[rand] + "\"*" + covhappy);
+        message.channel.send(covhappy + "*" + quotes[rand] + "*" + covhappy);
     }
 
     else if (command === 'translate'){
