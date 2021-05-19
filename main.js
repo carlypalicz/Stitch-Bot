@@ -6,7 +6,7 @@ const prefix = '!';
 
 const lineReader = require('line-reader');
 
-lineReader.eachLine('/path/to/file', function(line) {
+lineReader.eachLine('/cov-quotes.txt', function(line) {
     console.log(line);
 });
 
