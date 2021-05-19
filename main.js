@@ -4,6 +4,12 @@ const client = new Discord.Client();
 
 const prefix = '!';
 
+const lineReader = require('line-reader');
+
+lineReader.eachLine('/path/to/file', function(line) {
+    console.log(line);
+});
+
 const alphabet={
     'a': ['<:stitch_a:823344398409662484>'],
     'b': ['<:stitch_b:823348619926569010>'],
