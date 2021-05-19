@@ -6,11 +6,6 @@ const prefix = '!';
 
 const lineReader = require('line-reader');
 
-lineReader.eachLine('cov-quotes.txt', function(line) {
-    console.log(line);
-});
-
-
 const alphabet={
     'a': ['<:stitch_a:823344398409662484>'],
     'b': ['<:stitch_b:823348619926569010>'],
@@ -67,6 +62,14 @@ const alphabet={
     '<:stitch_z1:823360282741964830>': ['z'],
     '<:stitch_z2:823361048798953493>': ['z']
 };
+
+let quotes = [];
+
+lineReader.eachLine('cov-quotes.txt', function(line) {
+    quotes.push(line);
+});
+
+console.log(quotes.toString());
 
 client.once('ready', () => {
     console.log('Stitch Bot is online');
