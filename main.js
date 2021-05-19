@@ -6,11 +6,10 @@ const prefix = '!';
 
 const lineReader = require('line-reader');
 
-lineReader.eachLine('/cov-quotes.txt', function(line) {
+lineReader.eachLine('cov-quotes.txt', function(line) {
     console.log(line);
 });
 
-console.log("idk");
 
 const alphabet={
     'a': ['<:stitch_a:823344398409662484>'],
