@@ -112,9 +112,9 @@ var quotes = [
 "Sea snail versus sea CUCUMBER! Showdown of the sea!",
 "Sometimes bird daddy gets maddy",
 "Pokémon are losing limbs and no one is doing anything about it. You can't tell me the government cares about us when Pokémon are losing limbs",
-"way too early for butt worms..",
+"That's way too early for butt worms..",
 "I cut my arm off when I was younger, it grew back, don't worry about it",
-"spicy grape soup",
+"Spicy grape soup",
 "I'M COWBOBY",
 "Know that your feelings are valid no matter where it goes. There is no right or wrong. Only you:) and that a beautiful thing no matter where it lands",
 "I don’t feel like you should be my wittle kitten though. I don’t know if that’s appropriate. I can’t have a cat anyway because I’m gonna be going on tour, so I won’t be able to take care of you. And then you’ll starve to death and then the rats will come out and then they’ll eat you. And then I’ll get home and find this like- kitten corpse eaten by rats. And at that point the rats will have probably bred and there’ll be like, tons of rats inside the house and then they’ll form their own little rat hierarchy and soon there’ll be a little rat civilization. And I’m gonna come home and have to like, deal with this whole hierarchy of rats and civilizations. And there will be race wars within the rats and I won’t be able to keep up with all the crazy shit that’s going on in my own apartment... So, no. Probably shouldn’t be my wittle kitten",
@@ -179,7 +179,6 @@ client.on('message', async (message) => {
 
     else if (command === 'quote'){
         let output = "<:covhappy:826907997682663474> ";
-        output += "Covey told me to tell you: "
         let rand = Math.floor(Math.random()*57);
         let rand2 = Math.floor(Math.random()*8);
         message.channel.send(output + intros[rand2] + "*\"" + quotes[rand] + "\"*");
