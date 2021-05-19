@@ -173,6 +173,11 @@ client.on('message', async (message) => {
         message.channel.send(exampleEmbed);
     }
 
+    else if (command === 'quote'){
+        let rand = Math.random()*57;
+        message.channel.send(quotes[rand]);
+    }
+
     else if (command === 'translate'){
         let rand = Math.random();
         let z1 = rand < .5;
