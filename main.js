@@ -66,7 +66,7 @@ const alphabet={
 let quotes = [];
 
 lineReader.eachLine('cov-quotes.txt', function(line) {
-    quotes.push(line);
+    quotes.push("testing");
 });
 
 for (i = 0; i < quotes.length; i++){
