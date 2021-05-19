@@ -70,7 +70,7 @@ var quotes = [
 "You guys are the art.",
 "Where did my teeth go?",
 "Oh, shut up, fridge.",
-"Pleeeease HELP ME, I'm gonna die:)",
+"Pleeeease HELP ME, I'm gonna die",
 "Everything is possible, and there are no rules or answers to anything.",
 "Someone said 'British question-mark-question-mark'???",
 "No. I'm not. I'm not being held hostage.",
