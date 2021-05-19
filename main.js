@@ -4,8 +4,6 @@ const client = new Discord.Client();
 
 const prefix = '!';
 
-const lineReader = require('line-reader');
-
 const alphabet={
     'a': ['<:stitch_a:823344398409662484>'],
     'b': ['<:stitch_b:823348619926569010>'],
@@ -63,12 +61,66 @@ const alphabet={
     '<:stitch_z2:823361048798953493>': ['z']
 };
 
-var quotes = [];
+var quotes = [
+"JOIN THE DISCOOOORD",
+"I'm in me mums car! Broom Broom!",
+"Fuck the system, and do what you want",
+"Fuck TIKTOK",
+"Fox head. Fox head. Fuck head. Fox head. Fox head.",
+"You guys are the art.",
+"Where did my teeth go?",
+"Oh, shut up, fridge.",
+"Pleeeease HELP ME, I'm gonna die:)",
+"Everything is possible, and there are no rules or answers to anything.",
+"Someone said 'British question-mark-question-mark'???",
+"No. I'm not. I'm not being held hostage.",
+"FUCK OFF THOMPSON I'LL LONG NECK DECK YOU!",
+"Fuck you, hurdle.",
+"Middle finger to it all. Fuck you!",
+"Sometimes Bird Daddy just fuckin freaks out, y'know?",
+"Do you wanna be SASSY with me tonight?",
+"What's my opinion on the color orange? NOT A THIIIING!",
+"GOOD LUCK BESTIES",
+"I think I finally broke the discord",
+"I was born....and I lived...and now I'm still living.",
+"The discord is just basically a place where I can receive cyber bullying.",
+"I decided a long time ago that I deserve to be bullied.",
+"I'll simp for bird daddy",
+"Fingers crossed I don't DIE on the way",
+"Goofy fucking Fox",
+"You guys give me life",
+"Everybody needs to stop their thoughts and prayers for Sammy Jammy because she's become too strong. She's become too powerful.",
+"You guys got me oversharing about my psoriasis",
+"Sammy rises up in T-pose and just burns down everything. Rains down a firey, icey... she starts rising and just spurts piping hot coffee all over everyone. Brandon drowns immediately.",
+"Sorry about my catastrophic life....it is....a disaster",
+"Wanna see me throw a football? I can throw a fuckin' football",
+"BANAN?! no. Nope",
+"YLAPPLE MIYLK",
+"Oi!!! No ice cream for cats!! Eat your cold fish jelly!!",
+"Brandon got sucked into a vacuum type whirl pool as the water rushed downward through the cave. The bear didnt stand a chance. Then he was spit out on dry land, then started crying and drowned.",
+"we all simp for bird daddy",
+"I've cut the heads off of most things at this point",
+"Squirtle is doing a benjamin bork cosplay",
+"SQUIRTLES HEAD FELL OFF, HIS BRAINS ARE EVERYWHERE",
+"There's only one rule in the jungle.....when a lion is hungry, it eats",
+"Our entire society's hanging on a thread of banana",
+"Harris likes smooth boys",
+"Jesus Christ is gonna become an eyeball!",
+"I'm in a SILLY mood today",
+"EYEBALL JESUS",
+"SCIENCE......CONSUMES......RELIGION",
+"Sea snail versus sea CUCUMBER! Showdown of the sea!",
+"Sometimes bird daddy gets maddy",
+"Pokémon are losing limbs and no one is doing anything about it. You can't tell me the government cares about us when Pokémon are losing limbs",
+"way too early for butt worms..",
+"I cut my arm off when I was younger, it grew back, don't worry about it",
+"spicy grape soup",
+"I'M COWBOBY",
+"Know that your feelings are valid no matter where it goes. There is no right or wrong. Only you:) and that a beautiful thing no matter where it lands",
+"I don’t feel like you should be my wittle kitten though. I don’t know if that’s appropriate. I can’t have a cat anyway because I’m gonna be going on tour, so I won’t be able to take care of you. And then you’ll starve to death and then the rats will come out and then they’ll eat you. And then I’ll get home and find this like- kitten corpse eaten by rats. And at that point the rats will have probably bred and there’ll be like, tons of rats inside the house and then they’ll form their own little rat hierarchy and soon there’ll be a little rat civilization. And I’m gonna come home and have to like, deal with this whole hierarchy of rats and civilizations. And there will be race wars within the rats and I won’t be able to keep up with all the crazy shit that’s going on in my own apartment... So, no. Probably shouldn’t be my wittle kitten",
+"There's 7.9 billion people dead in front of me and I'm just crying"
+];
 
-lineReader.eachLine('cov-quotes.txt', function(line) {
-    quotes.push("testing");
-    console.log(line);
-});
 
 console.log(quotes.length);
 
