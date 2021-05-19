@@ -121,6 +121,17 @@ var quotes = [
 "There's 7.9 billion people dead in front of me and I'm just crying"
 ];
 
+var intros = [
+    "Covey told me to tell you: ",
+    "A man in a beanie once told me something that changed my life, and now I'll tell you: ",
+    "(in a british accent): ",
+    "I asked Covey for the meaning of life and they said this: ",
+    "Hey, in case nobody has told you yet today, Covey says: ",
+    "Only TRUE Covey fans remember this: ",
+    "Just a quick reminder: ",
+    "Never forget this - it could come in handy one day: "
+];
+
 
 console.log(quotes.length);
 
@@ -177,7 +188,8 @@ client.on('message', async (message) => {
         let output = "<:covhappy:826907997682663474> ";
         output += "Covey told me to tell you: "
         let rand = Math.floor(Math.random()*57);
-        message.channel.send(output + quotes[rand]);
+        let rand2 = Math.floor(Math.random()*8);
+        message.channel.send(intros[rand2] + quotes[rand]);
     }
 
     else if (command === 'translate'){
