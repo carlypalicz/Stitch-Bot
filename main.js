@@ -182,7 +182,7 @@ client.on('message', async (message) => {
         output += "Covey told me to tell you: "
         let rand = Math.floor(Math.random()*57);
         let rand2 = Math.floor(Math.random()*8);
-        message.channel.send(output + intros[rand2] + quotes[rand]);
+        message.channel.send(output + intros[rand2] + "*\"" + quotes[rand] + "\"*");
     }
 
     else if (command === 'translate'){
