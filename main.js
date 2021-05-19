@@ -174,7 +174,7 @@ client.on('message', async (message) => {
     }
 
     else if (command === 'quote'){
-        let rand = Math.random()*57;
+        let rand = Math.floor(Math.random()*57);
         message.channel.send(quotes[rand]);
     }
 
