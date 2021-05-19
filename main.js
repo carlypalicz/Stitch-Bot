@@ -10,6 +10,8 @@ lineReader.eachLine('/cov-quotes.txt', function(line) {
     console.log(line);
 });
 
+console.log("idk");
+
 const alphabet={
     'a': ['<:stitch_a:823344398409662484>'],
     'b': ['<:stitch_b:823348619926569010>'],
