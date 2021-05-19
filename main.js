@@ -69,7 +69,9 @@ lineReader.eachLine('cov-quotes.txt', function(line) {
     quotes.push(line);
 });
 
-console.log(quotes.toString());
+for (i = 0; i < quotes.length; i++){
+    console.log(quotes[i]);
+}
 
 client.once('ready', () => {
     console.log('Stitch Bot is online');
