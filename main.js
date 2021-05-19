@@ -121,17 +121,6 @@ var quotes = [
 "There's 7.9 billion people dead in front of me and I'm just crying"
 ];
 
-var intros = [
-    "Covey told me to tell you: ",
-    "A man in a beanie once told me something that changed my life, and now I'll tell you: ",
-    "(in a british accent): ",
-    "I asked Covey for the meaning of life and they said this: ",
-    "Hey, in case nobody has told you yet today, Covey says: ",
-    "Only TRUE Covey fans remember this: ",
-    "Just a quick reminder: ",
-    "Never forget this - it could come in handy one day: "
-];
-
 client.once('ready', () => {
     console.log('Stitch Bot is online');
     client.user.setPresence({
@@ -178,10 +167,9 @@ client.on('message', async (message) => {
     }
 
     else if (command === 'quote'){
-        let output = "<:covhappy:826907997682663474> ";
+        let covhappy = "<:covhappy:826907997682663474> ";
         let rand = Math.floor(Math.random()*57);
-        let rand2 = Math.floor(Math.random()*8);
-        message.channel.send(output + intros[rand2] + "*\"" + quotes[rand] + "\"*");
+        message.channel.send(covhappy + "*\"" + quotes[rand] + "\"*" + covhappy);
     }
 
     else if (command === 'translate'){
