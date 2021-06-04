@@ -118,7 +118,10 @@ var quotes = [
 "I'M COWBOBY",
 "Know that your feelings are valid no matter where it goes. There is no right or wrong. Only you:) and that a beautiful thing no matter where it lands",
 "I don’t feel like you should be my wittle kitten though. I don’t know if that’s appropriate. I can’t have a cat anyway because I’m gonna be going on tour, so I won’t be able to take care of you. And then you’ll starve to death and then the rats will come out and then they’ll eat you. And then I’ll get home and find this like- kitten corpse eaten by rats. And at that point the rats will have probably bred and there’ll be like, tons of rats inside the house and then they’ll form their own little rat hierarchy and soon there’ll be a little rat civilization. And I’m gonna come home and have to like, deal with this whole hierarchy of rats and civilizations. And there will be race wars within the rats and I won’t be able to keep up with all the crazy shit that’s going on in my own apartment... So, no. Probably shouldn’t be my wittle kitten",
-"There's 7.9 billion people dead in front of me and I'm just crying"
+"There's 7.9 billion people dead in front of me and I'm just crying",
+"It's a thankless job, trailblazing mullet fashion",
+"Maybe it's like a snuggie and you climb inside its mouth",
+"If they don't promote you day 1, then quit. Know your worth"
 ];
 
 client.once('ready', () => {
@@ -168,7 +171,8 @@ client.on('message', async (message) => {
 
     else if (command === 'quote'){
         let covhappy = "<:covhappy:826907997682663474>";
-        let rand = Math.floor(Math.random()*57);
+        let len = quotes.length;
+        let rand = Math.floor(Math.random()*(len));
         message.channel.send(covhappy + "*" + quotes[rand] + "*" + covhappy);
     }
 
