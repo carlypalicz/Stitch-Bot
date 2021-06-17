@@ -121,7 +121,16 @@ var quotes = [
 "There's 7.9 billion people dead in front of me and I'm just crying",
 "It's a thankless job, trailblazing mullet fashion",
 "Maybe it's like a snuggie and you climb inside its mouth",
-"If they don't promote you day 1, then quit. Know your worth"
+"If they don't promote you day 1, then quit. Know your worth",
+"Fake your own death, and pin it on them. Then when they’re in jail on death row, reveal yourself. Then when they’re free look them in the eyes and say 'don’t be a jerk.' And walk away",
+"'a phobia of cheese’? I’m sorry to hear that…",
+"Why is boby so short? I don’t know. He’s a short king!",
+"I am not an animal",
+"I'm not- I'm not hugging any crots. Um.. Sorry.",
+"Here are my rusty spoons!",
+"b o b y f e m e n",
+"I have everything that I need",
+"Poggers indeed",
 ];
 
 client.once('ready', () => {
@@ -129,7 +138,7 @@ client.once('ready', () => {
     client.user.setPresence({
         status: 'available',
         activity: {
-            name: 'the 1991 Music Video',
+            name: 'the Point Mutation Music Video',
             type: 'WATCHING',
         }
     })
