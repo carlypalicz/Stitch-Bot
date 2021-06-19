@@ -138,8 +138,8 @@ client.once('ready', () => {
     client.user.setPresence({
         status: 'available',
         activity: {
-            name: 'the Point Mutation Music Video',
-            type: 'WATCHING',
+            name: 'CCS on loop',
+            type: 'PLAYING',
         }
     })
 });
