@@ -131,6 +131,17 @@ var quotes = [
 "b o b y f e m e n",
 "I have everything that I need",
 "Poggers indeed",
+"That's my ear, excuse me. That's my ear. Please leave my ear alone.",
+"What do you wanna do? You wanna eat the characters?",
+"I'm out of control, there's no rules tonight",
+"Sleeping. Little baby. Doesn't even know ABCs. Small. Little, little boy",
+"Humor resides in everything, always",
+"Smile, laugh, and love. Even when it seems like there’s no fucking way its possible. Find a way.",
+"You’re all the funniest people I know, and truly, that is what saves people",
+"You’re all the absolute best, truly.",
+"The P in Penny stands for Psycho",
+"What the fedi",
+":fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox:/srs:fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox:",
 ];
 
 client.once('ready', () => {
