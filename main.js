@@ -159,6 +159,7 @@ client.once('ready', async () => {
             console.log('connected to mongo!')
         }
         finally {
+            console.log("lalala")
             mongoose.connection.close()
         }
     })
