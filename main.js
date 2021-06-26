@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
+const mongo = require('./mongo');
 const prefix = '!';
 
 const alphabet={
@@ -144,13 +145,21 @@ var quotes = [
 ":fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox:/srs:fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox:",
 ];
 
-client.once('ready', () => {
+client.once('ready', async () => {
     console.log('Stitch Bot is online');
     client.user.setPresence({
         status: 'available',
         activity: {
             name: 'CCS on loop',
             type: 'PLAYING',
+        }
+    });
+    await mongo().then(mongoose => {
+        try {
+            console.log('connected to mongo!')
+        }
+        finally {
+            mongoose.connection.close()
         }
     })
 });
