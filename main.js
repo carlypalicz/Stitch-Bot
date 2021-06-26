@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const mongo = require('./mongo');
+const mongoose = require('mongoose');
 const prefix = '!';
 
 const alphabet={
@@ -62,7 +62,7 @@ const alphabet={
     '<:stitch_z2:823361048798953493>': ['z']
 };
 
-var quotes = [
+const quotes = [
 "JOIN THE DISCOOOORD",
 "I'm in me mums car! Broom Broom!",
 "Fuck the system, and do what you want",
@@ -145,7 +145,7 @@ var quotes = [
 ":fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox:/srs:fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox:",
 ];
 
-client.once('ready', async () => {
+client.once('ready', () => {
     console.log('Stitch Bot is online');
     client.user.setPresence({
         status: 'available',
@@ -154,15 +154,6 @@ client.once('ready', async () => {
             type: 'PLAYING',
         }
     });
-    await mongo().then(mongoose => {
-        try {
-            console.log('connected to mongo!')
-        }
-        finally {
-            console.log("lalala")
-            mongoose.connection.close()
-        }
-    })
 });
 
 
@@ -389,5 +380,15 @@ function find_non_stitch_emote(arg, partial_output){
     }
     return find_non_stitch_emote(arg.substring(index), output);
 }
+
+mongoose.connect(process.env.MONGODB_SRV, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+}).then(() => {
+    console.log("connected to the database!");
+}).catch((err) => {
+    console.log(err);
+})
 
 client.login(process.env.STITCH_BOT_SECRET);
