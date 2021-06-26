@@ -386,7 +386,7 @@ mongoose.connect(process.env.MONGODB_SRV, {
     useUnifiedTopology: true,
     useFindAndModify: false
 }).then(() => {
-    console.log("Stitch Bot is connected to the database!");
+    console.log("Stitch Bot is connected to the database:)");
 }).catch((err) => {
     console.log(err);
 });
