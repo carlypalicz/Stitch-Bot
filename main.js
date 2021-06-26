@@ -383,6 +383,17 @@ function find_non_stitch_emote(arg, partial_output){
     return find_non_stitch_emote(arg.substring(index), output);
 }
 
+module.exports = async(client, discord, member) => {
+    let profile = await profileModel.create({
+        userID: member.id, 
+        serverID: member.guild.id,
+        ylapples: 11,
+        bank: 0
+    });
+    profile.save();
+    console.log('fgdflkjgdflkj');
+}
+
 mongoose.connect(process.env.MONGODB_SRV, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -395,12 +406,4 @@ mongoose.connect(process.env.MONGODB_SRV, {
 
 client.login(process.env.STITCH_BOT_SECRET);
 
-module.exports = async(client, discord, member) => {
-    let profile = await profileModel.create({
-        userID: member.id, 
-        serverID: member.guild.id,
-        ylapples: 11,
-        bank: 0
-    });
-    profile.save();
-}
+
