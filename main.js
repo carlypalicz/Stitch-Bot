@@ -112,7 +112,6 @@ client.on('message', async (message) => {
     let profileData;
 
     try{
-        console.log('trying');
         profileData = await profileModel.findOne({userID: message.author.id});
         if (!profileData){
             let profile = await profileModel.create({
@@ -135,8 +134,8 @@ client.on('message', async (message) => {
         client.commands.get('balance').execute(message, args, profileData, name);
     }
 
-    else if (command === 'add-ylapples'){
-        client.commands.get('add-ylapples').execute(message, args, profileData, name);
+    else if (command === 'daily'){
+        client.commands.get('daily').execute(message, args, profileData, name);
     }
 
     else if (command === 'ping'){
