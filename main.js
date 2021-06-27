@@ -135,25 +135,6 @@ client.on('message', async (message) => {
     }
 
     else if (command === 'daily'){
-        if (!cooldowns.has(command)){
-            cooldowns.set(command, new Discord.Collection());
-        }
-
-        const current_time = Date.now();
-        const timestamps = cooldowns.get(command);
-        const cooldown_amount = 86400 * 1000;
-
-        if (timestamps.has(message.author.id)){
-            const expiration_time = timestamps.get(message.author.id) + cooldown_amount;
-            if (current_time < expiration_time){
-                const time_left = (expiration_time - current_time);
-                return message.channel.send(`Please wait ${convert_ms(time_left)} before using this command again.`);
-            }
-        }
-
-        timestamps.set(message.author.id, current_time);
-        setTimeout(() => timestamps.delete(message.author.id), cooldown_amount);
-
         client.commands.get('daily').execute(message, args, profileData, name);
     }
 
@@ -176,19 +157,6 @@ client.on('message', async (message) => {
         client.commands.get('translate').execute(message, args, name, dm, alphabet);
     }
 });
-
-function convert_ms(duration){
-    var milliseconds = Math.floor((duration % 1000) / 100),
-    seconds = Math.floor((duration / 1000) % 60),
-    minutes = Math.floor((duration / (1000 * 60)) % 60),
-    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
-
-    hours = (hours < 10) ? "0" + hours : hours;
-    minutes = (minutes < 10) ? "0" + minutes : minutes;
-    seconds = (seconds < 10) ? "0" + seconds : seconds;
-
-    return hours + " hours and " + minutes + " minutes";
-}
 
 mongoose.connect(process.env.MONGODB_SRV, {
     useNewUrlParser: true,
