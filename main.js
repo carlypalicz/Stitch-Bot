@@ -123,6 +123,10 @@ client.on('message', async (message) => {
         client.commands.get('introduce').execute(message, args);
     }
 
+    else if (command === 'balance'){
+        client.commands.get('balance').execute(message, args, profileData);
+    }
+
     else if (command === 'ping'){
         client.commands.get('ping').execute(message, args);
     }
