@@ -1,8 +1,7 @@
 module.exports = {
     name: 'translate',
     description: 'translate in and out of Stitch',
-    execute(message, args, name, dm){
-    
+    execute(message, args, name, dm, alphabet){
         let rand = Math.random();
         let z1 = rand < .5;
 
