@@ -117,6 +117,7 @@ client.on('message', async (message) => {
                 userID: message.author.id, 
                 serverID: message.guild.id,
                 ylapples: 11,
+                lastDaily: 0,
                 bank: 0
             });
             profile.save();

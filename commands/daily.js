@@ -7,7 +7,7 @@ module.exports = {
         const current_time = Date.now();
         const cooldown_amount = 86400 * 1000;
 
-        if (current_time < profile.Data.lastDaily+cooldown_amount){
+        if (current_time < profileData.lastDaily+cooldown_amount){
             const time_left = (expiration_time - current_time);
             return message.channel.send(`Please wait ${convert_ms(time_left)} before using this command again.`);
         }
