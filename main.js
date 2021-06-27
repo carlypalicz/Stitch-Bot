@@ -155,10 +155,6 @@ client.on('message', async (message) => {
         message.channel.send(exampleEmbed);
     }
 
-    else if (command === 'test'){
-        message.channel.send("yee yee");
-    }
-
     else if (command === 'quote'){
         let covhappy = "<:covhappy:826907997682663474>";
         let len = quotes.length;
@@ -168,8 +164,9 @@ client.on('message', async (message) => {
 
     else if (command === 'translate'){
         let name='';
+        let dm=false;
         if (message.guild == null){
-            let dm = true;
+            dm = true;
             name = message.author.username;
         }
 
