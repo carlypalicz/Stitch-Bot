@@ -13,7 +13,7 @@ module.exports = {
             return message.channel.send(`Please wait ${convert_ms(time_left)} before using this command again.`);
         }
 
-        const reward = Math.floor(Math.random() * 44) + 11;
+        const reward = 11;
         const response = await profileModel.findOneAndUpdate({
             userID: profileData.userID,
         }, {
