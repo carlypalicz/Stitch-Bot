@@ -167,14 +167,15 @@ client.on('message', async (message) => {
     }
 
     else if (command === 'translate'){
+        let name='';
         if (message.guild == null){
             let dm = true;
-            let name = message.author.username;
+            name = message.author.username;
         }
 
         else {
             const member = await message.guild.member(message.author);
-            let name = member.nickname ? member.nickname : message.author.username;
+            name = member.nickname ? member.nickname : message.author.username;
         }
         client.commands.get('translate').execute(message, args, name, dm);
     }
