@@ -2,10 +2,39 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
+client.once('ready', () => {
+    console.log('Stitch Bot is online');
+    client.user.setPresence({
+        status: 'available',
+        activity: {
+            name: 'CCS on loop',
+            type: 'PLAYING',
+        }
+    });
+});
+
+const prefix = '!';
+
+const fs = require('fs');
+
+client.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+for (const file of commandFiles){
+    const command = require(`./commands/${file}`);
+
+    client.commands.set(command.name, command)
+}
+
+client.login(process.env.STITCH_BOT_SECRET);
+
+
+
+
+
 const profileModel = require('./models/profileSchema');
 
 const mongoose = require('mongoose');
-const prefix = '!';
 
 const alphabet={
     'a': ['<:stitch_a:823344398409662484>'],
@@ -147,17 +176,6 @@ const quotes = [
 ":fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox:/srs:fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox::fox:",
 ];
 
-client.once('ready', () => {
-    console.log('Stitch Bot is online');
-    client.user.setPresence({
-        status: 'available',
-        activity: {
-            name: 'CCS on loop',
-            type: 'PLAYING',
-        }
-    });
-});
-
 
 client.on('message', async (message) => {
 
@@ -171,6 +189,9 @@ client.on('message', async (message) => {
         message.channel.send(intro);
     }
 
+    else if (command === 'ping'){
+        client.commands.get('ping').execute(message, args);
+    }
     else if (command === 'ylapples'){
         let output = '';
         for (let i = 0; i < 11; i++){
@@ -404,6 +425,5 @@ mongoose.connect(process.env.MONGODB_SRV, {
     console.log(err);
 });
 
-client.login(process.env.STITCH_BOT_SECRET);
 
 
