@@ -1,8 +1,7 @@
 module.exports = {
     name: 'translate',
     description: 'translate in and out of Stitch',
-    execute(message, args){
-
+    execute(message, args, name, dm){
         const alphabet={
             'a': ['<:stitch_a:823344398409662484>'],
             'b': ['<:stitch_b:823348619926569010>'],
@@ -64,18 +63,6 @@ module.exports = {
 
         let rand = Math.random();
         let z1 = rand < .5;
-        let name = '';
-        let dm = false;
-
-        if (message.guild == null){
-            dm = true;
-            name = message.author.username;
-        }
-
-        else {
-            const member = await message.guild.member(message.author);
-            name = member.nickname ? member.nickname : message.author.username;
-        }
 
         console.log("Command executed by: " + name);
         console.log("Message: " + args.join(' '));
