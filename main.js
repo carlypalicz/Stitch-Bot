@@ -96,6 +96,16 @@ client.on('message', async (message) => {
     const args = message.content.slice(prefix.length).split(/ +/); //splits the message into an array
     const command = args.shift().toLowerCase(); //the command to be executed, args is now the message minus the command
 
+    let name='';
+    let dm=false;
+    if (message.guild == null){
+        dm = true;
+        name = message.author.username;
+    }
+    else {
+        const member = await message.guild.member(message.author);
+        name = member.nickname ? member.nickname : message.author.username;
+    }
 
     const profileModel = require('./models/profileSchema');
 
@@ -117,14 +127,16 @@ client.on('message', async (message) => {
         console.log(err);
     }
 
-
-
     if (command === 'introduce'){
         client.commands.get('introduce').execute(message, args);
     }
 
     else if (command === 'balance'){
-        client.commands.get('balance').execute(message, args, profileData);
+        client.commands.get('balance').execute(message, args, profileData, name);
+    }
+
+    else if (command === 'add-ylapples'){
+        client.commands.get('add-ylapples').execute(message, args, profileData, name);
     }
 
     else if (command === 'ping'){
@@ -143,17 +155,6 @@ client.on('message', async (message) => {
     }
 
     else if (command === 'translate'){
-        let name='';
-        let dm=false;
-        if (message.guild == null){
-            dm = true;
-            name = message.author.username;
-        }
-
-        else {
-            const member = await message.guild.member(message.author);
-            name = member.nickname ? member.nickname : message.author.username;
-        }
         client.commands.get('translate').execute(message, args, name, dm, alphabet);
     }
 });

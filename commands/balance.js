@@ -1,7 +1,7 @@
 module.exports = {
     name: 'balance',
     description: 'get a users balance',
-    execute(message, args, profileData){
-        message.channel.send(`You have ${profileData.ylapples} ylapples!`);
+    execute(message, args, profileData, name){
+        message.channel.send(`Hey ${name}, you have ${profileData.ylapples} ylapples!`);
     }
 }
