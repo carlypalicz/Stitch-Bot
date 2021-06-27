@@ -26,8 +26,6 @@ for (const file of commandFiles){
     client.commands.set(command.name, command)
 }
 
-client.login(process.env.STITCH_BOT_SECRET);
-
 const profileModel = require('./models/profileSchema');
 
 const mongoose = require('mongoose');
@@ -98,6 +96,29 @@ client.on('message', async (message) => {
     const args = message.content.slice(prefix.length).split(/ +/); //splits the message into an array
     const command = args.shift().toLowerCase(); //the command to be executed, args is now the message minus the command
 
+
+    const profileModel = require('./models/profileSchema');
+
+    let profileData;
+
+    try{
+        console.log('trying');
+        profileData = await profileModel.findOne({userID: message.author.id});
+        if (!profileData){
+            let profile = await profileModel.create({
+                userID: message.author.id, 
+                serverID: message.guild.id,
+                ylapples: 11,
+                bank: 0
+            });
+            profile.save();
+        }
+    } catch(err){
+        console.log(err);
+    }
+
+
+
     if (command === 'introduce'){
         client.commands.get('introduce').execute(message, args);
     }
@@ -133,17 +154,6 @@ client.on('message', async (message) => {
     }
 });
 
-module.exports = async(client, discord, member) => {
-    let profile = await profileModel.create({
-        userID: member.id, 
-        serverID: member.guild.id,
-        ylapples: 11,
-        bank: 0
-    });
-    profile.save();
-    console.log('fgdflkjgdflkj');
-}
-
 mongoose.connect(process.env.MONGODB_SRV, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -154,5 +164,6 @@ mongoose.connect(process.env.MONGODB_SRV, {
     console.log(err);
 });
 
+client.login(process.env.STITCH_BOT_SECRET);
 
 
