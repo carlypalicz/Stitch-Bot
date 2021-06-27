@@ -5,7 +5,7 @@ const profileSchema = new mongoose.Schema({
     serverID: { type: String, require: true},
     ylapples: {type: Number, default: 0},
     lastDaily: {type: Number, default: 0},
-    bank: {type: Number }
+    name: { type: String },
 })
 
 const model = mongoose.model('ProfileModels', profileSchema);

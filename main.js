@@ -118,14 +118,13 @@ client.on('message', async (message) => {
                 serverID: message.guild.id,
                 ylapples: 11,
                 lastDaily: 0,
-                bank: 0
+                name: name,
             });
             profile.save();
         }
     } catch(err){
         console.log(err);
     }
-
 
     if (command === 'introduce'){
         client.commands.get('introduce').execute(message, args);
@@ -156,6 +155,9 @@ client.on('message', async (message) => {
 
     else if (command === 'translate'){
         client.commands.get('translate').execute(message, args, name, dm, alphabet);
+    }
+    else if (command === 'richest'){
+        client.commands.get('richest').execute(message, args, name);
     }
 });
 
