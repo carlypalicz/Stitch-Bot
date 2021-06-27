@@ -87,6 +87,7 @@ const alphabet={
     '<:stitch_z2:823361048798953493>': ['z']
 };
 
+const cooldowns = new Map();
 
 
 client.on('message', async (message) => {
@@ -107,8 +108,6 @@ client.on('message', async (message) => {
         name = member.nickname ? member.nickname : message.author.username;
     }
 
-    const profileModel = require('./models/profileSchema');
-
     let profileData;
 
     try{
@@ -126,6 +125,7 @@ client.on('message', async (message) => {
         console.log(err);
     }
 
+
     if (command === 'introduce'){
         client.commands.get('introduce').execute(message, args);
     }
@@ -135,6 +135,25 @@ client.on('message', async (message) => {
     }
 
     else if (command === 'daily'){
+        if (!cooldowns.has(command)){
+            cooldowns.set(command, new Discord.Collection());
+        }
+
+        const current_time = Date.now();
+        const timestamps = cooldowns.get(command);
+        const cooldown_amount = 86400 * 1000;
+
+        if (timestamps.has(message.author.id)){
+            const expiration_time = timestamps.get(message.author.id) + cooldown_amount;
+            if (current_time < expiration_time){
+                const time_left = (expiration_time - current_time);
+                return message.channel.send(`You must wait ${time_left} before using this command.`);
+            }
+        }
+
+        timestamps.set(message.author.id, current_time);
+        setTimeout(() => timestamps.delete(message.author.id), cooldown_amount);
+
         client.commands.get('daily').execute(message, args, profileData, name);
     }
 
