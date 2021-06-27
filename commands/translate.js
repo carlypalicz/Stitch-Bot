@@ -32,12 +32,12 @@ module.exports = {
                 //remove that emote id from the string, and do the same checks on the rest of the string
                 outputting_stitch = false;
                 add_space = true;
-                output += find_stitch_emote(args[i], '');
+                output += find_stitch_emote(args[i], '', alphabet);
             }
 
             else if (args[i].includes('<:') && args[i].includes('>')){
                 //its a server-specific emote, but not a stitch emote :0)
-                output += find_non_stitch_emote(args[i], '');
+                output += find_non_stitch_emote(args[i], '', alphabet);
                 add_space = true;
             }
 
@@ -85,7 +85,7 @@ module.exports = {
 
     }
 }
-function find_stitch_emote(arg, partial_output){
+function find_stitch_emote(arg, partial_output, alphabet){
     if (arg.length === 0){
         return partial_output;
     }
@@ -119,10 +119,10 @@ function find_stitch_emote(arg, partial_output){
         }
         index = arg.indexOf('>')+1;
     }
-    return find_stitch_emote(arg.substring(index), output);
+    return find_stitch_emote(arg.substring(index), output, alphabet);
 }
 
-function find_non_stitch_emote(arg, partial_output){
+function find_non_stitch_emote(arg, partial_output, alphabet){
     if (arg.length === 0){
         return partial_output;
     }
@@ -150,5 +150,5 @@ function find_non_stitch_emote(arg, partial_output){
         output += emote_code;
         index = arg.indexOf('>')+1;
     }
-    return find_non_stitch_emote(arg.substring(index), output);
+    return find_non_stitch_emote(arg.substring(index), output, alphabet);
 }
