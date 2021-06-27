@@ -147,7 +147,7 @@ client.on('message', async (message) => {
             const expiration_time = timestamps.get(message.author.id) + cooldown_amount;
             if (current_time < expiration_time){
                 const time_left = (expiration_time - current_time);
-                return message.channel.send(`You must wait ${time_left} before using this command.`);
+                return message.channel.send(`You must wait ${convert_ms(time_left)} before using this command.`);
             }
         }
 
@@ -176,6 +176,19 @@ client.on('message', async (message) => {
         client.commands.get('translate').execute(message, args, name, dm, alphabet);
     }
 });
+
+function convert_ms(duration){
+    var milliseconds = Math.floor((duration % 1000) / 100),
+    seconds = Math.floor((duration / 1000) % 60),
+    minutes = Math.floor((duration / (1000 * 60)) % 60),
+    hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+    return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+}
 
 mongoose.connect(process.env.MONGODB_SRV, {
     useNewUrlParser: true,
