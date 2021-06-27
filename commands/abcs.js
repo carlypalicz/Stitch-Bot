@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 module.exports = {
     name: 'abcs',
     description: 'outputs key for stitch',
