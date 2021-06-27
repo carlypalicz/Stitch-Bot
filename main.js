@@ -121,6 +121,7 @@ client.on('message', async (message) => {
                 name: name,
             });
             profile.save();
+            profileData = profile;
         }
     } catch(err){
         console.log(err);
@@ -131,6 +132,7 @@ client.on('message', async (message) => {
     }
 
     else if (command === 'balance'){
+        await profileData;
         client.commands.get('balance').execute(message, args, profileData, name);
     }
 
