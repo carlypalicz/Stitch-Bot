@@ -5,7 +5,7 @@ module.exports = {
     description: '',
     async execute(message, args, profileData, name){
         const current_time = Date.now();
-        const cooldown_amount = 86400 * 1000;
+        const cooldown_amount = 57600 * 1000;
         const expiration_time = profileData.lastDaily+cooldown_amount;
 
         if (current_time < profileData.lastDaily+cooldown_amount){
