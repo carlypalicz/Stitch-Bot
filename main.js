@@ -7,8 +7,8 @@ client.once('ready', () => {
     client.user.setPresence({
         status: 'available',
         activity: {
-            name: 'CCS on loop',
-            type: 'PLAYING',
+            name: 'Tour To Nobody',
+            type: 'WATCHING',
         }
     });
 });
@@ -114,7 +114,7 @@ client.on('message', async (message) => {
         profileData = await profileModel.findOne({userID: message.author.id});
         if (!profileData){
             let profile = await profileModel.create({
-                userID: message.author.id, 
+                userID: message.author.id,
                 serverID: message.guild.id,
                 ylapples: 11,
                 lastDaily: 0,
@@ -174,5 +174,3 @@ mongoose.connect(process.env.MONGODB_SRV, {
 });
 
 client.login(process.env.STITCH_BOT_SECRET);
-
-
