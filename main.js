@@ -27,6 +27,7 @@ for (const file of commandFiles){
 }
 
 const profileModel = require('./models/profileSchema');
+const serverModel = require('../models/serverSchema');
 
 const mongoose = require('mongoose');
 
@@ -122,6 +123,23 @@ client.on('message', async (message) => {
             });
             profile.save();
             profileData = profile;
+        }
+    } catch(err){
+        console.log(err);
+    }
+
+    let serverData;
+    try {
+        serverData = await serverModel.findOne({serverID: message.guild.id});
+        if (!serverData){
+            let server = await serverModel.create({
+                serverID: message.guild.id,
+                richest: "",
+                richestBalance: 0,
+                coveyCrimeCounter: 0,
+            });
+            server.save();
+            serverData = server;
         }
     } catch(err){
         console.log(err);
