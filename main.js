@@ -27,7 +27,7 @@ for (const file of commandFiles){
 }
 
 const profileModel = require('./models/profileSchema');
-const serverModel = require('../models/serverSchema');
+const serverModel = require('./models/serverSchema');
 
 const mongoose = require('mongoose');
 
