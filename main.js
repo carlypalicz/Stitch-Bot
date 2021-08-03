@@ -134,8 +134,6 @@ client.on('message', async (message) => {
         if (!serverData){
             let server = await serverModel.create({
                 serverID: message.guild.id,
-                richest: "",
-                richestBalance: 0,
                 coveyCrimeCounter: 0,
             });
             server.save();
