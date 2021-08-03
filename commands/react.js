@@ -4,7 +4,7 @@ module.exports = {
     execute(message){
         message.channel.send("I will react to this!")
         .then(function (msg) {
-            message.react("👍")
+            msg.react("👍")
         })
     }
 }
