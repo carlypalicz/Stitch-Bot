@@ -179,6 +179,9 @@ client.on('message', async (message) => {
     else if (command === 'richest'){
         client.commands.get('richest').execute(message, args, name);
     }
+    else if (command === 'react'){
+        client.commands.get('react').execute(message);
+    }
 });
 
 mongoose.connect(process.env.MONGODB_SRV, {
