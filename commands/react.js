@@ -76,7 +76,7 @@ module.exports = {
             .setColor('A91B0D')
             .setTitle('Let\'s Play Hangman')
             .setDescription('Guess a letter by reacting to this message!')
-            .setTimestamp()
+            .setTimestamp();
         message.channel.send(embed)
         .then(function (msg) {
             msg.awaitReactions((reaction, user) => user.id == message.author.id,
