@@ -89,6 +89,7 @@ function makeGuess(description, letter, emote_name, message){
     if (word.indexOf(letter) === -1){
         console.log("a wrong guess was made!");
         (strikes >= 0) ? strikes-- : lose(message)
+        return;
     }
     else {
         console.log("a correct guess was made!");
