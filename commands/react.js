@@ -97,22 +97,21 @@ module.exports = {
     name: 'react',
     description: 'add a reaction to a message',
     execute(message){
+        descrip = "Guess a letter by reacting to this message! Letter's guessed so far: ";
         const embed = new Discord.MessageEmbed()
             .setColor('A91B0D')
             .setTitle('Let\'s Play Hangman')
-            .setDescription('Guess a letter by reacting to this message!')
+            .setDescription(descrip)
             .setTimestamp();
-        //message.channel.send(embed)
-        output = "tracking reactions: ";
-        message.channel.send(output)
+        message.channel.send(embed)
 
         .then(function (msg) {
             const collector = msg.createReactionCollector(filter, {max: 5});
 
             collector.on('collect', (reaction, user) => {
                 console.log(`Collected ${reaction.emoji.name}`);
-                output += alphabet[reaction.emoji.name];
-                msg.edit(output);
+                descrip += alphabet[reaction.emoji.name];
+                msg.edit(editEmbed(descrip));
             });
 
             collector.on('end', collected => {
@@ -121,4 +120,13 @@ module.exports = {
 
         });
     }
+}
+
+function editEmbed(description){
+    embed = new Discord.MessageEmbed()
+    .setColor('A91B0D')
+    .setTitle('Let\'s Play Hangman')
+    .setDescription(description)
+    .setTimestamp();
+    return embed;
 }
