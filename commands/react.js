@@ -105,7 +105,7 @@ module.exports = {
         message.channel.send(embed)
 
         .then(function (msg) {
-            const collector = msg.createReactionCollector( {filter, max: 5 });
+            const collector = msg.createReactionCollector( {filter, time: 60000, max: 5 });
 
             collector.on('collect', (reaction, user) => {
                 console.log(`Collected ${reaction.emoji.name}`);
