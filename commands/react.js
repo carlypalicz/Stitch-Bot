@@ -1,10 +1,10 @@
 const Discord = require('discord.js');
 
-// const time = 60000 //1 minute
+const time = 60000 //1 minute
 
-// function filter(reaction, user){
-//     return (!user.bot) && (reactions.includes(reaction.emoji.name));
-// }
+function filter(reaction, user){
+    return (!user.bot);
+}
 
 // function onCollect(emoji, message){
 //     message.edit("im not sure yet");
@@ -103,20 +103,30 @@ module.exports = {
             .setDescription('Guess a letter by reacting to this message!')
             .setTimestamp();
         message.channel.send(embed)
+
         .then(function (msg) {
-            msg.awaitReactions((reaction, user) => user.id == message.author.id,
-                { max: 1, time: 30000 }).then(collected => {
-                    msg.edit("weeee testing 1" + alphabet[collected.first().emoji.name]);
-                    reaction.remove(user);
-                }).catch((err) => {
-                    console.log(err);
-                });
-            msg.awaitReactions((reaction, user) => user.id == message.author.id,
-                { max: 2, time: 30000 }).then(collected => {
-                    msg.edit("weeee testing 2" + alphabet[collected[1]]);
-                }).catch((err) => {
-                    console.log(err);
-                });
+            const collector = msg.createReactionCollector( {filter, time: time, max: 5 });
+
+            collector.on('collect', (reaction, user) => {
+                console.log(`Collected ${reaction.emoji.name}`);
+            });
+
+            collector.on('end', collected => {
+                console.log(`Collected ${collected.size} items`);
+            });
+
+            // msg.awaitReactions((reaction, user) => user.id == message.author.id,
+            //     { max: 1, time: 30000 }).then(collected => {
+            //         msg.edit("weeee testing 1" + alphabet[collected.first().emoji.name]);
+            //     }).catch((err) => {
+            //         console.log(err);
+            //     });
+            // msg.awaitReactions((reaction, user) => user.id == message.author.id,
+            //     { max: 2, time: 30000 }).then(collected => {
+            //         msg.edit("weeee testing 2" + alphabet[collected[1]]);
+            //     }).catch((err) => {
+            //         console.log(err);
+            //     });
         });
     }
 }
