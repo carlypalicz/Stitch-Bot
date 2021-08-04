@@ -136,7 +136,7 @@ function lose(message){
     .setTimestamp();
 
     resetGame();
-    msg.edit(embed);
+    message.edit(embed);
 }
 
 function resetGame(){
