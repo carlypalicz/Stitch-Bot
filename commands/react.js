@@ -108,8 +108,8 @@ module.exports = {
                 { max: 1, time: 30000 }).then(collected => {
                     msg.edit("weeee testing 1" + alphabet[collected.first().emoji.name]);
                     reaction.remove(user);
-                }).catch(() => {
-                    message.channel.send("wahhhh something went wrong");
+                }).catch((err) => {
+                    console.log(err);
                 });
             msg.awaitReactions((reaction, user) => user.id == message.author.id,
                 { max: 1, time: 30000 }).then(collected => {
