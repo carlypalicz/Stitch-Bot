@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 const time = 60000 //1 minute
 
 const word = "coveysux";
+wordLength = word.length;
 
 const alphabet={
     'stitch_a': ['<:stitch_a:823344398409662484>'],
@@ -39,8 +40,7 @@ module.exports = {
     description: 'add a reaction to a message',
     execute(message){
         strikes = 5;
-        wordLength = word.length;
-        descrip = ''+ getDescription();
+        descrip = '' + getDescription();
         const embed = new Discord.MessageEmbed()
             .setColor('A91B0D')
             .setTitle('Let\'s Play Hangman')
@@ -92,17 +92,9 @@ function makeGuess(description, letter){
 }
 
 function getDescription() {
-    return ('```'
-    + '|‾‾‾‾‾‾|   \n|     '
-    + ('🎩')
-    + '   \n|     '
-    + ('😟')
-    + '   \n|     '
-    + ('👕')
-    + '   \n|     '
-    + ('🩳')
-    + '   \n|    '
-    + ('👞👞')
-    + '   \n|     \n|__________\n\n'
-    + '```');
+    clue = '';
+    for (i = 0; i < wordLength; i++){
+        clue += '❔';
+    }
+    return clue;
 }
