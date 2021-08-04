@@ -104,7 +104,7 @@ module.exports = {
             .setTimestamp();
         //message.channel.send(embed)
         output = "tracking reactions: ";
-        message.channel.send(output);
+        message.channel.send(output)
 
         .then(function (msg) {
             const collector = msg.createReactionCollector(filter, {max: 5});
