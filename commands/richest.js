@@ -1,5 +1,5 @@
-const serverModel = require('../models/serverSchema');
 const profileModel = require('../models/profileSchema');
+const Discord = require('discord.js');
 
 module.exports = {
     name: 'richest',
