@@ -38,13 +38,15 @@ module.exports = {
     name: 'react',
     description: 'add a reaction to a message',
     execute(message){
-        descrip = "Guess a letter by reacting to this message! Letter's guessed so far: ";
+        strikes = 5;
+        wordLength = word.length;
+        descrip = "Guess a letter by reacting to this message!";
         const embed = new Discord.MessageEmbed()
             .setColor('A91B0D')
             .setTitle('Let\'s Play Hangman')
-            .setDescription(descrip)
+            .setDescription(getDescription())
             .addField('Wrong Guesses Left: ', '5')
-            .addField('Letter\'s Guessed: ', 'weeee')
+            .addField('Letter\'s Guessed: ', '')
             .setTimestamp();
         message.channel.send(embed)
 
@@ -87,4 +89,19 @@ function makeGuess(description, letter){
     .setDescription(description)
     .setTimestamp();
     return embed;
+}
+
+function getDescription() {
+    return '```'
+    + '|‾‾‾‾‾‾|   \n|     '
+    + (' ')
+    + '   \n|     '
+    + (' ')
+    + '   \n|     '
+    + (' ')
+    + '   \n|     '
+    + (' ')
+    + '   \n|    '
+    + (' ')
+    + '   \n|     \n|__________\n\nGuess a letter by reacting to this message!'
 }
