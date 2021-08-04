@@ -10,7 +10,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setColor('A91B0D')
             .setTitle('CCS Ylapples Leaderboard')
-            .addField(richest[0].name, richest[0].ylapples)
+            .addField(richest[0].name, '<:ylapples:826531088188440588>' + richest[0].ylapples)
             .addField(richest[1].name, richest[1].ylapples)
             .addField(richest[2].name, richest[2].ylapples)
             .addField(richest[3].name, richest[3].ylapples)
