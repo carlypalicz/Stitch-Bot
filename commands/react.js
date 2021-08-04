@@ -53,7 +53,7 @@ module.exports = {
                 emojiname = reaction.emoji.name;
                 console.log(`Collected ${reaction.emoji.name}`);
                 descrip += alphabet[emojiname];
-                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length()-1)));
+                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.slice(-1))));
             });
 
             collector.on('end', collected => {
