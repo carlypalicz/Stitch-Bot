@@ -4,6 +4,10 @@ const time = 60000 //1 minute
 
 const word = "coveysux";
 wordLength = word.length;
+guesses = [];
+for (i = 0; i < wordLength; i++){
+    guesses[i] = '❔';
+}
 
 const alphabet={
     'stitch_a': ['<:stitch_a:823344398409662484>'],
@@ -40,7 +44,7 @@ module.exports = {
     description: 'add a reaction to a message',
     execute(message){
         strikes = 5;
-        descrip = '\u200b' + getDescription();
+        descrip = 'Guess the following word/phrase by reaction to this message with a Stitch Letter!\n' + getDescription() + '\n' + 'Letters guessed so far: \n';
         console.log(descrip);
         const embed = new Discord.MessageEmbed()
             .setColor('A91B0D')
@@ -83,11 +87,16 @@ function makeGuess(description, letter){
     }
     else {
         console.log("a correct guess was made!");
+        for (i = 0; i < word.length; i++){
+            if (word.charAt(i) === letter){
+                guesses[i] = letter; 
+            }
+        }
     }
     embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('Let\'s Play Hangman')
-    .setDescription(description)
+    .setDescription(description + letter)
     .setTimestamp();
     return embed;
 }
