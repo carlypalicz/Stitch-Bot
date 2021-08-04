@@ -104,4 +104,5 @@ function getDescription() {
     + '   \n|    '
     + (' ')
     + '   \n|     \n|__________\n\nGuess a letter by reacting to this message!'
+    + '```';
 }
