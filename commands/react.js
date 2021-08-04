@@ -69,7 +69,7 @@ module.exports = {
             });
 
             collector.on('end', collected => {
-                msg.edit(lose());
+                lose(msg);
                 console.log(`Collected ${collected.size} items`);
             });
 
@@ -88,7 +88,7 @@ function makeGuess(description, letter, emote_name, message){
     console.log('index of letter in word is: ' + word.indexOf(letter));
     if (word.indexOf(letter) === -1){
         console.log("a wrong guess was made!");
-        (strikes > 0) ? strikes-- : lose(message)
+        (strikes >= 0) ? strikes-- : lose(message)
     }
     else {
         console.log("a correct guess was made!");
@@ -136,7 +136,7 @@ function lose(message){
     .setTimestamp();
 
     resetGame();
-    return embed;
+    msg.edit(embed);
 }
 
 function resetGame(){
