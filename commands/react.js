@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 const reactions = new Map([
     ['🅰️', 'A'],
     ['🇦', 'A'],
