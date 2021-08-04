@@ -93,15 +93,15 @@ function makeGuess(description, letter){
 
 function getDescription() {
     return '```'
-    + '|‾‾‾‾‾‾|   \n|     '
+    + '|‾‾‾‾‾‾|   \n|'
     + (' ')
-    + '   \n|     '
+    + '   \n|'
     + (' ')
-    + '   \n|     '
+    + '   \n|'
     + (' ')
-    + '   \n|     '
+    + '   \n|'
     + (' ')
-    + '   \n|    '
+    + '   \n|'
     + (' ')
     + '   \n|     \n|__________\n\nGuess a letter by reacting to this message!'
     + '```';
