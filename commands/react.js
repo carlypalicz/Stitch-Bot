@@ -65,7 +65,7 @@ module.exports = {
                 console.log(`Collected ${reaction.emoji.name}`);
                 descrip += alphabet[emojiname];
                 console.log(emojiname.charAt(emojiname.length-1));
-                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length-1), emojiname));
+                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length-1), emojiname, msg));
             });
 
             collector.on('end', collected => {
@@ -81,14 +81,14 @@ function filter(reaction, user){
     return (!user.bot);
 }
 
-function makeGuess(description, letter, emote_name){
+function makeGuess(description, letter, emote_name, message){
     lettersGuessed.push(alphabet[emote_name]);
     console.log('word to guess is: ' + word);
     console.log('letter guessed is:' +letter)
     console.log('index of letter in word is: ' + word.indexOf(letter));
     if (word.indexOf(letter) === -1){
         console.log("a wrong guess was made!");
-        (strikes > 0) ? strikes-- : lose()
+        (strikes > 0) ? strikes-- : lose(message)
     }
     else {
         console.log("a correct guess was made!");
@@ -121,11 +121,11 @@ function getDescription() {
     return description;
 }
 
-function win(){
+function win(message){
     message.channel.send("You WON!");
 }
 
-function lose(){
+function lose(message){
     message.channel.send("hahaha you LOSE!");
 }
 
