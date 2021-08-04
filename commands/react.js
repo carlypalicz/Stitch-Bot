@@ -102,31 +102,23 @@ module.exports = {
             .setTitle('Let\'s Play Hangman')
             .setDescription('Guess a letter by reacting to this message!')
             .setTimestamp();
-        message.channel.send(embed)
+        //message.channel.send(embed)
+        output = "tracking reactions: ";
+        message.channel.send(output);
 
         .then(function (msg) {
-            const collector = msg.createReactionCollector(filter, {time: 60000}, {max: 5});
+            const collector = msg.createReactionCollector(filter, {max: 5});
 
             collector.on('collect', (reaction, user) => {
                 console.log(`Collected ${reaction.emoji.name}`);
+                output += alphabet[reaction.emoji.name];
+                msg.edit(output);
             });
 
             collector.on('end', collected => {
                 console.log(`Collected ${collected.size} items`);
             });
 
-            // msg.awaitReactions((reaction, user) => user.id == message.author.id,
-            //     { max: 1, time: 30000 }).then(collected => {
-            //         msg.edit("weeee testing 1" + alphabet[collected.first().emoji.name]);
-            //     }).catch((err) => {
-            //         console.log(err);
-            //     });
-            // msg.awaitReactions((reaction, user) => user.id == message.author.id,
-            //     { max: 2, time: 30000 }).then(collected => {
-            //         msg.edit("weeee testing 2" + alphabet[collected[1]]);
-            //     }).catch((err) => {
-            //         console.log(err);
-            //     });
         });
     }
 }
