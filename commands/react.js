@@ -43,6 +43,8 @@ module.exports = {
             .setColor('A91B0D')
             .setTitle('Let\'s Play Hangman')
             .setDescription(descrip)
+            .addField('Wrong Guesses Left: 5')
+            .addField('Letter\'s Guessed: ')
             .setTimestamp();
         message.channel.send(embed)
 
