@@ -105,8 +105,14 @@ module.exports = {
         message.channel.send(embed)
         .then(function (msg) {
             msg.awaitReactions((reaction, user) => user.id == message.author.id,
-                { max: 5, time: 30000 }).then(collected => {
-                    msg.edit("weeee testing " + alphabet[collected.first().emoji.name]);
+                { max: 1, time: 30000 }).then(collected => {
+                    msg.edit("weeee testing 1" + alphabet[collected.first().emoji.name]);
+                }).catch(() => {
+                    message.channel.send("wahhhh something went wrong");
+                });
+            msg.awaitReactions((reaction, user) => user.id == message.author.id,
+                { max: 1, time: 30000 }).then(collected => {
+                    msg.edit("weeee testing 2" + alphabet[collected.first().emoji.name]);
                 }).catch(() => {
                     message.channel.send("wahhhh something went wrong");
                 });
