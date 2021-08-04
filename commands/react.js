@@ -47,7 +47,7 @@ module.exports = {
             .setTitle('Let\'s Play Hangman')
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', '5')
-            .addField('Letter\'s Guessed: ', ' ')
+            .addField('Letter\'s Guessed: ', '\u200b')
             .setTimestamp();
         message.channel.send(embed)
 
