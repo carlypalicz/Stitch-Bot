@@ -112,7 +112,7 @@ module.exports = {
                     console.log(err);
                 });
             msg.awaitReactions((reaction, user) => user.id == message.author.id,
-                { max: 1, time: 30000 }).then(collected => {
+                { max: 2, time: 30000 }).then(collected => {
                     msg.edit("weeee testing 2" + alphabet[collected.first().emoji.name]);
                 }).catch((err) => {
                     console.log(err);
