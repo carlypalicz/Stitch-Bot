@@ -88,7 +88,7 @@ function makeGuess(description, letter, emote_name){
     console.log('index of letter in word is: ' + word.indexOf(letter));
     if (word.indexOf(letter) === -1){
         console.log("a wrong guess was made!");
-        strikes--;
+        (strikes > 0) ? strikes-- : lose()
     }
     else {
         console.log("a correct guess was made!");
@@ -98,6 +98,9 @@ function makeGuess(description, letter, emote_name){
             }
         }
         console.log(guesses)
+    }
+    if (guesses.indexOf('❔') === -1){
+        win();
     }
     embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
@@ -116,6 +119,14 @@ function getDescription() {
     }
     description += '\n Letters guessed so far: \n'
     return description;
+}
+
+function win(){
+    message.channel.send("You WON!");
+}
+
+function lose(){
+    message.channel.send("hahaha you LOSE!");
 }
 
 function resetGame(){
