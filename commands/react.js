@@ -72,6 +72,7 @@ function filter(reaction, user){
 }
 
 function makeGuess(description, letter){
+    console.log(word.indexOf(letter));
     if (word.indexOf(letter) === -1){
         console.log("a wrong guess was made!");
     }
