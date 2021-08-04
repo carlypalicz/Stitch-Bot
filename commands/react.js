@@ -40,7 +40,8 @@ module.exports = {
     description: 'add a reaction to a message',
     execute(message){
         strikes = 5;
-        descrip = '' + getDescription();
+        descrip = '\u200b' + getDescription();
+        console.log(descrip);
         const embed = new Discord.MessageEmbed()
             .setColor('A91B0D')
             .setTitle('Let\'s Play Hangman')
@@ -92,7 +93,7 @@ function makeGuess(description, letter){
 }
 
 function getDescription() {
-    clue = '';
+    clue = '\u200b';
     for (i = 0; i < wordLength; i++){
         clue += '❔';
     }
