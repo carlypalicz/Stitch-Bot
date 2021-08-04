@@ -72,7 +72,12 @@ module.exports = {
     name: 'react',
     description: 'add a reaction to a message',
     execute(message){
-        message.channel.send("Waiting for you to react!")
+        const embed = new Discord.MessageEmbed()
+            .setColor('A91B0D')
+            .setTitle('Let\'s Play Hangman')
+            .setDescription('Guess a letter by reacting to this message!')
+            .setTimestamp()
+        message.channel.send(embed)
         .then(function (msg) {
             msg.awaitReactions((reaction, user) => user.id == message.author.id,
                 { max: 1, time: 30000 }).then(collected => {
