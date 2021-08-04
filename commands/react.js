@@ -72,7 +72,10 @@ function filter(reaction, user){
 }
 
 function makeGuess(description, letter){
-    if (word.indexOf(letter) != -1){
+    if (word.indexOf(letter) === -1){
+        console.log("a wrong guess was made!");
+    }
+    else {
         console.log("a correct guess was made!");
     }
     embed = new Discord.MessageEmbed()
