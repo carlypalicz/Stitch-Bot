@@ -69,7 +69,7 @@ module.exports = {
             });
 
             collector.on('end', collected => {
-                resetGame();
+                msg.edit(lose());
                 console.log(`Collected ${collected.size} items`);
             });
 
@@ -126,7 +126,17 @@ function win(message){
 }
 
 function lose(message){
-    message.channel.send("hahaha you LOSE!");
+    description = "You did not correctly guess the word/phrase, so no ylapples have been earned. Please try again in an hour!\n"
+
+    embed = new Discord.MessageEmbed()
+    .setColor('A91B0D')
+    .setTitle('You LOST | Let\'s Play Hangman')
+    .setDescription(description)
+    .addField('The correct answer was: ', word)
+    .setTimestamp();
+
+    resetGame();
+    return embed;
 }
 
 function resetGame(){
