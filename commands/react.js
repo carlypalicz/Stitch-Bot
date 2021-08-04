@@ -72,7 +72,9 @@ function filter(reaction, user){
 }
 
 function makeGuess(description, letter){
-    console.log(word.indexOf(letter));
+    console.log('word to guess is: ' + word);
+    console.log('letter guessed is:' +letter)
+    console.log('index of letter in word is: ' + word.indexOf(letter));
     if (word.indexOf(letter) === -1){
         console.log("a wrong guess was made!");
     }
