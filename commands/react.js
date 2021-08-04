@@ -2,66 +2,7 @@ const Discord = require('discord.js');
 
 const time = 60000 //1 minute
 
-function filter(reaction, user){
-    return (!user.bot);
-}
-
-// function onCollect(emoji, message){
-//     message.edit("im not sure yet");
-// }
-
-// function createCollectorMessage(message){
-//     const collector = message.createReactionCollector(filter, { time });
-//     collector.on('collect', r => {
-//         onCollect(r.emoji, message);
-//     });
-//     collector.on('end', collected => message.clearReactions());
-// }
-
-// function send(channel){
-//     channel.send(embed)
-//         .then(reaction => )
-// }
-
-const reactions = new Map([
-    ['🅰️', 'A'],
-    ['🇦', 'A'],
-    ['🅱️', 'B'],
-    ['🇧', 'B'],
-    ['🇨', 'C'],
-    ['🇩', 'D'],
-    ['🇪', 'E'],
-    ['🇫', 'F'],
-    ['🇬', 'G'],
-    ['🇭', 'H'],
-    ['ℹ️', 'I'],
-    ['🇮', 'I'],
-    ['🇯', 'J'],
-    ['🇰', 'K'],
-    ['🇱', 'L'],
-    ['Ⓜ️', 'M'],
-    ['🇲', 'M'],
-    ['🇳', 'N'],
-    ['🅾️', 'O'],
-    ['⭕', 'O'],
-    ['🇴', 'O'],
-    ['🅿️', 'P'],
-    ['🇵', 'P'],
-    ['🇶', 'Q'],
-    ['🇷', 'R'],
-    ['🇸', 'S'],
-    ['🇹', 'T'],
-    ['🇺', 'U'],
-    ['🇻', 'V'],
-    ['🇼', 'W'],
-    ['✖️', 'X'],
-    ['❎', 'X'],
-    ['❌', 'X'],
-    ['🇽', 'X'],
-    ['🇾', 'Y'],
-    ['💤', 'Z'],
-    ['🇿', 'Z'],
-]);
+const word = "coveysux";
 
 const alphabet={
     'stitch_a': ['<:stitch_a:823344398409662484>'],
@@ -109,9 +50,10 @@ module.exports = {
             const collector = msg.createReactionCollector(filter, {max: 5});
 
             collector.on('collect', (reaction, user) => {
+                emojiname = reaction.emoji.name;
                 console.log(`Collected ${reaction.emoji.name}`);
-                descrip += alphabet[reaction.emoji.name];
-                msg.edit(editEmbed(descrip));
+                descrip += alphabet[emojiname];
+                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length()-1)));
             });
 
             collector.on('end', collected => {
@@ -122,7 +64,14 @@ module.exports = {
     }
 }
 
-function editEmbed(description){
+function filter(reaction, user){
+    return (!user.bot);
+}
+
+function makeGuess(description, letter){
+    if (word.indexOf(letter) != -1){
+        console.log("a correct guess was made!");
+    }
     embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('Let\'s Play Hangman')
