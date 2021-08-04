@@ -40,11 +40,11 @@ module.exports = {
     execute(message){
         strikes = 5;
         wordLength = word.length;
-        descrip = "Guess a letter by reacting to this message!";
+        descrip = ''+ getDescription();
         const embed = new Discord.MessageEmbed()
             .setColor('A91B0D')
             .setTitle('Let\'s Play Hangman')
-            .setDescription(getDescription())
+            .setDescription(descrip)
             .addField('Wrong Guesses Left: ', '5')
             .addField('Letter\'s Guessed: ', '')
             .setTimestamp();
@@ -92,7 +92,7 @@ function makeGuess(description, letter){
 }
 
 function getDescription() {
-    return '```'
+    return ('```'
     + '|‾‾‾‾‾‾|   \n|'
     + (' ')
     + '   \n|'
@@ -104,5 +104,5 @@ function getDescription() {
     + '   \n|'
     + (' ')
     + '   \n|     \n|__________\n\nGuess a letter by reacting to this message!'
-    + '```';
+    + '```');
 }
