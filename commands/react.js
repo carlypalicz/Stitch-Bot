@@ -46,7 +46,7 @@ module.exports = {
             .setTitle('Let\'s Play Hangman')
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', '5')
-            .addField('Letter\'s Guessed: ', '')
+            .addField('Letter\'s Guessed: ', ' ')
             .setTimestamp();
         message.channel.send(embed)
 
@@ -93,16 +93,16 @@ function makeGuess(description, letter){
 
 function getDescription() {
     return ('```'
-    + '|‾‾‾‾‾‾|   \n|'
-    + (' ')
-    + '   \n|'
-    + (' ')
-    + '   \n|'
-    + (' ')
-    + '   \n|'
-    + (' ')
-    + '   \n|'
-    + (' ')
-    + '   \n|     \n|__________\n\nGuess a letter by reacting to this message!'
+    + '|‾‾‾‾‾‾|   \n|     '
+    + ('🎩')
+    + '   \n|     '
+    + ('😟')
+    + '   \n|     '
+    + ('👕')
+    + '   \n|     '
+    + ('🩳')
+    + '   \n|    '
+    + ('👞👞')
+    + '   \n|     \n|__________\n\n'
     + '```');
 }
