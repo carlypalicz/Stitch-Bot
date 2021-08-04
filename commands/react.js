@@ -5,6 +5,8 @@ const time = 60000 //1 minute
 const word = "coveysux";
 wordLength = word.length;
 guesses = [];
+lettersGuessed = [];
+
 for (i = 0; i < wordLength; i++){
     guesses[i] = '❔';
 }
@@ -50,20 +52,20 @@ module.exports = {
             .setColor('A91B0D')
             .setTitle('Let\'s Play Hangman')
             .setDescription(descrip)
-            .addField('Wrong Guesses Left: ', '5')
-            .addField('Letter\'s Guessed: ', '\u200b')
+            .addField('Wrong Guesses Left: ', strikes)
+            .addField('Letter\'s Guessed: ', lettersGuessed.join(', '))
             .setTimestamp();
         message.channel.send(embed)
 
         .then(function (msg) {
-            const collector = msg.createReactionCollector(filter, {max: 5});
+            const collector = msg.createReactionCollector(filter, {max: 9});
 
             collector.on('collect', (reaction, user) => {
                 emojiname = reaction.emoji.name;
                 console.log(`Collected ${reaction.emoji.name}`);
                 descrip += alphabet[emojiname];
                 console.log(emojiname.charAt(emojiname.length-1));
-                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length-1)));
+                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length-1), emojiname));
             });
 
             collector.on('end', collected => {
@@ -78,12 +80,14 @@ function filter(reaction, user){
     return (!user.bot);
 }
 
-function makeGuess(description, letter){
+function makeGuess(description, letter, emote_name){
+    lettersGuessed.push(alphabet[emote_name]);
     console.log('word to guess is: ' + word);
     console.log('letter guessed is:' +letter)
     console.log('index of letter in word is: ' + word.indexOf(letter));
     if (word.indexOf(letter) === -1){
         console.log("a wrong guess was made!");
+        strikes--;
     }
     else {
         console.log("a correct guess was made!");
@@ -98,6 +102,8 @@ function makeGuess(description, letter){
     .setColor('A91B0D')
     .setTitle('Let\'s Play Hangman')
     .setDescription(getDescription())
+    .addField('Wrong Guesses Left: ', strikes)
+    .addField('Letter\'s Guessed: ', lettersGuessed.join(', '))
     .setTimestamp();
     return embed;
 }
