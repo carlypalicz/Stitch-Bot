@@ -69,6 +69,7 @@ module.exports = {
             });
 
             collector.on('end', collected => {
+                resetGame();
                 console.log(`Collected ${collected.size} items`);
             });
 
@@ -115,4 +116,9 @@ function getDescription() {
     }
     description += '\n Letters guessed so far: \n'
     return description;
+}
+
+function resetGame(){
+    guesses = [];
+    lettersGuessed = [];
 }
