@@ -44,7 +44,7 @@ module.exports = {
     description: 'add a reaction to a message',
     execute(message){
         strikes = 5;
-        descrip = 'Guess the following word/phrase by reaction to this message with a Stitch Letter!\n' + getDescription() + '\n' + 'Letters guessed so far: \n';
+        descrip = getDescription();
         console.log(descrip);
         const embed = new Discord.MessageEmbed()
             .setColor('A91B0D')
@@ -92,19 +92,21 @@ function makeGuess(description, letter){
                 guesses[i] = letter; 
             }
         }
+        console.log(guesses)
     }
     embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('Let\'s Play Hangman')
-    .setDescription(description)
+    .setDescription(getDescription())
     .setTimestamp();
     return embed;
 }
 
 function getDescription() {
-    clue = '';
+    description = 'Guess the following word/phrase by reacting to this message with a Stitch Letter!\n';
     for (i = 0; i < wordLength; i++){
-        clue += guesses[i];
+        description += guesses[i];
     }
-    return clue;
+    description += '\n Letters guessed so far: \n'
+    return description;
 }
