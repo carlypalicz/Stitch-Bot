@@ -1,5 +1,28 @@
 const Discord = require('discord.js');
 
+// const time = 60000 //1 minute
+
+// function filter(reaction, user){
+//     return (!user.bot) && (reactions.includes(reaction.emoji.name));
+// }
+
+// function onCollect(emoji, message){
+//     message.edit("im not sure yet");
+// }
+
+// function createCollectorMessage(message){
+//     const collector = message.createReactionCollector(filter, { time });
+//     collector.on('collect', r => {
+//         onCollect(r.emoji, message);
+//     });
+//     collector.on('end', collected => message.clearReactions());
+// }
+
+// function send(channel){
+//     channel.send(embed)
+//         .then(reaction => )
+// }
+
 const reactions = new Map([
     ['🅰️', 'A'],
     ['🇦', 'A'],
@@ -83,7 +106,7 @@ module.exports = {
         .then(function (msg) {
             msg.awaitReactions((reaction, user) => user.id == message.author.id,
                 { max: 1, time: 30000 }).then(collected => {
-                    message.channel.send(alphabet[collected.first().emoji.name]);
+                    msg.edit("weeee testing " + alphabet[collected.first().emoji.name]);
                 }).catch(() => {
                     message.channel.send("wahhhh something went wrong");
                 });
