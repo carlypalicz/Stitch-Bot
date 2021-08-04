@@ -69,7 +69,7 @@ module.exports = {
             });
 
             collector.on('end', collected => {
-                lose(msg);
+                msg.edit(lose());
                 console.log(`Collected ${collected.size} items`);
             });
 
@@ -81,15 +81,19 @@ function filter(reaction, user){
     return (!user.bot);
 }
 
-function makeGuess(description, letter, emote_name, message){
+function makeGuess(description, letter, emote_name){
     lettersGuessed.push(alphabet[emote_name]);
     console.log('word to guess is: ' + word);
     console.log('letter guessed is:' +letter)
     console.log('index of letter in word is: ' + word.indexOf(letter));
     if (word.indexOf(letter) === -1){
         console.log("a wrong guess was made!");
-        (strikes >= 0) ? strikes-- : lose(message)
-        return;
+        if (strikes >= 0) {
+            strikes--;
+        } else {
+            return lose();
+        }
+
     }
     else {
         console.log("a correct guess was made!");
@@ -126,7 +130,7 @@ function win(message){
     message.channel.send("You WON!");
 }
 
-function lose(message){
+function lose(){
     description = "You did not correctly guess the word/phrase, so no ylapples have been earned. Please try again in an hour!\n"
 
     embed = new Discord.MessageEmbed()
@@ -137,7 +141,7 @@ function lose(message){
     .setTimestamp();
 
     resetGame();
-    message.edit(embed);
+    return embed;
 }
 
 function resetGame(){
