@@ -88,7 +88,7 @@ function makeGuess(description, letter, emote_name){
     console.log('index of letter in word is: ' + word.indexOf(letter));
     if (word.indexOf(letter) === -1){
         console.log("a wrong guess was made!");
-        if (strikes >= 0) {
+        if (strikes > 0) {
             strikes--;
         } else {
             return lose();
@@ -105,7 +105,7 @@ function makeGuess(description, letter, emote_name){
         console.log(guesses)
     }
     if (guesses.indexOf('❔') === -1){
-        win();
+        return win();
     }
     embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
@@ -126,8 +126,18 @@ function getDescription() {
     return description;
 }
 
-function win(message){
-    message.channel.send("You WON!");
+function win(){
+    description = "CONGRATS! You correctly guessed the word/phrase, and 11 ylapples have been earned. Feel free to play again in an hour!\n"
+
+    embed = new Discord.MessageEmbed()
+    .setColor('A91B0D')
+    .setTitle('You WON!!! | Let\'s Play Hangman')
+    .setDescription(description)
+    .addField('Great job! The correct answer was: ', word)
+    .setTimestamp();
+
+    resetGame();
+    return embed;
 }
 
 function lose(){
