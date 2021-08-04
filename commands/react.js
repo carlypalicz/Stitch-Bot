@@ -114,8 +114,8 @@ module.exports = {
             msg.awaitReactions((reaction, user) => user.id == message.author.id,
                 { max: 1, time: 30000 }).then(collected => {
                     msg.edit("weeee testing 2" + alphabet[collected.first().emoji.name]);
-                }).catch(() => {
-                    message.channel.send("wahhhh something went wrong");
+                }).catch((err) => {
+                    console.log(err);
                 });
         });
     }
