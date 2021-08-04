@@ -96,15 +96,15 @@ function makeGuess(description, letter){
     embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('Let\'s Play Hangman')
-    .setDescription(description + letter)
+    .setDescription(description)
     .setTimestamp();
     return embed;
 }
 
 function getDescription() {
-    clue = '\u200b';
+    clue = '';
     for (i = 0; i < wordLength; i++){
-        clue += '❔';
+        clue += guesses[i];
     }
     return clue;
 }
