@@ -53,7 +53,7 @@ module.exports = {
             .setTitle('Let\'s Play Hangman')
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', strikes)
-            .addField('Letter\'s Guessed: ', lettersGuessed.join(', '))
+            .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
             .setTimestamp();
         message.channel.send(embed)
 
@@ -103,7 +103,7 @@ function makeGuess(description, letter, emote_name){
     .setTitle('Let\'s Play Hangman')
     .setDescription(getDescription())
     .addField('Wrong Guesses Left: ', strikes)
-    .addField('Letter\'s Guessed: ', lettersGuessed.join(', '))
+    .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
     .setTimestamp();
     return embed;
 }
