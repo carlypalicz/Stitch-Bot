@@ -43,8 +43,8 @@ module.exports = {
             .setColor('A91B0D')
             .setTitle('Let\'s Play Hangman')
             .setDescription(descrip)
-            .addField('Wrong Guesses Left: 5')
-            .addField('Letter\'s Guessed: ')
+            .addField('Wrong Guesses Left: ', '5')
+            .addField('Letter\'s Guessed: ', 'weeee')
             .setTimestamp();
         message.channel.send(embed)
 
@@ -55,7 +55,7 @@ module.exports = {
                 emojiname = reaction.emoji.name;
                 console.log(`Collected ${reaction.emoji.name}`);
                 descrip += alphabet[emojiname];
-                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.slice(-1))));
+                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.charAt(emojiname.length-1))));
             });
 
             collector.on('end', collected => {
