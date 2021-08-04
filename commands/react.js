@@ -121,4 +121,7 @@ function getDescription() {
 function resetGame(){
     guesses = [];
     lettersGuessed = [];
+    for (i = 0; i < wordLength; i++){
+        guesses[i] = '❔';
+    }
 }
