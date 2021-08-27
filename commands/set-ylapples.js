@@ -3,7 +3,7 @@ const profileModel = require('../models/profileSchema');
 module.exports = {
     name: 'set-ylapples',
     description: 'set ylapples for users - only carly has permission to do this',
-    async execute(message, args, profileData, name){
+    async execute(message, args, profileData){
         console.log(args);
         const recipient = args[0];
         const amount = args[1];
@@ -12,7 +12,7 @@ module.exports = {
         console.log(amount);
         try {
             await profileModel.findOneAndUpdate({
-                userID: profileData.recipient,
+                userID: recipient,
             }, {
                 ylapples: amount
             });
