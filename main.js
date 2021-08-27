@@ -180,6 +180,9 @@ client.on('message', async (message) => {
     else if (command === 'react'){
         client.commands.get('react').execute(message);
     }
+    else if (command === 'set-ylapples'){
+        client.commands.get('set-ylapples').execute(message);
+    }
 });
 
 mongoose.connect(process.env.MONGODB_SRV, {
