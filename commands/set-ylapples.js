@@ -6,12 +6,18 @@ module.exports = {
     async execute(message, args, profileData, name){
         const recipient = args[0];
         const amount = args[1];
-
-        await profileModel.findOneAndUpdate({
-            userID: profileData.recipient,
-        }, {
-            ylapples: amount
-        });
+        
+        console.log(recipient);
+        console.log(amount);
+        try {
+            await profileModel.findOneAndUpdate({
+                userID: profileData.recipient,
+            }, {
+                ylapples: amount
+            });
+        } catch(err){
+            console.log(err);
+        }
         return message.channel.send(`Updated the ylapples for ${recipient} to ${amount} ylapples!`);
     },
 };
