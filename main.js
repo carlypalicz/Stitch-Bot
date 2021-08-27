@@ -181,7 +181,7 @@ client.on('message', async (message) => {
         client.commands.get('react').execute(message);
     }
     else if (command === 'set-ylapples'){
-        client.commands.get('set-ylapples').execute(message);
+        client.commands.get('set-ylapples').execute(message, args, profileData);
     }
 });
 
