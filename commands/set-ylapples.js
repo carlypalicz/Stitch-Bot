@@ -4,6 +4,7 @@ module.exports = {
     name: 'set-ylapples',
     description: 'set ylapples for users - only carly has permission to do this',
     async execute(message, args, profileData, name){
+        console.log(args);
         const recipient = args[0];
         const amount = args[1];
         
