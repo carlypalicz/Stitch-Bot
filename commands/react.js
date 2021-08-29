@@ -48,7 +48,7 @@ module.exports = {
         wordLength = word.length;
         guesses = [];
         lettersGuessed = [];
-        
+
         for (let i = 0; i < wordLength; i++){
             guesses[i] = (word.charAt(i) == ' ') ? '|' : '❔';
         }
@@ -82,7 +82,9 @@ module.exports = {
             });
 
             message.channel.awaitMessages(m => m.author.id == message.author.id, {max: 1, time: 300000}).then(collected => {
-                if (collected.first().content.toLowerCase() == word){
+                let guess = collected.first().content.replace(/[^a-z+]+/gi, '');
+                console.log(guess)
+                if (guess.toLowerCase() == word){
                     msg.edit(winByWordGuessedRight());
                 }
                 else {
