@@ -82,7 +82,7 @@ module.exports = {
             });
 
             message.channel.awaitMessages(m => m.author.id == message.author.id, {max: 1, time: 300000}).then(collected => {
-                let guess = collected.first().content.replace(/[^a-z+]+/gi, '');
+                let guess = collected.first().content.replace(/[^a-z+\s]+/gi, '');
                 console.log(guess)
                 if (guess.toLowerCase() == word){
                     msg.edit(winByWordGuessedRight());
