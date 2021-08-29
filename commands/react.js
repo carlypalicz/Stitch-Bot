@@ -7,6 +7,8 @@ let lettersGuessed;
 
 let word, wordLength, strikes;
 
+let gameOver = false;
+
 const wordBank = ['coveysux', 'ok boomer', 'bobby my beloved', 'ylapples', 'join the discord', 'fuck that guy i hope hes dead', 'cardinal sin', 'class of cardinal sin', 'some cats live some cats die', 'haggarty', 'benjamin bork', 'gabe godman', 'harris haggarty', 'henry haggarty', 'tevin thompson', 'sammy jammy', 'ray razzi', 'fence ferguson', 'jack and jake johnson', 'alex anderson', 'lewis lin', 'tony tazzari', 'wade wallace', 'danny davis', 'jamie jones', 'freddy freeman', 'gretta greene', 'leila lee', 'martha may', 'brandon brown', 'penny perkins', 'caleb cameron', 'suzie simons', 'bobby freeman', 'mr gabberman', 'mr tatterson', 'mr jones', 'mrs baxterban', 'mrs zniderick', 'mrs hackerly', 'the surgeon', 'morbious morrison', 'prince najefe', 'preston grittletwain', 'malady sundew', 'jim scalopini', 'winston walrus', 'mortal realm', 'death realm', 'middle ground', 'spirit realm', 'rebirth realm', 'fox tears', 'haggarty corner store', 'hugo haggarty', 'black orb middle ground', 'winfred stitch', 'the fox killed bobby', 'bellport house', 'gatekeeper', 'you must contain prince najefe', 'in the dark you will find light', 'jim is the air to the throne', 'bobby is not who you think he is', 'bobby i miss you', 'call home', 'same white shoes', 'old man', 'stockholm syndrome', 'funeral home', 'eyesore', 'you dont need me', 'in or out', 'cut on the crease', 'why am i alive', 'four dollar sandwich', 'point mutation', 'local anesthesia', 'sound of a gun', 'marzipan pills', 'jupiter', 'gecko', 'cloudy eyes', 'fractured brain', 'you can eat me', 'basement', 'stable now', 'plane crash', 'bile of the beast', 'invader zim', 'skittish cat', 'young and nauseous', 'blood mump', 'crot defensive form', 'soul worm vision', 'choggo farming', 'the cultists', 'tour to nobody', 'leeches screaming at the walls', 'rip jeremy', 'its that fox again', 'gengcharsquirtasaur', 'are you still eating sour lemons', 'theres a left shoe', 'overtired and dead inside', 'blind luck burns slow', 'i just wanna be consumed', 'piping hot procrastination', 'its thoughts like this', 'looming with intent', 'its like kleptomania', 'i dont think im scary', 'fucked up family dinner', 'a genetic anomaly', 'i am undercooked', 'stay together for the kids', 'strong spine sammy jame', 's shaped vertebrae', 'sleeping through that summer sun', 'a bowl of your mothers homemade soup', 'open wound that begs for salt', 'yellow socks', 'call me a loser', 'late night wasters', 'hot sauce moment', 'red blue dichotomy', 'curse the fox', 'the elders'];
 
 const alphabet={
@@ -82,6 +84,9 @@ module.exports = {
             });
 
             message.channel.awaitMessages(m => m.author.id == message.author.id, {max: 1, time: 300000}).then(collected => {
+                if (gameOver){
+                    return;
+                }
                 let guess = collected.first().content.replace(/[^a-z+\s]+/gi, '');
                 console.log(guess)
                 if (guess.toLowerCase() == word){
@@ -147,6 +152,7 @@ function getDescription() {
 }
 
 function winByLettersRevealed(){
+    gameOver = true;
     let description = "CONGRATS! The word/phrase has been fully revealed, and you have won 11 ylapples. Feel free to play again in an hour!\n"
 
     let embed = new Discord.MessageEmbed()
@@ -161,6 +167,7 @@ function winByLettersRevealed(){
 }
 
 function loseByOutOfTurns(){
+    gameOver = true;
     let description = "You did not correctly guess the word/phrase, so no ylapples have been earned. Please try again in an hour!\n"
 
     let embed = new Discord.MessageEmbed()
@@ -175,6 +182,7 @@ function loseByOutOfTurns(){
 }
 
 function winByWordGuessedRight(){
+    gameOver = true;
     let description = "CONGRATS! You correctly guessed the word/phrase, and 11 ylapples have been earned. Feel free to play again in an hour!\n"
 
     let embed = new Discord.MessageEmbed()
@@ -189,6 +197,7 @@ function winByWordGuessedRight(){
 }
 
 function loseByWordGuessedWrong(){
+    gameOver = true;
     let description = "You made an incorrect guess, so no ylapples have been earned. Please try again in an hour!\n"
 
     let embed = new Discord.MessageEmbed()
@@ -203,6 +212,8 @@ function loseByWordGuessedWrong(){
 }
 
 function timedOut(){
+    gameOver = true;
+
     let description = "No guess made in 5 minutes, game has timed out.\n"
 
     let embed = new Discord.MessageEmbed()
