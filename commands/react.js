@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 
 const time = 60000 //1 minute
 
-let guesses = [];
-let lettersGuessed = [];
+let guesses;
+let lettersGuessed;
 
 let word, wordLength, strikes;
 
@@ -46,6 +46,8 @@ module.exports = {
         let rand = Math.floor(Math.random()*(wordBank.length)); //index for a random word
         word = wordBank[rand];
         wordLength = word.length;
+        guesses = [];
+        lettersGuessed = [];
         
         for (let i = 0; i < wordLength; i++){
             guesses[i] = (word.charAt(i) == ' ') ? '|' : '❔';
