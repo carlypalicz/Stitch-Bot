@@ -73,6 +73,17 @@ module.exports = {
                 console.log(`Collected ${collected.size} items`);
             });
 
+            message.channel.awaitMessages(m => m.author.id == message.author.id, {max: 1, time: 600000}).then(collected => {
+                if (collected.first().content.toLowerCase() == 'coveysux'){
+                    message.reply('YEET');
+                }
+                else {
+                    message.reply('NOPE');
+                }
+            }).catch(() => {
+                message.reply('timed out');
+            })
+
         });
     }
 }
