@@ -17,7 +17,7 @@ const word = wordBank[rand];
 wordLength = word.length;
 
 for (i = 0; i < wordLength; i++){
-    guesses[i] = (word.charAt(i) == ' ') ? ' ' : '❔';
+    guesses[i] = (word.charAt(i) == ' ') ? '|' : '❔';
 }
 
 const alphabet={
