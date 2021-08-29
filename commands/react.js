@@ -7,6 +7,7 @@ wordLength = word.length;
 guesses = [];
 lettersGuessed = [];
 
+
 for (i = 0; i < wordLength; i++){
     guesses[i] = '❔';
 }
@@ -69,16 +70,16 @@ module.exports = {
             });
 
             collector.on('end', collected => {
-                msg.edit(lose());
+                msg.edit(loseByOutOfTurns());
                 console.log(`Collected ${collected.size} items`);
             });
 
             message.channel.awaitMessages(m => m.author.id == message.author.id, {max: 1, time: 600000}).then(collected => {
-                if (collected.first().content.toLowerCase() == 'coveysux'){
-                    message.reply('YEET');
+                if (collected.first().content.toLowerCase() == word){
+                    msg.edit(winByWordGuessedRight());
                 }
                 else {
-                    message.reply('NOPE');
+                    msg.edit(loseByWordGuessedWrong());
                 }
             }).catch(() => {
                 message.reply('timed out');
@@ -102,7 +103,7 @@ function makeGuess(description, letter, emote_name){
         if (strikes > 0) {
             strikes--;
         } else {
-            return lose();
+            return loseByOutOfTurns();
         }
 
     }
@@ -116,7 +117,7 @@ function makeGuess(description, letter, emote_name){
         console.log(guesses)
     }
     if (guesses.indexOf('❔') === -1){
-        return win();
+        return winByLettersRevealed();
     }
     embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
@@ -137,7 +138,35 @@ function getDescription() {
     return description;
 }
 
-function win(){
+function winByLettersRevealed(){
+    description = "CONGRATS! The word/phrase has been fully revealed, and you have won 11 ylapples. Feel free to play again in an hour!\n"
+
+    embed = new Discord.MessageEmbed()
+    .setColor('A91B0D')
+    .setTitle('You WON!!! | Let\'s Play Hangman')
+    .setDescription(description)
+    .addField('Great job! The correct answer was: ', word)
+    .setTimestamp();
+
+    resetGame();
+    return embed;
+}
+
+function loseByOutOfTurns(){
+    description = "You did not correctly guess the word/phrase, so no ylapples have been earned. Please try again in an hour!\n"
+
+    embed = new Discord.MessageEmbed()
+    .setColor('A91B0D')
+    .setTitle('You LOST | Let\'s Play Hangman')
+    .setDescription(description)
+    .addField('The correct answer was: ', word)
+    .setTimestamp();
+
+    resetGame();
+    return embed;
+}
+
+function winByWordGuessedRight(){
     description = "CONGRATS! You correctly guessed the word/phrase, and 11 ylapples have been earned. Feel free to play again in an hour!\n"
 
     embed = new Discord.MessageEmbed()
@@ -151,8 +180,8 @@ function win(){
     return embed;
 }
 
-function lose(){
-    description = "You did not correctly guess the word/phrase, so no ylapples have been earned. Please try again in an hour!\n"
+function loseByWordGuessedWrong(){
+    description = "You made an incorrect guess, so no ylapples have been earned. Please try again in an hour!\n"
 
     embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
