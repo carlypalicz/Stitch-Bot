@@ -2,23 +2,12 @@ const Discord = require('discord.js');
 
 const time = 60000 //1 minute
 
-guesses = [];
-lettersGuessed = [];
+let guesses = [];
+let lettersGuessed = [];
 
-
-
+let word, wordLength, strikes;
 
 const wordBank = ['coveysux', 'ok boomer', 'bobby my beloved', 'ylapples', 'join the discord', 'fuck that guy i hope hes dead', 'cardinal sin', 'class of cardinal sin', 'some cats live some cats die', 'haggarty', 'benjamin bork', 'gabe godman', 'harris haggarty', 'henry haggarty', 'tevin thompson', 'sammy jammy', 'ray razzi', 'fence ferguson', 'jack and jake johnson', 'alex anderson', 'lewis lin', 'tony tazzari', 'wade wallace', 'danny davis', 'jamie jones', 'freddy freeman', 'gretta greene', 'leila lee', 'martha may', 'brandon brown', 'penny perkins', 'caleb cameron', 'suzie simons', 'bobby freeman', 'mr gabberman', 'mr tatterson', 'mr jones', 'mrs baxterban', 'mrs zniderick', 'mrs hackerly', 'the surgeon', 'morbious morrison', 'prince najefe', 'preston grittletwain', 'malady sundew', 'jim scalopini', 'winston walrus', 'mortal realm', 'death realm', 'middle ground', 'spirit realm', 'rebirth realm', 'fox tears', 'haggarty corner store', 'hugo haggarty', 'black orb middle ground', 'winfred stitch', 'the fox killed bobby', 'bellport house', 'gatekeeper', 'you must contain prince najefe', 'in the dark you will find light', 'jim is the air to the throne', 'bobby is not who you think he is', 'bobby i miss you', 'call home', 'same white shoes', 'old man', 'stockholm syndrome', 'funeral home', 'eyesore', 'you dont need me', 'in or out', 'cut on the crease', 'why am i alive', 'four dollar sandwich', 'point mutation', 'local anesthesia', 'sound of a gun', 'marzipan pills', 'jupiter', 'gecko', 'cloudy eyes', 'fractured brain', 'you can eat me', 'basement', 'stable now', 'plane crash', 'bile of the beast', 'invader zim', 'skittish cat', 'young and nauseous', 'blood mump', 'crot defensive form', 'soul worm vision', 'choggo farming', 'the cultists', 'tour to nobody', 'leeches screaming at the walls', 'rip jeremy', 'its that fox again', 'gengcharsquirtasaur', 'are you still eating sour lemons', 'theres a left shoe', 'overtired and dead inside', 'blind luck burns slow', 'i just wanna be consumed', 'piping hot procrastination', 'its thoughts like this', 'looming with intent', 'its like kleptomania', 'i dont think im scary', 'fucked up family dinner', 'a genetic anomaly', 'i am undercooked', 'stay together for the kids', 'strong spine sammy jame', 's shaped vertebrae', 'sleeping through that summer sun', 'a bowl of your mothers homemade soup', 'open wound that begs for salt', 'yellow socks', 'call me a loser', 'late night wasters', 'hot sauce moment', 'red blue dichotomy', 'curse the fox', 'the elders'];
-
-let rand = Math.floor(Math.random()*(wordBank.length)); //index for a random quote
-const word = wordBank[rand];
-
-
-wordLength = word.length;
-
-for (i = 0; i < wordLength; i++){
-    guesses[i] = (word.charAt(i) == ' ') ? '|' : '❔';
-}
 
 const alphabet={
     'stitch_a': ['<:stitch_a:823344398409662484>'],
@@ -54,8 +43,16 @@ module.exports = {
     name: 'react',
     description: 'add a reaction to a message',
     execute(message){
+        let rand = Math.floor(Math.random()*(wordBank.length)); //index for a random word
+        word = wordBank[rand];
+        wordLength = word.length;
+        
+        for (let i = 0; i < wordLength; i++){
+            guesses[i] = (word.charAt(i) == ' ') ? '|' : '❔';
+        }
+
         strikes = 5;
-        descrip = getDescription();
+        let descrip = getDescription();
         console.log(descrip);
         const embed = new Discord.MessageEmbed()
             .setColor('A91B0D')
@@ -70,11 +67,11 @@ module.exports = {
             const collector = msg.createReactionCollector(filter, {max: 16});
 
             collector.on('collect', (reaction, user) => {
-                emojiname = reaction.emoji.name;
+                let emojiname = reaction.emoji.name;
                 console.log(`Collected ${reaction.emoji.name}`);
                 descrip += alphabet[emojiname];
                 console.log(emojiname.charAt(emojiname.length-1));
-                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length-1), emojiname, msg));
+                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length-1), emojiname));
             });
 
             collector.on('end', collected => {
@@ -90,7 +87,7 @@ module.exports = {
                     msg.edit(loseByWordGuessedWrong());
                 }
             }).catch(() => {
-                message.reply('timed out');
+                msg.edit(timedOut());
             })
 
         });
@@ -117,7 +114,7 @@ function makeGuess(description, letter, emote_name){
     }
     else {
         console.log("a correct guess was made!");
-        for (i = 0; i < word.length; i++){
+        for (let i = 0; i < word.length; i++){
             if (word.charAt(i) === letter){
                 guesses[i] = letter; 
             }
@@ -127,19 +124,18 @@ function makeGuess(description, letter, emote_name){
     if (guesses.indexOf('❔') === -1){
         return winByLettersRevealed();
     }
-    embed = new Discord.MessageEmbed()
+    return new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('Let\'s Play Hangman')
     .setDescription(getDescription())
     .addField('Wrong Guesses Left: ', strikes)
     .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
     .setTimestamp();
-    return embed;
 }
 
 function getDescription() {
-    description = 'Guess the following word/phrase by reacting to this message with a Stitch Letter!\n';
-    for (i = 0; i < wordLength; i++){
+    let description = 'Guess the following word/phrase by reacting to this message with a Stitch Letter!\n';
+    for (let i = 0; i < wordLength; i++){
         description += guesses[i];
     }
     description += '\n Letters guessed so far: \n'
@@ -147,9 +143,9 @@ function getDescription() {
 }
 
 function winByLettersRevealed(){
-    description = "CONGRATS! The word/phrase has been fully revealed, and you have won 11 ylapples. Feel free to play again in an hour!\n"
+    let description = "CONGRATS! The word/phrase has been fully revealed, and you have won 11 ylapples. Feel free to play again in an hour!\n"
 
-    embed = new Discord.MessageEmbed()
+    let embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('You WON!!! | Let\'s Play Hangman')
     .setDescription(description)
@@ -161,9 +157,9 @@ function winByLettersRevealed(){
 }
 
 function loseByOutOfTurns(){
-    description = "You did not correctly guess the word/phrase, so no ylapples have been earned. Please try again in an hour!\n"
+    let description = "You did not correctly guess the word/phrase, so no ylapples have been earned. Please try again in an hour!\n"
 
-    embed = new Discord.MessageEmbed()
+    let embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
@@ -175,9 +171,9 @@ function loseByOutOfTurns(){
 }
 
 function winByWordGuessedRight(){
-    description = "CONGRATS! You correctly guessed the word/phrase, and 11 ylapples have been earned. Feel free to play again in an hour!\n"
+    let description = "CONGRATS! You correctly guessed the word/phrase, and 11 ylapples have been earned. Feel free to play again in an hour!\n"
 
-    embed = new Discord.MessageEmbed()
+    let embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('You WON!!! | Let\'s Play Hangman')
     .setDescription(description)
@@ -189,9 +185,9 @@ function winByWordGuessedRight(){
 }
 
 function loseByWordGuessedWrong(){
-    description = "You made an incorrect guess, so no ylapples have been earned. Please try again in an hour!\n"
+    let description = "You made an incorrect guess, so no ylapples have been earned. Please try again in an hour!\n"
 
-    embed = new Discord.MessageEmbed()
+    let embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
@@ -203,9 +199,9 @@ function loseByWordGuessedWrong(){
 }
 
 function timedOut(){
-    description = "No guess made in 5 minutes, game has timed out.\n"
+    let description = "No guess made in 5 minutes, game has timed out.\n"
 
-    embed = new Discord.MessageEmbed()
+    let embed = new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('Timed Out | Let\'s Play Hangman')
     .setDescription(description)
@@ -218,7 +214,7 @@ function timedOut(){
 function resetGame(){
     guesses = [];
     lettersGuessed = [];
-    for (i = 0; i < wordLength; i++){
+    for (let i = 0; i < wordLength; i++){
         guesses[i] = '❔';
     }
 }
