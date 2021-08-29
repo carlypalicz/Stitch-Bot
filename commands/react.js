@@ -212,9 +212,5 @@ function timedOut(){
 }
 
 function resetGame(){
-    guesses = [];
-    lettersGuessed = [];
-    for (let i = 0; i < wordLength; i++){
-        guesses[i] = '❔';
-    }
+    console.log('game reset');
 }
