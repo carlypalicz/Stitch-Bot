@@ -50,7 +50,7 @@ module.exports = {
         const cooldown_amount =  1000 * 60 * 3; //3 minutes
         const expiration_time = profileData.lastHangman+cooldown_amount;
 
-        if (current_time < profileData.lastDaily+cooldown_amount){
+        if (current_time < profileData.lastHangman+cooldown_amount){
             const time_left = (expiration_time - current_time);
             return message.channel.send(`Please wait ${convert_ms(time_left)} before using this command again.`);
         }
