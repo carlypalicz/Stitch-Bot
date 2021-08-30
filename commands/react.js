@@ -236,7 +236,7 @@ function timedOut(){
     .setTimestamp();
 }
 
-function awardYlapples(profileData){
+async function awardYlapples(profileData){
     const reward = 11;
 
     await profileModel.findOneAndUpdate({
