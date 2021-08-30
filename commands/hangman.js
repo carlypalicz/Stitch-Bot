@@ -160,7 +160,7 @@ function makeGuess(letter, emote_name, profileData, message){
             console.log(guesses)
         }
         if (guesses.indexOf('❔') === -1){
-            message.reply('you revealed all the letters before the surgeon could curse the fox, great job! 11 ylapples<:ylapples:826531088188440588> have been awarded.');
+            message.reply('great job! You revealed all the letters before the surgeon could curse the fox - 11 ylapples<:ylapples:826531088188440588> have been awarded.');
             return winByLettersRevealed(profileData);
         }
     }
