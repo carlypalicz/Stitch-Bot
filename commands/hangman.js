@@ -233,8 +233,10 @@ function loseByWordGuessedWrong(){
     .setColor('A91B0D')
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
-    .addField('\nThe correct answer was: ', word)
-    .addField('\nOh No...', orbs(5, false) + cursedFox())
+    .addField('\u200b', '\u200b')
+    .addField('The correct answer was: ', word)
+    .addField('\u200b', '\u200b')
+    .addField('Oh No...', orbs(5, false) + cursedFox())
     .setTimestamp();
 }
 
