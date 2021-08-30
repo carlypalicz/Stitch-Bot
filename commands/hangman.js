@@ -230,7 +230,7 @@ function loseByWordGuessedWrong(){
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('The correct answer was: ', word)
-    .addField('Oh No...', surgeon() + orbs() + cursedFox())
+    .addField('Oh No...', surgeon() + orbs(5) + cursedFox())
     .setTimestamp();
 }
 
@@ -266,10 +266,10 @@ function convert_ms(duration){
 }
 
 function cursedFox(){
-    let line1 = '<:cursed_0_0:881761989775478795><:cursed_1_0:881761989834178600><:cursed_2_0:881761989846765568><:cursed_3_0:881761989330886658>\n';
-    let line2 = '<:cursed_0_1:881761990043906079><:cursed_1_1:881761990358491186><:cursed_2_1:881761989939068958><:cursed_3_1:881761515152224267>\n';
-    let line3 = '<:cursed_0_2:881761990186504242><:cursed_1_2:881761989725134899><:cursed_2_2:881761989846790184>\n';
-    let line4 = '<:cursed_0_3:881761989687406612><:cursed_1_3:881761989813239868>';
+    let line1 = '<:blank:881814718917001237><:blank:881814718917001237><:blank:881814718917001237><:cursed_0_0:881761989775478795><:cursed_1_0:881761989834178600><:cursed_2_0:881761989846765568><:cursed_3_0:881761989330886658>\n';
+    let line2 = '<:blank:881814718917001237><:blank:881814718917001237><:blank:881814718917001237><:cursed_0_1:881761990043906079><:cursed_1_1:881761990358491186><:cursed_2_1:881761989939068958><:cursed_3_1:881761515152224267>\n';
+    let line3 = '<:blank:881814718917001237><:blank:881814718917001237><:blank:881814718917001237><:cursed_0_2:881761990186504242><:cursed_1_2:881761989725134899><:cursed_2_2:881761989846790184>\n';
+    let line4 = '<:blank:881814718917001237><:blank:881814718917001237><:blank:881814718917001237><:cursed_0_3:881761989687406612><:cursed_1_3:881761989813239868>';
     return '\n' + line1+line2+line3+line4;
 }
 
