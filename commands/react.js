@@ -47,7 +47,7 @@ module.exports = {
     description: 'add a reaction to a message',
     async execute(message, profileData){
         current_time = Date.now();
-        const cooldown_amount =  1000 * 60 * 2; //5 minutes
+        const cooldown_amount =  1000 * 60 * 5; //5 minutes
         const expiration_time = profileData.lastHangman+cooldown_amount;
 
         if (current_time < profileData.lastHangman+cooldown_amount){
@@ -81,7 +81,8 @@ module.exports = {
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', strikes)
             .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
-            .addField('<:surgeon:881749379390779433>', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
+            .addField('\u200b', '<:plague_doctor_0_0:881752822171983872><:plague_doctor_1_0:881752821848997919>\n<:plague_doctor_0_1:881752822075506718><:plague_doctor_1_1:881752821828038708>\n')
+            .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
             .setTimestamp();
         message.channel.send(embed)
 
