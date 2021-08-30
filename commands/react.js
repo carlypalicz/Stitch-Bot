@@ -73,16 +73,18 @@ module.exports = {
 
             collector.on('collect', (reaction, user) => {
                 let emojiname = reaction.emoji.name;
-                if (emojiname.substring(0, 6) != "stitch"){
-                    console.log('illegal emoji');
+                if (emojiname.substring(0, 6) != "stitch" || user.id != message.author.id){ //if they didnt guess a stitch letter, or if the wrong person made a guess, dont count it
+                    console.log('illegal reaction');
+                    reaction.remove()
+                        .catch(err => console.log('failed to remove reaction'));
                 }
-                else if (user.id != message.author.id){
-                    console.log('wrong person reacted');
+
+                else {
+                    console.log(`Collected ${reaction.emoji.name}`);
+                    descrip += alphabet[emojiname];
+                    console.log(emojiname.charAt(emojiname.length-1));
+                    msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length-1), emojiname));
                 }
-                console.log(`Collected ${reaction.emoji.name}`);
-                descrip += alphabet[emojiname];
-                console.log(emojiname.charAt(emojiname.length-1));
-                msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length-1), emojiname));
             });
 
             collector.on('end', collected => {
