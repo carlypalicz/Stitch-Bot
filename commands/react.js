@@ -81,8 +81,8 @@ module.exports = {
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', strikes)
             .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
-            .addField('\u200b', '<:plague_doctor_0_0:881752822171983872><:plague_doctor_1_0:881752821848997919>\n<:plague_doctor_0_1:881752822075506718><:plague_doctor_1_1:881752821828038708>\n')
-            .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
+            .addField('\u200b', surgeon()+'<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>\n')
+            .addField('\u200b', '🦊')
             .setTimestamp();
         message.channel.send(embed)
 
@@ -264,4 +264,17 @@ function convert_ms(duration){
     let minutes = Math.floor((duration / (1000 * 60)) % 60);
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     return minutes + " minutes";
+}
+
+function fox(){
+    let line1 = '<:cursed_0_0:881761989775478795><:cursed_1_0:881761989834178600><:cursed_2_0:881761989846765568><:cursed_3_0:881761989330886658>\n';
+    let line2 = '<:cursed_0_1:881761990043906079><:cursed_1_1:881761990358491186><:cursed_2_1:881761989939068958><:cursed_3_1:881761515152224267>\n';
+    let line3 = '<:cursed_0_2:881761990186504242><:cursed_1_2:881761989725134899><:cursed_2_2:881761989846790184>\n';
+    let line4 = '<:cursed_0_3:881761989687406612><:cursed_1_3:881761989813239868>';
+    return line1+line2+line3+line4;
+}
+
+
+function surgeon(){
+    return '<:plague_doctor_0_0:881752822171983872><:plague_doctor_1_0:881752821848997919>\n<:plague_doctor_0_1:881752822075506718><:plague_doctor_1_1:881752821828038708>';
 }
