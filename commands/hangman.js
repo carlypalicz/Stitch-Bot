@@ -81,7 +81,7 @@ module.exports = {
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', strikes)
             .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
-            .addField('Stop the Surgeon from cursing the fox!', surgeon()+'\n   ' + '<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>\n')
+            .addField('Stop the Surgeon from cursing the fox!', surgeon()+'\n\t' + '<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>\n')
             .setTimestamp();
         message.channel.send(embed)
 
@@ -279,7 +279,7 @@ function surgeon(){
 }
 
 function orbs(strikes){
-    let output = '';
+    let output = '\t';
     let orbs = ['🔵','<:pink_orb:881740876257321000>','<:black_orb:881741304030175322>','🟡','🔴'];
     for (let i = 0; i < 5; i++){
         if (i < strikes){
