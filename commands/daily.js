@@ -14,7 +14,7 @@ module.exports = {
         }
 
         const reward = 11;
-        const response = await profileModel.findOneAndUpdate({
+        await profileModel.findOneAndUpdate({
             userID: profileData.userID,
         }, {
             lastDaily: current_time,

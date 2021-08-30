@@ -119,6 +119,7 @@ client.on('message', async (message) => {
                 serverID: message.guild.id,
                 ylapples: 11,
                 lastDaily: 0,
+                lastHangman: 0,
                 name: name,
             });
             profile.save();
@@ -178,7 +179,7 @@ client.on('message', async (message) => {
         client.commands.get('richest').execute(message, args, name);
     }
     else if (command === 'react'){
-        client.commands.get('react').execute(message);
+        client.commands.get('react').execute(message, profileData);
     }
     else if (command === 'set-ylapples'){
         client.commands.get('set-ylapples').execute(message, args, profileData);

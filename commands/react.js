@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const profileModel = require('../models/profileSchema');
 
 const time = 60000 //1 minute
 
@@ -44,7 +45,16 @@ const alphabet={
 module.exports = {
     name: 'react',
     description: 'add a reaction to a message',
-    execute(message){
+    execute(message, profileData){
+        const current_time = Date.now();
+        const cooldown_amount =  1000 * 60 * 3; //3 minutes
+        const expiration_time = profileData.lastHangman+cooldown_amount;
+
+        if (current_time < profileData.lastDaily+cooldown_amount){
+            const time_left = (expiration_time - current_time);
+            return message.channel.send(`Please wait ${convert_ms(time_left)} before using this command again.`);
+        }
+
         let rand = Math.floor(Math.random()*(wordBank.length)); //index for a random word
         word = wordBank[rand];
         wordLength = word.length;
@@ -81,7 +91,7 @@ module.exports = {
                 else if (emojiname.substring(0, 6) == "stitch" && user.id == message.author.id) {
                     console.log(`Collected ${reaction.emoji.name}`);
                     descrip += alphabet[emojiname];
-                    msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length-1), emojiname));
+                    msg.edit(makeGuess(emojiname.charAt(emojiname.length-1), emojiname, profileData));
                 }
                 reaction.remove()
                 .catch(err => console.log('failed to remove reaction'));
@@ -96,10 +106,13 @@ module.exports = {
                 if (gameOver){
                     return;
                 }
+                if (guess.charAt(0) == '!'){
+                    return;
+                }
                 let guess = collected.first().content.replace(/[^a-z+\s]+/gi, '');
                 console.log(guess)
                 if (guess.toLowerCase() == word){
-                    msg.edit(winByWordGuessedRight());
+                    msg.edit(winByWordGuessedRight(profileData));
                 }
                 else {
                     msg.edit(loseByWordGuessedWrong());
@@ -116,7 +129,7 @@ function filter(reaction, user){
     return (!user.bot);
 }
 
-function makeGuess(description, letter, emote_name){
+function makeGuess(letter, emote_name, profileData){
     if (!lettersGuessed.includes(alphabet[emote_name])) {
         lettersGuessed.push(alphabet[emote_name]);
         console.log('word to guess is: ' + word);
@@ -139,7 +152,7 @@ function makeGuess(description, letter, emote_name){
             console.log(guesses)
         }
         if (guesses.indexOf('❔') === -1){
-            return winByLettersRevealed();
+            return winByLettersRevealed(profileData);
         }
     }
 
@@ -160,64 +173,55 @@ function getDescription() {
     return description;
 }
 
-function winByLettersRevealed(){
+function winByLettersRevealed(profileData){
     gameOver = true;
+    awardYlapples(profileData);
     let description = "CONGRATS! The word/phrase has been fully revealed, and you have won 11 ylapples. Feel free to play again in an hour!\n"
 
-    let embed = new Discord.MessageEmbed()
+    return new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('You WON!!! | Let\'s Play Hangman')
     .setDescription(description)
     .addField('Great job! The correct answer was: ', word)
     .setTimestamp();
-
-    resetGame();
-    return embed;
 }
 
 function loseByOutOfTurns(){
     gameOver = true;
     let description = "You did not correctly guess the word/phrase, so no ylapples have been earned. Please try again in an hour!\n"
 
-    let embed = new Discord.MessageEmbed()
+    return new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('The correct answer was: ', word)
     .setTimestamp();
-
-    resetGame();
-    return embed;
 }
 
-function winByWordGuessedRight(){
+function winByWordGuessedRight(profileData){
     gameOver = true;
+    awardYlapples(profileData);
+
     let description = "CONGRATS! You correctly guessed the word/phrase, and 11 ylapples have been earned. Feel free to play again in an hour!\n"
 
-    let embed = new Discord.MessageEmbed()
+    return new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('You WON!!! | Let\'s Play Hangman')
     .setDescription(description)
     .addField('Great job! The correct answer was: ', word)
     .setTimestamp();
-
-    resetGame();
-    return embed;
 }
 
 function loseByWordGuessedWrong(){
     gameOver = true;
     let description = "You made an incorrect guess, so no ylapples have been earned. Please try again in an hour!\n"
 
-    let embed = new Discord.MessageEmbed()
+    return new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('The correct answer was: ', word)
     .setTimestamp();
-
-    resetGame();
-    return embed;
 }
 
 function timedOut(){
@@ -225,16 +229,29 @@ function timedOut(){
 
     let description = "No guess made in 5 minutes, game has timed out.\n"
 
-    let embed = new Discord.MessageEmbed()
+    return new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('Timed Out | Let\'s Play Hangman')
     .setDescription(description)
     .setTimestamp();
-
-    resetGame();
-    return embed;    
 }
 
-function resetGame(){
-    console.log('game reset');
+function awardYlapples(profileData){
+    const reward = 11;
+
+    await profileModel.findOneAndUpdate({
+        userID: profileData.userID,
+    }, {
+        lastHangman: current_time,
+        $inc: {
+            ylapples: reward,
+        }
+    });
+    return message.channel.send(`You earned ${reward} ylapples!`);
+}
+
+function convert_ms(duration){
+    let minutes = Math.floor((duration / (1000 * 60)) % 60),
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    return minutes + " minutes";
 }

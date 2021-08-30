@@ -5,6 +5,7 @@ const profileSchema = new mongoose.Schema({
     serverID: { type: String, require: true},
     ylapples: {type: Number, default: 0},
     lastDaily: {type: Number, default: 0},
+    lastHangman: {type: Number, default: 0},
     name: { type: String },
 })
 
