@@ -230,7 +230,7 @@ function loseByWordGuessedWrong(){
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('The correct answer was: ', word)
-    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
+    .addField('Oh No...', surgeon() + orbs() + cursedFox())
     .setTimestamp();
 }
 
@@ -265,12 +265,12 @@ function convert_ms(duration){
     return minutes + " minutes";
 }
 
-function fox(){
+function cursedFox(){
     let line1 = '<:cursed_0_0:881761989775478795><:cursed_1_0:881761989834178600><:cursed_2_0:881761989846765568><:cursed_3_0:881761989330886658>\n';
     let line2 = '<:cursed_0_1:881761990043906079><:cursed_1_1:881761990358491186><:cursed_2_1:881761989939068958><:cursed_3_1:881761515152224267>\n';
     let line3 = '<:cursed_0_2:881761990186504242><:cursed_1_2:881761989725134899><:cursed_2_2:881761989846790184>\n';
     let line4 = '<:cursed_0_3:881761989687406612><:cursed_1_3:881761989813239868>';
-    return line1+line2+line3+line4;
+    return '\n' + line1+line2+line3+line4;
 }
 
 
@@ -304,8 +304,4 @@ function asciifox(){
     let line8 = '```';
 
     return line0+line1+line2+line3+line4+line5+line6+line7+line8;
-}
-
-function cursedfox(){
-
 }
