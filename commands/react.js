@@ -69,11 +69,16 @@ module.exports = {
         message.channel.send(embed)
 
         .then(function (msg) {
-            const collector = msg.createReactionCollector(filter, {max: 16});
+            const collector = msg.createReactionCollector(filter, {max: 2});
 
             collector.on('collect', (reaction, user) => {
                 let emojiname = reaction.emoji.name;
-                if (emojiname.substring(0, 6) == "stitch" && user.id == message.author.id) {
+                
+                if (gameOver){
+                    return;
+                }
+
+                else if (emojiname.substring(0, 6) == "stitch" && user.id == message.author.id) {
                     console.log(`Collected ${reaction.emoji.name}`);
                     descrip += alphabet[emojiname];
                     console.log(emojiname.charAt(emojiname.length-1));
