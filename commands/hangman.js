@@ -98,7 +98,7 @@ module.exports = {
                 else if (emojiname.substring(0, 6) == "stitch" && user.id == message.author.id) {
                     console.log(`Collected ${reaction.emoji.name}`);
                     descrip += alphabet[emojiname];
-                    msg.edit(makeGuess(emojiname.charAt(emojiname.length-1), emojiname, profileData));
+                    msg.edit(makeGuess(emojiname.charAt(emojiname.length-1), emojiname, profileData, message));
                 }
                 reaction.remove()
                 .catch(err => console.log('failed to remove reaction'));
@@ -117,6 +117,7 @@ module.exports = {
                 console.log(guess)
                 if (guess.toLowerCase() == word){
                     msg.edit(winByWordGuessedRight(profileData));
+                    message.reply('Great guess! You won 11 ylapples <:ylapples:826531088188440588> and saved the fox!')
                 }
                 else {
                     msg.edit(loseByWordGuessedWrong());
@@ -134,7 +135,7 @@ function filter(reaction, user){
     return (!user.bot);
 }
 
-function makeGuess(letter, emote_name, profileData){
+function makeGuess(letter, emote_name, profileData, message){
     if (!lettersGuessed.includes(alphabet[emote_name])) {
         lettersGuessed.push(alphabet[emote_name]);
         console.log('word to guess is: ' + word);
@@ -157,6 +158,7 @@ function makeGuess(letter, emote_name, profileData){
             console.log(guesses)
         }
         if (guesses.indexOf('❔') === -1){
+            message.reply('You revealed all of the letters before the surgeon cursed the fox, great job! 11 ylapples<:ylapples:826531088188440588> have been awarded.');
             return winByLettersRevealed(profileData);
         }
     }
