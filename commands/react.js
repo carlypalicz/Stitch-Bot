@@ -76,8 +76,9 @@ module.exports = {
                 if (emojiname.substring(0, 6) != "stitch"){
                     console.log('illegal emoji');
                 }
-
-                console.log(reaction.users);
+                else if (user.id != message.author.id){
+                    console.log('wrong person reacted');
+                }
                 console.log(`Collected ${reaction.emoji.name}`);
                 descrip += alphabet[emojiname];
                 console.log(emojiname.charAt(emojiname.length-1));
