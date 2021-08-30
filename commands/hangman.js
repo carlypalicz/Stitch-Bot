@@ -167,7 +167,7 @@ function makeGuess(letter, emote_name, profileData){
     .setDescription(getDescription())
     .addField('Wrong Guesses Left: ', strikes)
     .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
-    .addField('\u200b', surgeon() +'\n' + orbs(5-strikes))
+    .addField('\u200b', surgeon() +'\n' + orbs(5-strikes, true))
     .setTimestamp();
 }
 
@@ -230,7 +230,7 @@ function loseByWordGuessedWrong(){
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('The correct answer was: ', word)
-    .addField('Oh No...', surgeon() + '\n' + orbs(5) + cursedFox())
+    .addField('Oh No...', orbs(5, false) + cursedFox())
     .setTimestamp();
 }
 
@@ -266,10 +266,10 @@ function convert_ms(duration){
 }
 
 function cursedFox(){
-    let line1 = '<:blank:881814718917001237><:blank:881814718917001237><:cursed_0_0:881761989775478795><:cursed_1_0:881761989834178600><:cursed_2_0:881761989846765568><:cursed_3_0:881761989330886658>\n';
-    let line2 = '<:blank:881814718917001237><:blank:881814718917001237><:cursed_0_1:881761990043906079><:cursed_1_1:881761990358491186><:cursed_2_1:881761989939068958><:cursed_3_1:881761515152224267>\n';
-    let line3 = '<:blank:881814718917001237><:blank:881814718917001237><:cursed_0_2:881761990186504242><:cursed_1_2:881761989725134899><:cursed_2_2:881761989846790184>\n';
-    let line4 = '<:blank:881814718917001237><:blank:881814718917001237><:cursed_0_3:881761989687406612><:cursed_1_3:881761989813239868>';
+    let line1 = '<:blank:881814718917001237><:cursed_0_0:881761989775478795><:cursed_1_0:881761989834178600><:cursed_2_0:881761989846765568><:cursed_3_0:881761989330886658>\n';
+    let line2 = '<:blank:881814718917001237><:cursed_0_1:881761990043906079><:cursed_1_1:881761990358491186><:cursed_2_1:881761989939068958><:cursed_3_1:881761515152224267>\n';
+    let line3 = '<:blank:881814718917001237><:cursed_0_2:881761990186504242><:cursed_1_2:881761989725134899><:cursed_2_2:881761989846790184>\n';
+    let line4 = '<:blank:881814718917001237><:cursed_0_3:881761989687406612><:cursed_1_3:881761989813239868>';
     return '\n' + line1+line2+line3+line4;
 }
 
@@ -278,8 +278,8 @@ function surgeon(){
     return '<:plague_doctor_0_0:881752822171983872><:plague_doctor_1_0:881752821848997919>\n<:plague_doctor_0_1:881752822075506718><:plague_doctor_1_1:881752821828038708>';
 }
 
-function orbs(strikes){
-    let output = '<:blank:881814718917001237>';
+function orbs(strikes, blank){
+    let output = blank ? '<:blank:881814718917001237>' : '';
     let orbs = ['🔵','<:pink_orb:881740876257321000>','<:black_orb:881741304030175322>','🟡','🔴'];
     for (let i = 0; i < 5; i++){
         if (i < strikes){
