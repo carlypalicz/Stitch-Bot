@@ -69,7 +69,7 @@ module.exports = {
         message.channel.send(embed)
 
         .then(function (msg) {
-            const collector = msg.createReactionCollector(filter, {max: 2});
+            const collector = msg.createReactionCollector(filter);
 
             collector.on('collect', (reaction, user) => {
                 let emojiname = reaction.emoji.name;
