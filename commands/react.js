@@ -5,7 +5,7 @@ const time = 60000 //1 minute
 
 let guesses;
 let lettersGuessed;
-
+let current_time;
 let word, wordLength, strikes;
 
 let gameOver;
@@ -46,7 +46,7 @@ module.exports = {
     name: 'react',
     description: 'add a reaction to a message',
     execute(message, profileData){
-        const current_time = Date.now();
+        current_time = Date.now();
         const cooldown_amount =  1000 * 60 * 3; //3 minutes
         const expiration_time = profileData.lastHangman+cooldown_amount;
 
@@ -245,7 +245,6 @@ async function awardYlapples(profileData){
             ylapples: reward,
         }
     });
-    return message.channel.send(`You earned ${reward} ylapples!`);
 }
 
 function convert_ms(duration){
