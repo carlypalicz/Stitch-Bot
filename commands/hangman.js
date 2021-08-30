@@ -234,8 +234,7 @@ function loseByWordGuessedWrong(){
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('The correct answer was: ', word)
-    .addField('\u200b', '\u200b')
-    .addField('Oh No...', orbs(5, false) + cursedFox())
+    .addField('\u200b', orbs(5, false) + cursedFox())
     .setTimestamp();
 }
 
