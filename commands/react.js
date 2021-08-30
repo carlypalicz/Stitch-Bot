@@ -81,7 +81,6 @@ module.exports = {
                 else if (emojiname.substring(0, 6) == "stitch" && user.id == message.author.id) {
                     console.log(`Collected ${reaction.emoji.name}`);
                     descrip += alphabet[emojiname];
-                    console.log(emojiname.charAt(emojiname.length-1));
                     msg.edit(makeGuess(descrip, emojiname.charAt(emojiname.length-1), emojiname));
                 }
                 reaction.remove()
@@ -118,10 +117,13 @@ function filter(reaction, user){
 }
 
 function makeGuess(description, letter, emote_name){
+    if (lettersGuessed.includes(alphabet[emote_name])) {
+        return;
+    }
+
     lettersGuessed.push(alphabet[emote_name]);
     console.log('word to guess is: ' + word);
     console.log('letter guessed is:' +letter)
-    console.log('index of letter in word is: ' + word.indexOf(letter));
     if (word.indexOf(letter) === -1){
         console.log("a wrong guess was made!");
         if (strikes > 0) {
@@ -129,7 +131,6 @@ function makeGuess(description, letter, emote_name){
         } else {
             return loseByOutOfTurns();
         }
-
     }
     else {
         console.log("a correct guess was made!");
