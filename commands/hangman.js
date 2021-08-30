@@ -160,7 +160,7 @@ function makeGuess(letter, emote_name, profileData, message){
             console.log(guesses)
         }
         if (guesses.indexOf('❔') === -1){
-            message.reply('great job! You revealed all the letters before the surgeon could curse the fox - 11 ylapples<:ylapples:826531088188440588> have been awarded.');
+            message.reply('great job! You revealed all the letters before the surgeon could curse the fox. 11 ylapples<:ylapples:826531088188440588> have been awarded to you as thanks.');
             return winByLettersRevealed(profileData);
         }
     }
@@ -205,8 +205,8 @@ function loseByOutOfTurns(){
     .setColor('A91B0D')
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
-    .addField('The correct answer was: ', word)
-    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
+    .addField('\nThe correct answer was: ', word)
+    .addField('\nOh No...', orbs(5, false) + cursedFox())
     .setTimestamp();
 }
 
@@ -233,8 +233,8 @@ function loseByWordGuessedWrong(){
     .setColor('A91B0D')
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
-    .addField('The correct answer was: ', word)
-    .addField('Oh No...', orbs(5, false) + cursedFox())
+    .addField('\nThe correct answer was: ', word)
+    .addField('\nOh No...', orbs(5, false) + cursedFox())
     .setTimestamp();
 }
 
