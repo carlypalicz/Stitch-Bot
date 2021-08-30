@@ -81,7 +81,7 @@ module.exports = {
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', strikes)
             .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
-            .addField('Stop the Surgeon from cursing the fox!', surgeon()+'<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>\n')
+            .addField('Stop the Surgeon from cursing the fox!', surgeon()+'\n   ' + <:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>\n')
             .setTimestamp();
         message.channel.send(embed)
 
@@ -167,7 +167,7 @@ function makeGuess(letter, emote_name, profileData){
     .setDescription(getDescription())
     .addField('Wrong Guesses Left: ', strikes)
     .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
-    .addField('\u200b', surgeon() + orbs(5-strikes))
+    .addField('\u200b', surgeon() +'\n   ' + orbs(5-strikes))
     .setTimestamp();
 }
 
@@ -304,4 +304,8 @@ function asciifox(){
     let line8 = '```';
 
     return line0+line1+line2+line3+line4+line5+line6+line7+line8;
+}
+
+function cursedfox(){
+
 }
