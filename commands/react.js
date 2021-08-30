@@ -106,9 +106,6 @@ module.exports = {
                 if (gameOver){
                     return;
                 }
-                if (guess.charAt(0) == '!'){
-                    return;
-                }
                 let guess = collected.first().content.replace(/[^a-z+\s]+/gi, '');
                 console.log(guess)
                 if (guess.toLowerCase() == word){
@@ -117,7 +114,8 @@ module.exports = {
                 else {
                     msg.edit(loseByWordGuessedWrong());
                 }
-            }).catch(() => {
+            }).catch((err) => {
+                console.log(err);
                 msg.edit(timedOut());
             })
 
