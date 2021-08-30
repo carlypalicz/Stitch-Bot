@@ -282,7 +282,7 @@ function orbs(strikes){
     let output = '';
     let orbs = ['🔵','<:pink_orb:881740876257321000>','<:black_orb:881741304030175322>','🟡','🔴'];
     for (let i = 0; i < 5; i++){
-        if (i <= strikes){
+        if (i < strikes){
             output += orbs[i];
         }
         else{
