@@ -178,8 +178,8 @@ client.on('message', async (message) => {
     else if (command === 'richest'){
         client.commands.get('richest').execute(message, args, name);
     }
-    else if (command === 'react'){
-        client.commands.get('react').execute(message, profileData);
+    else if (command === 'hangman'){
+        client.commands.get('hangman').execute(message, profileData);
     }
     else if (command === 'set-ylapples'){
         client.commands.get('set-ylapples').execute(message, args, profileData);

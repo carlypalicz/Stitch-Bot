@@ -43,8 +43,8 @@ const alphabet={
 };
 
 module.exports = {
-    name: 'react',
-    description: 'add a reaction to a message',
+    name: 'hangman',
+    description: 'play a game of hangman',
     async execute(message, profileData){
         current_time = Date.now();
         const cooldown_amount =  1000 * 60 * 2; //5 minutes
@@ -294,9 +294,9 @@ function orbs(strikes){
 
 function asciifox(){
     let line0 = '```';
-    let line1 = '　　　　　　 ／￣￣￣￣'+'\n';
-    let line2 = '　　　　　　 |　thx !' + '\n';
-    let line3 = '　　　　　　 /へ.＿＿＿' +'\n';
+    let line1 = '　　　　　　 ／￣￣￣￣￣￣￣￣￣'+'\n';
+    let line2 = '　　　　　　 | thanks bestie <3 ' + '\n';
+    let line3 = '　　　　　　 /へ.＿＿＿＿＿＿＿＿' +'\n';
     let line4 = '    |\\__/|' +'\n';
     let line5 = '   /     \\' +'\n';
     let line6 = '  /_.^ ^,_\\' + '\n';
