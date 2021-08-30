@@ -167,7 +167,7 @@ function makeGuess(letter, emote_name, profileData){
     .setDescription(getDescription())
     .addField('Wrong Guesses Left: ', strikes)
     .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
-    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
+    .addField('\u200b', surgeon() + orbs(5-strikes))
     .setTimestamp();
 }
 
@@ -276,4 +276,18 @@ function fox(){
 
 function surgeon(){
     return '<:plague_doctor_0_0:881752822171983872><:plague_doctor_1_0:881752821848997919>\n<:plague_doctor_0_1:881752822075506718><:plague_doctor_1_1:881752821828038708>';
+}
+
+function orbs(strikes){
+    let output = '';
+    let orbs = ['🔵','<:pink_orb:881740876257321000>','<:black_orb:881741304030175322>','🟡','🔴'];
+    for (let i = 0; i < 5; i++){
+        if (i <= strikes){
+            output += orbs[i];
+        }
+        else{
+            output += '<:holder:881755396686110750>'
+        }
+    }
+    return output;
 }
