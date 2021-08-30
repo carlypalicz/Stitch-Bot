@@ -73,7 +73,7 @@ module.exports = {
 
             collector.on('collect', (reaction, user) => {
                 let emojiname = reaction.emoji.name;
-                if (emojiname.substring(6) != "stitch"){
+                if (emojiname.substring(0, 6) != "stitch"){
                     console.log('illegal emoji');
                 }
                 else if (reaction.author.id != message.author.id){
