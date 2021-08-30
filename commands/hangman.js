@@ -47,7 +47,7 @@ module.exports = {
     description: 'play a game of hangman',
     async execute(message, profileData){
         current_time = Date.now();
-        const cooldown_amount =  1000 * 60 * 2; //5 minutes
+        const cooldown_amount =  1000 * 60 * 1; //5 minutes
         const expiration_time = profileData.lastHangman+cooldown_amount;
 
         if (current_time < profileData.lastHangman+cooldown_amount){
@@ -117,9 +117,10 @@ module.exports = {
                 console.log(guess)
                 if (guess.toLowerCase() == word){
                     msg.edit(winByWordGuessedRight(profileData));
-                    message.reply('Great guess! You won 11 ylapples <:ylapples:826531088188440588> and saved the fox!')
+                    message.reply('great guess! You won 11 ylapples <:ylapples:826531088188440588> and saved the fox!')
                 }
                 else {
+                    message.reply('unfortunately, you guessed incorrectly. The Surgeon thanks you for helping him escape.');
                     msg.edit(loseByWordGuessedWrong());
                 }
             }).catch((err) => {
@@ -145,6 +146,7 @@ function makeGuess(letter, emote_name, profileData, message){
             if (strikes > 1) {
                 strikes--;
             } else {
+                message.reply('uh oh...you made too many wrong guesses, and the surgeon cursed the fox. He thanks you for helping him escape.');
                 return loseByOutOfTurns();
             }
         }
@@ -158,7 +160,7 @@ function makeGuess(letter, emote_name, profileData, message){
             console.log(guesses)
         }
         if (guesses.indexOf('❔') === -1){
-            message.reply('You revealed all of the letters before the surgeon cursed the fox, great job! 11 ylapples<:ylapples:826531088188440588> have been awarded.');
+            message.reply('you revealed all the letters before the surgeon could curse the fox, great job! 11 ylapples<:ylapples:826531088188440588> have been awarded.');
             return winByLettersRevealed(profileData);
         }
     }
