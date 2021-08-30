@@ -6,7 +6,7 @@ const time = 60000 //1 minute
 let guesses;
 let lettersGuessed;
 let current_time;
-let word, wordLength, strikes;
+let word, wordLength, strikes, numLetters, numCorrectGuesses;
 
 let gameOver;
 
@@ -42,6 +42,8 @@ const alphabet={
     'stitch_z2': ['<:stitch_z2:823361048798953493>']
 };
 
+const bonusMatrix = [1, 1, 3, 5, 10, 15]; //how many bonus ylapples you get for guessing with index+1 letters left to reveal
+
 module.exports = {
     name: 'hangman',
     description: 'play a game of hangman',
@@ -67,6 +69,8 @@ module.exports = {
         guesses = [];
         lettersGuessed = [];
         gameOver = false;
+        numLetters = numUniqueChars(word);
+        numCorrectGuesses = 0;
 
         for (let i = 0; i < wordLength; i++){
             guesses[i] = (word.charAt(i) == ' ') ? '|' : '❔';
@@ -116,8 +120,11 @@ module.exports = {
                 let guess = collected.first().content.replace(/[^a-z+\s]+/gi, '');
                 console.log(guess)
                 if (guess.toLowerCase() == word){
-                    msg.edit(winByWordGuessedRight(profileData));
-                    message.reply('great guess! You won 11 ylapples <:ylapples:826531088188440588> and saved the fox!')
+                    let remainder = numLetters - numCorrectGuesses;
+                    let bonusPoints = remainder >= 6 ? bonusMatrix[5] : bonusMatrix[remainder-1];
+                    let award = 11 + bonusPoints;
+                    msg.edit(winByWordGuessedRight(profileData, award));
+                    message.reply(`great guess! You won ${award} ylapples <:ylapples:826531088188440588> and saved the fox!`)
                 }
                 else {
                     message.reply('unfortunately, you guessed incorrectly. The Surgeon thanks you for helping him escape.');
@@ -152,6 +159,7 @@ function makeGuess(letter, emote_name, profileData, message){
         }
         else {
             console.log("a correct guess was made!");
+            numCorrectGuesses++;
             for (let i = 0; i < word.length; i++){
                 if (word.charAt(i) === letter){
                     guesses[i] = letter; 
@@ -210,9 +218,9 @@ function loseByOutOfTurns(){
     .setTimestamp();
 }
 
-function winByWordGuessedRight(profileData){
+function winByWordGuessedRight(profileData, award){
     gameOver = true;
-    awardYlapples(profileData);
+    awardYlapples(profileData, award);
 
     let description = "CONGRATS! You correctly guessed the word/phrase, and 11 ylapples have been earned. Feel free to play again in an hour!\n"
 
@@ -251,8 +259,8 @@ function timedOut(){
     .setTimestamp();
 }
 
-async function awardYlapples(profileData){
-    const reward = 11;
+async function awardYlapples(profileData, bonus){
+    const reward = 11 + bonus;
 
     await profileModel.findOneAndUpdate({
         userID: profileData.userID,
@@ -308,4 +316,15 @@ function asciifox(){
     let line8 = '```';
 
     return line0+line1+line2+line3+line4+line5+line6+line7+line8;
+}
+
+function numUniqueChars(word){
+    let wordFormatted = word.replace(/[^a-z+]+/gi, '').toLowerCase();
+    let unique = '';
+    for (let i = 0; i < wordFormatted.length; i++){
+        if (unique.indexOf(wordFormatted.charAt(i)) === -1){
+            unique += wordFormatted.charAt(i);
+        } 
+    }
+    return unique.length;
 }
