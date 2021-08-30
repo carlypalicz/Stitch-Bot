@@ -81,6 +81,7 @@ module.exports = {
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', strikes)
             .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
+            .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
             .setTimestamp();
         message.channel.send(embed)
 
@@ -166,11 +167,12 @@ function makeGuess(letter, emote_name, profileData){
     .setDescription(getDescription())
     .addField('Wrong Guesses Left: ', strikes)
     .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
+    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
     .setTimestamp();
 }
 
 function getDescription() {
-    let description = 'Guess the following word/phrase by reacting to this message with a Stitch Letter!\n';
+    let description = 'Stop the Surgeon from Cursing the fox by guessing the following word/phrase by reacting to this message with Stitch letters! When you think you know the answer, submit your guess by sending it (in english) in a message in this channel.\n\n';
     for (let i = 0; i < wordLength; i++){
         description += guesses[i];
     }
@@ -187,6 +189,7 @@ function winByLettersRevealed(profileData){
     .setTitle('You WON!!! | Let\'s Play Hangman')
     .setDescription(description)
     .addField('Great job! The correct answer was: ', word)
+    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
     .setTimestamp();
 }
 
@@ -199,6 +202,7 @@ function loseByOutOfTurns(){
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('The correct answer was: ', word)
+    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
     .setTimestamp();
 }
 
@@ -213,6 +217,7 @@ function winByWordGuessedRight(profileData){
     .setTitle('You WON!!! | Let\'s Play Hangman')
     .setDescription(description)
     .addField('Great job! The correct answer was: ', word)
+    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
     .setTimestamp();
 }
 
@@ -225,6 +230,7 @@ function loseByWordGuessedWrong(){
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('The correct answer was: ', word)
+    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
     .setTimestamp();
 }
 
@@ -237,6 +243,7 @@ function timedOut(){
     .setColor('A91B0D')
     .setTitle('Timed Out | Let\'s Play Hangman')
     .setDescription(description)
+    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
     .setTimestamp();
 }
 
