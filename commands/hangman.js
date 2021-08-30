@@ -227,15 +227,13 @@ function winByWordGuessedRight(profileData){
 
 function loseByWordGuessedWrong(){
     gameOver = true;
-    let description = "You made an incorrect guess, so no ylapples have been earned. Please try again in an hour!\n"
+    let description = "You made an incorrect guess, so no ylapples have been earned. Please try again in an hour!\n\n"
 
     return new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
-    .addField('\u200b', '\u200b')
-    .addField('The correct answer was: ', word)
-    .addField('\u200b', '\u200b')
+    .addField('The correct answer was: ', word + '\n')
     .addField('Oh No...', orbs(5, false) + cursedFox())
     .setTimestamp();
 }
