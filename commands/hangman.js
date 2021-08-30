@@ -193,7 +193,7 @@ function getDescription() {
 
 function winByLettersRevealed(profileData){
     gameOver = true;
-    awardYlapples(profileData);
+    awardYlapples(profileData, 11);
     let description = "CONGRATS! The word/phrase has been fully revealed, and you have won 11 ylapples. Feel free to play again in an hour!\n"
 
     return new Discord.MessageEmbed()
@@ -259,14 +259,13 @@ function timedOut(){
     .setTimestamp();
 }
 
-async function awardYlapples(profileData, bonus){
-    const reward = 11 + bonus;
+async function awardYlapples(profileData, award){
 
     await profileModel.findOneAndUpdate({
         userID: profileData.userID,
     }, {
         $inc: {
-            ylapples: reward,
+            ylapples: award,
         }
     });
 }
