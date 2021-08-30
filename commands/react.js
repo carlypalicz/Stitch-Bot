@@ -251,7 +251,7 @@ async function awardYlapples(profileData){
 }
 
 function convert_ms(duration){
-    let minutes = Math.floor((duration / (1000 * 60)) % 60),
+    let minutes = Math.floor((duration / (1000 * 60)) % 60);
     minutes = (minutes < 10) ? "0" + minutes : minutes;
     return minutes + " minutes";
 }
