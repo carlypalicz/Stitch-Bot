@@ -45,19 +45,21 @@ const alphabet={
 module.exports = {
     name: 'react',
     description: 'add a reaction to a message',
-    execute(message, profileData){
+    async execute(message, profileData){
         current_time = Date.now();
-        const cooldown_amount =  1000 * 60 * 60; //3 minutes
+        const cooldown_amount =  1000 * 60 * 5; //5 minutes
         const expiration_time = profileData.lastHangman+cooldown_amount;
 
         if (current_time < profileData.lastHangman+cooldown_amount){
             const time_left = (expiration_time - current_time);
-            message.channel.send(`Please wait ${convert_ms(time_left)} before using this command again.`);
+            return message.channel.send(`Please wait ${convert_ms(time_left)} before using this command again.`);
         }
 
-        console.log(current_time);
-        console.log(profileData.lastHangman);
-        console.log(cooldown_amount);
+        await profileModel.findOneAndUpdate({
+            userID: profileData.userID,
+        }, {
+            lastHangman: current_time,
+        });
 
         let rand = Math.floor(Math.random()*(wordBank.length)); //index for a random word
         word = wordBank[rand];
@@ -244,7 +246,6 @@ async function awardYlapples(profileData){
     await profileModel.findOneAndUpdate({
         userID: profileData.userID,
     }, {
-        lastHangman: current_time,
         $inc: {
             ylapples: reward,
         }
