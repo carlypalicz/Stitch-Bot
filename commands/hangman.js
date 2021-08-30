@@ -49,7 +49,7 @@ module.exports = {
     description: 'play a game of hangman',
     async execute(message, profileData){
         current_time = Date.now();
-        const cooldown_amount =  1000 * 60 * 5; //5 minutes
+        const cooldown_amount =  1000 * 60 * 1; //5 minutes
         const expiration_time = profileData.lastHangman+cooldown_amount;
 
         if (current_time < profileData.lastHangman+cooldown_amount){
