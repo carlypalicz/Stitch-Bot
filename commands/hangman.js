@@ -81,7 +81,7 @@ module.exports = {
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', strikes)
             .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
-            .addField('Stop the Surgeon from cursing the fox!', surgeon()+'\n   ' + <:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>\n')
+            .addField('Stop the Surgeon from cursing the fox!', surgeon()+'\n   ' + '<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>\n')
             .setTimestamp();
         message.channel.send(embed)
 
