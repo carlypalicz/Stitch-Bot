@@ -49,12 +49,12 @@ module.exports = {
     description: 'play a game of hangman',
     async execute(message, profileData){
         current_time = Date.now();
-        const cooldown_amount =  1000 * 60 * 1; //5 minutes
+        const cooldown_amount =  1000 * 60 * 5; //5 minutes
         const expiration_time = profileData.lastHangman+cooldown_amount;
 
         if (current_time < profileData.lastHangman+cooldown_amount){
             const time_left = (expiration_time - current_time);
-            return message.channel.send(`Please wait ${convert_ms(time_left)} before using this command again.`);
+            return message.channel.send(`Please wait ${convert_ms(time_left)} before you can play again.`);
         }
 
         await profileModel.findOneAndUpdate({
@@ -84,7 +84,7 @@ module.exports = {
             .setTitle('Let\'s Play Hangman')
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', strikes)
-            .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
+            .addField('Letters Guessed: ', '\u200b' + lettersGuessed.join(', '))
             .addField('Stop the Surgeon from cursing the fox!', surgeon()+'\n<:blank:881814718917001237><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>\n')
             .setTimestamp();
         message.channel.send(embed)
@@ -113,7 +113,7 @@ module.exports = {
                 console.log(`Collected ${collected.size} items`);
             });
 
-            message.channel.awaitMessages(m => m.author.id == message.author.id, {max: 1, time: 300000}).then(collected => {
+            message.channel.awaitMessages(m => m.author.id == message.author.id, {max: 1, time: 1000 * 60 * 7}).then(collected => {
                 if (gameOver){
                     return;
                 }
@@ -178,13 +178,13 @@ function makeGuess(letter, emote_name, profileData, message){
     .setTitle('Let\'s Play Hangman')
     .setDescription(getDescription())
     .addField('Wrong Guesses Left: ', strikes)
-    .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
+    .addField('Letters Guessed: ', '\u200b' + lettersGuessed.join(', '))
     .addField('\u200b', surgeon() +'\n' + orbs(5-strikes, true))
     .setTimestamp();
 }
 
 function getDescription() {
-    let description = 'Stop the Surgeon from Cursing the fox by guessing the following word/phrase by reacting to this message with Stitch letters! When you think you know the answer, submit your guess by sending it (in english) in a message in this channel.\n\n';
+    let description = 'Stop the Surgeon from cursing the fox by guessing the following word/phrase. Make guesses by reacting to this message with Stitch letters! When you think you know the answer, submit your guess by sending it (in english) in a message in this channel.\n\n';
     for (let i = 0; i < wordLength; i++){
         description += guesses[i];
     }
@@ -214,7 +214,7 @@ function loseByOutOfTurns(){
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('\nThe correct answer was: ', word)
-    .addField('\nOh No...', orbs(5, false) + cursedFox())
+    .addField('\u200b', orbs(5, false) + cursedFox())
     .setTimestamp();
 }
 
@@ -222,7 +222,7 @@ function winByWordGuessedRight(profileData, award){
     gameOver = true;
     awardYlapples(profileData, award);
 
-    let description = "CONGRATS! You correctly guessed the word/phrase, and 11 ylapples have been earned. Feel free to play again in an hour!\n"
+    let description = `CONGRATS! You correctly guessed the word/phrase, and ${award} ylapples have been earned. Feel free to play again in an hour!\n`
 
     return new Discord.MessageEmbed()
     .setColor('A91B0D')
@@ -249,13 +249,13 @@ function loseByWordGuessedWrong(){
 function timedOut(){
     gameOver = true;
 
-    let description = "No guess made in 5 minutes, game has timed out.\n"
+    let description = "No guess made in 7 minutes, game has timed out.\n"
 
     return new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('Timed Out | Let\'s Play Hangman')
     .setDescription(description)
-    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
+    .addField('\u200b', orbs(5, false) + cursedFox())
     .setTimestamp();
 }
 
