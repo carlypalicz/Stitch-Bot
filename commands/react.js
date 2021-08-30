@@ -297,10 +297,10 @@ function asciifox(){
     let line1 = '　　　　　　 ／￣￣￣￣'+'\n';
     let line2 = '　　　　　　 |　thx !' + '\n';
     let line3 = '　　　　　　 /へ.＿＿＿' +'\n';
-    let line4 = '    |\__/|' +'\n';
+    let line4 = '    |\\__/|' +'\n';
     let line5 = '   /     \\' +'\n';
     let line6 = '  /_.^ ^,_\\' + '\n';
-    let line7 = '     \o/' +'\n';
+    let line7 = '     \\o/' +'\n';
     let line8 = '```';
 
     return line0+line1+line2+line3+line4+line5+line6+line7+line8;
