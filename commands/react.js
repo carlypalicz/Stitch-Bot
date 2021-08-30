@@ -189,7 +189,7 @@ function winByLettersRevealed(profileData){
     .setTitle('You WON!!! | Let\'s Play Hangman')
     .setDescription(description)
     .addField('Great job! The correct answer was: ', word)
-    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
+    .addField('You stopped the Surgeon!', asciifox())
     .setTimestamp();
 }
 
@@ -217,7 +217,7 @@ function winByWordGuessedRight(profileData){
     .setTitle('You WON!!! | Let\'s Play Hangman')
     .setDescription(description)
     .addField('Great job! The correct answer was: ', word)
-    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
+    .addField('You stopped the Surgeon!', asciifox())
     .setTimestamp();
 }
 
@@ -290,4 +290,16 @@ function orbs(strikes){
         }
     }
     return output;
+}
+
+function asciifox(){
+    let line1 = '　　　　　　 ／￣￣￣￣\n';
+    let line2 = '　　　　　　 |　thx !\n';
+    let line3 = '　　　　　　 /へ.＿＿＿\n';
+    let line4 = '    |\__/|\n';
+    let line5 = '   /     \\n';
+    let line6 = '  /_.^ ^,_\\n';
+    let line7 = '     \o/';
+
+    return line1+line2+line3+line4+line5+line6+line7;
 }
