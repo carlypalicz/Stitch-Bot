@@ -81,7 +81,7 @@ module.exports = {
             .setDescription(descrip)
             .addField('Wrong Guesses Left: ', strikes)
             .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
-            .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
+            .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
             .setTimestamp();
         message.channel.send(embed)
 
@@ -167,7 +167,7 @@ function makeGuess(letter, emote_name, profileData){
     .setDescription(getDescription())
     .addField('Wrong Guesses Left: ', strikes)
     .addField('Letter\'s Guessed: ', '\u200b' + lettersGuessed.join(', '))
-    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
+    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
     .setTimestamp();
 }
 
@@ -189,7 +189,7 @@ function winByLettersRevealed(profileData){
     .setTitle('You WON!!! | Let\'s Play Hangman')
     .setDescription(description)
     .addField('Great job! The correct answer was: ', word)
-    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
+    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
     .setTimestamp();
 }
 
@@ -202,7 +202,7 @@ function loseByOutOfTurns(){
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('The correct answer was: ', word)
-    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
+    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
     .setTimestamp();
 }
 
@@ -217,7 +217,7 @@ function winByWordGuessedRight(profileData){
     .setTitle('You WON!!! | Let\'s Play Hangman')
     .setDescription(description)
     .addField('Great job! The correct answer was: ', word)
-    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
+    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
     .setTimestamp();
 }
 
@@ -230,7 +230,7 @@ function loseByWordGuessedWrong(){
     .setTitle('You LOST | Let\'s Play Hangman')
     .setDescription(description)
     .addField('The correct answer was: ', word)
-    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
+    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
     .setTimestamp();
 }
 
@@ -243,7 +243,7 @@ function timedOut(){
     .setColor('A91B0D')
     .setTitle('Timed Out | Let\'s Play Hangman')
     .setDescription(description)
-    .addField('\u200b', '🦊:black_orb:🟡🔴🔵:pink_orb:')
+    .addField('\u200b', '🦊<:black_orb:881741304030175322>🟡🔴🔵<:pink_orb:881740876257321000>')
     .setTimestamp();
 }
 
