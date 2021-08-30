@@ -117,33 +117,32 @@ function filter(reaction, user){
 }
 
 function makeGuess(description, letter, emote_name){
-    if (lettersGuessed.includes(alphabet[emote_name])) {
-        return;
-    }
-
-    lettersGuessed.push(alphabet[emote_name]);
-    console.log('word to guess is: ' + word);
-    console.log('letter guessed is:' +letter)
-    if (word.indexOf(letter) === -1){
-        console.log("a wrong guess was made!");
-        if (strikes > 0) {
-            strikes--;
-        } else {
-            return loseByOutOfTurns();
-        }
-    }
-    else {
-        console.log("a correct guess was made!");
-        for (let i = 0; i < word.length; i++){
-            if (word.charAt(i) === letter){
-                guesses[i] = letter; 
+    if (!lettersGuessed.includes(alphabet[emote_name])) {
+        lettersGuessed.push(alphabet[emote_name]);
+        console.log('word to guess is: ' + word);
+        console.log('letter guessed is:' +letter)
+        if (word.indexOf(letter) === -1){
+            console.log("a wrong guess was made!");
+            if (strikes > 1) {
+                strikes--;
+            } else {
+                return loseByOutOfTurns();
             }
         }
-        console.log(guesses)
+        else {
+            console.log("a correct guess was made!");
+            for (let i = 0; i < word.length; i++){
+                if (word.charAt(i) === letter){
+                    guesses[i] = letter; 
+                }
+            }
+            console.log(guesses)
+        }
+        if (guesses.indexOf('❔') === -1){
+            return winByLettersRevealed();
+        }
     }
-    if (guesses.indexOf('❔') === -1){
-        return winByLettersRevealed();
-    }
+
     return new Discord.MessageEmbed()
     .setColor('A91B0D')
     .setTitle('Let\'s Play Hangman')
