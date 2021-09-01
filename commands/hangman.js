@@ -194,7 +194,7 @@ function getDescription() {
 function winByLettersRevealed(profileData){
     gameOver = true;
     awardYlapples(profileData, 11);
-    let description = "CONGRATS! The word/phrase has been fully revealed, and you have won 11 ylapples. Feel free to play again in an hour!\n"
+    let description = "CONGRATS! The word/phrase has been fully revealed, and you have won 11 ylapples. Feel free to try again!\n"
 
     return new Discord.MessageEmbed()
     .setColor('A91B0D')
@@ -207,7 +207,7 @@ function winByLettersRevealed(profileData){
 
 function loseByOutOfTurns(){
     gameOver = true;
-    let description = "You did not correctly guess the word/phrase, so no ylapples have been earned. Please try again in an hour!\n"
+    let description = "You did not correctly guess the word/phrase, so no ylapples have been earned. Feel free to try again!\n"
 
     return new Discord.MessageEmbed()
     .setColor('A91B0D')
