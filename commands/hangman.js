@@ -222,7 +222,7 @@ function winByWordGuessedRight(profileData, award){
     gameOver = true;
     awardYlapples(profileData, award);
 
-    let description = `CONGRATS! You correctly guessed the word/phrase, and ${award} ylapples have been earned. Feel free to play again in an hour!\n`
+    let description = `CONGRATS! You correctly guessed the word/phrase, and ${award} ylapples have been earned. Feel free to play again!\n`
 
     return new Discord.MessageEmbed()
     .setColor('A91B0D')
@@ -235,7 +235,7 @@ function winByWordGuessedRight(profileData, award){
 
 function loseByWordGuessedWrong(){
     gameOver = true;
-    let description = "You made an incorrect guess, so no ylapples have been earned. Please try again in an hour!\n"
+    let description = "You made an incorrect guess, so no ylapples have been earned. Please try again!\n"
 
     return new Discord.MessageEmbed()
     .setColor('A91B0D')
