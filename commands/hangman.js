@@ -113,10 +113,11 @@ module.exports = {
                 console.log(`Collected ${collected.size} items`);
             });
 
-            message.channel.awaitMessages(m => m.author.id == message.author.id, {max: 1, time: 1000 * 60 * 7}).then(collected => {
-                if (gameOver){
+            message.channel.awaitMessages(m => m.author.id == message.author.id, {time: 1000 * 60 * 7}).then(collected => {                
+                if (gameOver || collected.first().c){
                     return;
                 }
+
                 let guess = collected.first().content.replace(/[^a-z+\s]+/gi, '');
                 console.log(guess)
                 if (guess.toLowerCase() == word){
@@ -141,6 +142,16 @@ module.exports = {
 
 function filter(reaction, user){
     return (!user.bot);
+}
+
+function isGuess(msg){
+    if (msg.substring(0, 5).toLowerCase() === 'guess'){
+        let guess = msg.replace(/[^a-z+\s]+/gi, '').toLowerCase();
+        return (guess === word) 
+    }
+    else {
+        return false;
+    }
 }
 
 function makeGuess(letter, emote_name, profileData, message){
