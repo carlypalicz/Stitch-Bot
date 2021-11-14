@@ -1,6 +1,8 @@
 const {Client, Intents, Collection} = require('discord.js');
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.DIRECT_MESSAGE_REACTIONS]});
 
+const cron = require('node-cron');
+
 client.once('ready', () => {
     console.log('Stitch Bot is online');
 
@@ -10,6 +12,10 @@ client.once('ready', () => {
             name: 'to Homebound',
             type: 'LISTENING',
         }]
+    });
+
+    cron.schedule('*/1 * * * *', () => {
+        client.guilds.cache.get('812841672345255986').channels.cache.get('827039962212859936').send('sending a message every minute?');
     });
 });
 
