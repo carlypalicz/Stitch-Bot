@@ -5,10 +5,9 @@ module.exports = {
     description: '',
     async execute(message, args, profileData, name){
         const current_time = Date.now();
-        //const cooldown_amount = 57600 * 1000; 
-        const cooldown_amount = 60 * 1000; 
+        const cooldown_amount = 57600 * 1000; //16 hours
         const expiration_time = profileData.lastDaily+cooldown_amount;
-        const streak_limit = 120 * 1000; //48 hours
+        const streak_limit = 17280 * 1000; //48 hours
         let streak = profileData.dailyStreak;
 
         //calculate streak bonus
