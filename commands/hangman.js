@@ -87,7 +87,7 @@ module.exports = {
             .addField('Letters Guessed: ', '\u200b' + lettersGuessed.join(', '))
             .addField('Stop the Surgeon from cursing the fox!', surgeon()+'\n<:blank:881814718917001237><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>\n')
             .setTimestamp();
-        message.channel.send(embed)
+        message.channel.send({embeds: [embed]})
 
         .then(function (msg) {
             const collector = msg.createReactionCollector(filter);
