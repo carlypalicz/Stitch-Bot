@@ -4,9 +4,9 @@ const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_M
 client.once('ready', () => {
     console.log('Stitch Bot is online');
     console.log(client);
-    
+
     client.user.setPresence({
-        status: 'available',
+        status: 'dnd',
         activity: {
             name: 'Tour To Nobody',
             type: 'WATCHING',
@@ -93,6 +93,7 @@ const cooldowns = new Map();
 
 
 client.on('message', async (message) => {
+    console.log("i read a message");
 
     if(!message.content.startsWith(prefix) || message.author.bot) return; //ensures message is a command, and not sent by a bot
 
