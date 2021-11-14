@@ -3,6 +3,8 @@ const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_M
 
 client.once('ready', () => {
     console.log('Stitch Bot is online');
+    console.log(client);
+    
     client.user.setPresence({
         status: 'available',
         activity: {
