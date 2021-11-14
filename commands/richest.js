@@ -21,7 +21,7 @@ module.exports = {
             .addField('9. '+ richest[8].name, '<:ylapples:826531088188440588> ' + richest[8].ylapples)
             .addField('10. '+ richest[9].name, '<:ylapples:826531088188440588> ' + richest[9].ylapples)
             .setTimestamp();
-        message.channel.send(embed)    
+        message.channel.send({embeds: [embed]})    
 
         console.log(richest);
         console.log("richest command executed");
