@@ -1,5 +1,5 @@
 const {Client, Intents, Collection} = require('discord.js');
-const client = new Client({intents: [Intents.FLAGS.GUILDS]});
+const client = new Client({intents: [Intents.default()]});
 
 client.once('ready', () => {
     console.log('Stitch Bot is online');
