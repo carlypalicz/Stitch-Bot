@@ -1,5 +1,5 @@
-const {Discord, Intents} = require('discord.js');
-const client = new Discord.Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]});
+const {Client, Intents} = require('discord.js');
+const client = new Client({intents: [Intents.FLAGS.GUILDS]});
 
 client.once('ready', () => {
     console.log('Stitch Bot is online');
@@ -16,7 +16,7 @@ const prefix = '!';
 
 const fs = require('fs');
 
-client.commands = new Discord.Collection();
+client.commands = new Client.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for (const file of commandFiles){
