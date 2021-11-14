@@ -13,6 +13,6 @@ module.exports = {
             .setTimestamp()
             .setFooter('type !introduce for help using Stitch Bot');
 
-        message.channel.send(embed);
+        message.channel.send({embeds: [embed]});
     }
 }
