@@ -49,13 +49,13 @@ module.exports = {
     description: 'play a game of hangman',
     async execute(message, profileData){
         current_time = Date.now();
-        const cooldown_amount =  1000 * 60 * 1; //5 minutes
-        const expiration_time = profileData.lastHangman+cooldown_amount;
+        //const cooldown_amount =  1000 * 60 * 1; 
+        //const expiration_time = profileData.lastHangman+cooldown_amount;
 
-        if (current_time < profileData.lastHangman+cooldown_amount){
-            const time_left = (expiration_time - current_time);
-            return message.channel.send(`Please wait ${convert_ms(time_left)} before you can play again.`);
-        }
+        // if (current_time < profileData.lastHangman+cooldown_amount){
+        //     const time_left = (expiration_time - current_time);
+        //     return message.channel.send(`Please wait ${convert_ms(time_left)} before you can play again.`);
+        // }
 
         await profileModel.findOneAndUpdate({
             userID: profileData.userID,
