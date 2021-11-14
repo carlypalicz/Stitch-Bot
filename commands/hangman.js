@@ -113,12 +113,8 @@ module.exports = {
                 console.log(`Collected ${collected.size} items`);
             });
 
-            message.channel.awaitMessages( 
-                {
-                    time: 1000 * 60 * 7,
-                    filter: m => m.author.id == message.author.id
-                }).then(collected => {                
-                if (gameOver || collected.first().c){
+            message.channel.awaitMessages({filter: m => m.author.id == message.author.id, time: 1000 * 60 * 7, max:1}).then(collected => {                
+                if (gameOver){
                     return;
                 }
 
