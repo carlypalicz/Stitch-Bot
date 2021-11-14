@@ -112,6 +112,7 @@ client.on('message', async (message) => {
     else {
         const member = await message.guild.members.cache.get(message.author.id);
         name = member.nickname ? member.nickname : message.author.username;
+        test = member.displayName
     }
 
     let profileData;
@@ -124,6 +125,7 @@ client.on('message', async (message) => {
                 serverID: message.guild.id,
                 ylapples: 11,
                 lastDaily: 0,
+                dailyStreak: 1,
                 lastHangman: 0,
                 name: name,
             });
