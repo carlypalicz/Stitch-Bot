@@ -3,7 +3,6 @@ const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_M
 
 client.once('ready', () => {
     console.log('Stitch Bot is online');
-    console.log(client);
 
     client.user.setPresence({
         status: 'dnd',
@@ -94,8 +93,12 @@ const cooldowns = new Map();
 
 client.on('message', async (message) => {
     console.log("i read a message");
+    console.log(message.content);
 
-    if(!message.content.startsWith(prefix) || message.author.bot) return; //ensures message is a command, and not sent by a bot
+    if(!message.content.startsWith(prefix) || message.author.bot){
+        console.log("no command will be executed");
+        return; //ensures message is a command, and not sent by a bot
+    } 
 
     const args = message.content.slice(prefix.length).split(/ +/); //splits the message into an array
     const command = args.shift().toLowerCase(); //the command to be executed, args is now the message minus the command
