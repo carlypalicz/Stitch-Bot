@@ -102,14 +102,14 @@ module.exports = {
                 else if (emojiname.substring(0, 6) == "stitch" && user.id == message.author.id) {
                     console.log(`Collected ${reaction.emoji.name}`);
                     descrip += alphabet[emojiname];
-                    msg.edit(makeGuess(emojiname.charAt(emojiname.length-1), emojiname, profileData, message));
+                    msg.edit({embeds: [makeGuess(emojiname.charAt(emojiname.length-1), emojiname, profileData, message)]});
                 }
                 reaction.remove()
                 .catch(err => console.log('failed to remove reaction'));
             });
 
             collector.on('end', collected => {
-                msg.edit(loseByOutOfTurns());
+                msg.edit({embeds: [loseByOutOfTurns()]});
                 console.log(`Collected ${collected.size} items`);
             });
 
@@ -124,16 +124,16 @@ module.exports = {
                     let remainder = numLetters - numCorrectGuesses;
                     let bonusPoints = remainder >= 6 ? bonusMatrix[5] : bonusMatrix[remainder-1];
                     let award = 11 + bonusPoints;
-                    msg.edit(winByWordGuessedRight(profileData, award));
+                    msg.edit({embeds: [winByWordGuessedRight(profileData, award)]});
                     message.reply(`great guess! You won ${award} ylapples <:ylapples:826531088188440588> and saved the fox!`)
                 }
                 else {
                     message.reply('unfortunately, you guessed incorrectly. The Surgeon thanks you for helping him escape.');
-                    msg.edit(loseByWordGuessedWrong());
+                    msg.edit({embeds: [loseByWordGuessedWrong()]});
                 }
             }).catch((err) => {
                 console.log(err);
-                msg.edit(timedOut());
+                msg.edit({embeds: [timedOut()]});
             })
 
         });
