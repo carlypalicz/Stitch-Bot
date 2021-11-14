@@ -7,116 +7,139 @@ const birthdays = new Map();
 birthdays.set('Danny Davis', {
     month: 'November',
     day: '16',
+    zodiac: 'Scorpio',
     message: 'hbd danny!'
 });
 birthdays.set('Bobby and Freddy Freeman', {
     month: 'November',
     day: '17',
+    zodiac: 'Scorpio',
     message: 'hbd boby fedy!'
 });
 birthdays.set('Leila Lee', {
     month: 'November',
     day: '26',
+    zodiac: 'Sagittarius',
     message: 'hbd Leila!'
 });
 birthdays.set('Penny Perkins', {
     month: 'December',
     day: '11',
+    zodiac: 'Sagittarius',
     message: 'hbd penny!'
 });
 birthdays.set('Caleb Cameron', {
     month: 'December',
     day: '24',
+    zodiac: 'Capricorn',
     message: 'hbd caleb!'
 });
 birthdays.set('Brandon Brown', {
     month: 'December',
     day: '25',
+    zodiac: 'Capricorn',
     message: 'hbd brandon!'
 });
 birthdays.set('Jamie Jones', {
     month: 'January',
     day: '4',
+    zodiac: 'Capricorn',
     message: 'hbd jamie!'
 });
 birthdays.set('Benjamin Bork', {
     month: 'January',
     day: '16',
+    zodiac: 'Capricorn',
     message: 'hbd banjo man!'
 });
 birthdays.set('Martha May', {
     month: 'February',
     day: '3',
+    zodiac: 'Aquarius',
     message: 'hbd martha!'
 });
 birthdays.set('Alex Anderson', {
     month: 'March',
     day: '1',
+    zodiac: 'Pisces',
     message: 'hbd alex!'
 });
 birthdays.set('Fence Ferguson', {
     month: 'March',
     day: '3',
+    zodiac: 'Pisces',
     message: 'hbd fence!'
 });
 birthdays.set('Jack and Jake Johnson', {
     month: 'May',
     day: '20',
+    zodiac: 'Taurus (cusp of Gemini)',
     message: 'hbd twins!'
 });
 birthdays.set('Tony Tazzari', {
     month: 'May',
     day: '28',
+    zodiac: 'Gemini',
     message: 'hbd tony!'
 });
 birthdays.set('Henry Haggarty', {
     month: 'June',
     day: '5',
+    zodiac: 'Gemini',
     message: 'hbd henry!'
 });
 birthdays.set('Harris Haggarty', {
     month: 'June',
     day: '11',
+    zodiac: 'Gemini',
     message: 'hbd harris!'
 });
 birthdays.set('Sammy Jammy', {
     month: 'June',
     day: '27',
+    zodiac: 'Cancer',
     message: 'hbd sammy!'
 });
 birthdays.set('Gretta Greene', {
     month: 'July',
     day: '19',
+    zodiac: 'Cancer',
     message: 'hbd gretta!'
 });
 birthdays.set('Lewis Lin', {
     month: 'August',
     day: '6',
+    zodiac: 'Leo',
     message: 'hbd lewis!'
 });
 birthdays.set('Gabe Godman', {
     month: 'August',
     day: '10',
+    zodiac: 'Leo',
     message: 'hbd gabe!'
 });
 birthdays.set('Tevin Thompson', {
     month: 'August',
     day: '17',
+    zodiac: 'Leo',
     message: 'hbd tevin!'
 });
 birthdays.set('Ray Razzi', {
     month: 'September',
     day: '15',
+    zodiac: 'Virgo',
     message: 'hbd ray!'
 });
 birthdays.set('Wade Wallace', {
     month: 'October',
     day: '4',
+    zodiac: 'Libra',
     message: 'hbd wade!'
 });
 birthdays.set('Suzie Simons', {
     month: 'October',
     day: '29',
+    zodiac: 'Scorpio',
     message: 'hbd suzie!'
 });
 
