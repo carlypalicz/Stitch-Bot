@@ -188,7 +188,7 @@ function makeGuess(letter, emote_name, profileData, message){
     .setColor('A91B0D')
     .setTitle('Let\'s Play Hangman')
     .setDescription(getDescription())
-    .addField('Wrong Guesses Left: ', strikes)
+    .addField('Wrong Guesses Left: ', strikes.toString())
     .addField('Letters Guessed: ', '\u200b' + lettersGuessed.join(', '))
     .addField('\u200b', surgeon() +'\n' + orbs(5-strikes, true))
     .setTimestamp();
