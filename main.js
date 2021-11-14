@@ -110,7 +110,7 @@ client.on('message', async (message) => {
         name = message.author.username;
     }
     else {
-        const member = await message.guild.member(message.author);
+        const member = await message.guild.members.cache.get(message.author.id);
         name = member.nickname ? member.nickname : message.author.username;
     }
 
