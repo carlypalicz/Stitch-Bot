@@ -186,9 +186,7 @@ client.on('message', async (message) => {
 });
 
 mongoose.connect(process.env.MONGODB_SRV, {
-    useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false
 }).then(() => {
     console.log("Stitch Bot is connected to the database:)");
 }).catch((err) => {
