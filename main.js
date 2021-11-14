@@ -3,6 +3,123 @@ const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_M
 
 const cron = require('node-cron');
 
+const birthdays = new Map();
+birthdays.set('Danny Davis', {
+    month: 'November',
+    day: '16',
+    message: 'hbd danny!'
+});
+birthdays.set('Bobby and Freddy Freeman', {
+    month: 'November',
+    day: '17',
+    message: 'hbd boby fedy!'
+});
+birthdays.set('Leila Lee', {
+    month: 'November',
+    day: '26',
+    message: 'hbd Leila!'
+});
+birthdays.set('Penny Perkins', {
+    month: 'December',
+    day: '11',
+    message: 'hbd penny!'
+});
+birthdays.set('Caleb Cameron', {
+    month: 'December',
+    day: '24',
+    message: 'hbd caleb!'
+});
+birthdays.set('Brandon Brown', {
+    month: 'December',
+    day: '25',
+    message: 'hbd brandon!'
+});
+birthdays.set('Jamie Jones', {
+    month: 'January',
+    day: '4',
+    message: 'hbd jamie!'
+});
+birthdays.set('Benjamin Bork', {
+    month: 'January',
+    day: '16',
+    message: 'hbd banjo man!'
+});
+birthdays.set('Martha May', {
+    month: 'February',
+    day: '3',
+    message: 'hbd martha!'
+});
+birthdays.set('Alex Anderson', {
+    month: 'March',
+    day: '1',
+    message: 'hbd alex!'
+});
+birthdays.set('Fence Ferguson', {
+    month: 'March',
+    day: '3',
+    message: 'hbd fence!'
+});
+birthdays.set('Jack and Jake Johnson', {
+    month: 'May',
+    day: '20',
+    message: 'hbd twins!'
+});
+birthdays.set('Tony Tazzari', {
+    month: 'May',
+    day: '28',
+    message: 'hbd tony!'
+});
+birthdays.set('Henry Haggarty', {
+    month: 'June',
+    day: '5',
+    message: 'hbd henry!'
+});
+birthdays.set('Harris Haggarty', {
+    month: 'June',
+    day: '11',
+    message: 'hbd harris!'
+});
+birthdays.set('Sammy Jammy', {
+    month: 'June',
+    day: '27',
+    message: 'hbd sammy!'
+});
+birthdays.set('Gretta Greene', {
+    month: 'July',
+    day: '19',
+    message: 'hbd gretta!'
+});
+birthdays.set('Lewis Lin', {
+    month: 'August',
+    day: '6',
+    message: 'hbd lewis!'
+});
+birthdays.set('Gabe Godman', {
+    month: 'August',
+    day: '10',
+    message: 'hbd gabe!'
+});
+birthdays.set('Tevin Thompson', {
+    month: 'August',
+    day: '17',
+    message: 'hbd tevin!'
+});
+birthdays.set('Ray Razzi', {
+    month: 'September',
+    day: '15',
+    message: 'hbd ray!'
+});
+birthdays.set('Wade Wallace', {
+    month: 'October',
+    day: '4',
+    message: 'hbd wade!'
+});
+birthdays.set('Suzie Simons', {
+    month: 'October',
+    day: '29',
+    message: 'hbd suzie!'
+});
+
 client.once('ready', () => {
     console.log('Stitch Bot is online');
 
@@ -14,7 +131,7 @@ client.once('ready', () => {
         }]
     });
 
-    cron.schedule('6 22 13 November *', () => {
+    cron.schedule('6 22 13 December *', () => {
         client.guilds.cache.get('812841672345255986').channels.cache.get('827039962212859936').send('sending a message at 10:06pm on november 13th?');
     },
     {
@@ -99,12 +216,8 @@ const alphabet={
     '<:stitch_z2:823361048798953493>': ['z']
 };
 
-const cooldowns = new Map();
-
 
 client.on('message', async (message) => {
-    console.log("i read a message");
-    console.log(message.content);
 
     if(!message.content.startsWith(prefix) || message.author.bot){
         console.log("no command will be executed");
