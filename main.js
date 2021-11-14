@@ -14,9 +14,14 @@ client.once('ready', () => {
         }]
     });
 
-    cron.schedule('*/100 * * * *', () => {
-        client.guilds.cache.get('812841672345255986').channels.cache.get('827039962212859936').send('sending a message every minute?');
-    });
+    cron.schedule('6 22 13 November *', () => {
+        client.guilds.cache.get('812841672345255986').channels.cache.get('827039962212859936').send('sending a message at 10:06pm on november 13th?');
+    },
+    {
+        scheduled: true,
+        timezone: 'America/Los_Angeles'
+    }
+    );
 });
 
 const prefix = '!';
