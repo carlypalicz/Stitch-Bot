@@ -5,10 +5,10 @@ client.once('ready', () => {
     console.log('Stitch Bot is online');
 
     client.user.setPresence({
-        status: 'dnd',
+        status: 'online',
         activities: [{
-            name: 'carly cry',
-            type: 'WATCHING',
+            name: 'to Homebound',
+            type: 'LISTENING',
         }]
     });
 });
