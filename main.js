@@ -131,8 +131,8 @@ client.once('ready', () => {
         }]
     });
 
-    cron.schedule('6 22 13 December *', () => {
-        client.guilds.cache.get('812841672345255986').channels.cache.get('827039962212859936').send('sending a message at 10:06pm on november 13th?');
+    cron.schedule('28 22 13 November *', () => {
+        client.guilds.cache.get('822718971311685633').channels.cache.get('822718971311685636').send('sending a message at 10:28pm on november 13th?');
     },
     {
         scheduled: true,
