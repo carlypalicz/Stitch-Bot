@@ -7,10 +7,10 @@ client.once('ready', () => {
 
     client.user.setPresence({
         status: 'dnd',
-        activity: {
-            name: 'Tour To Nobody',
+        activities: [{
+            name: 'carly cry',
             type: 'WATCHING',
-        }
+        }]
     });
 });
 
