@@ -1,6 +1,6 @@
-const { Discord, Intents}= require('discord.js');
+const Discord = require('discord.js');
 
-const client = new Discord.Client({intents: [Intents.FLAGS.GUILDS]});
+const client = new Discord.Client();
 
 client.once('ready', () => {
     console.log('Stitch Bot is online');
@@ -11,9 +11,6 @@ client.once('ready', () => {
             type: 'WATCHING',
         }
     });
-
-    //every ten seconds, check the time, if its the correct time, send a message
-
 });
 
 const prefix = '!';
