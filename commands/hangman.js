@@ -83,7 +83,7 @@ module.exports = {
             .setColor('A91B0D')
             .setTitle('Let\'s Play Hangman')
             .setDescription(descrip)
-            .addField('Wrong Guesses Left: ', strikes)
+            .addField('Wrong Guesses Left: ', strikes.toString())
             .addField('Letters Guessed: ', '\u200b' + lettersGuessed.join(', '))
             .addField('Stop the Surgeon from cursing the fox!', surgeon()+'\n<:blank:881814718917001237><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>\n')
             .setTimestamp();
