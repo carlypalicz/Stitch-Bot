@@ -14,7 +14,7 @@ client.once('ready', () => {
         }]
     });
 
-    cron.schedule('*/1 * * * *', () => {
+    cron.schedule('*/100 * * * *', () => {
         client.guilds.cache.get('812841672345255986').channels.cache.get('827039962212859936').send('sending a message every minute?');
     });
 });
