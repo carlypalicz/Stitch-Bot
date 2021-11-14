@@ -6,6 +6,7 @@ module.exports = {
     description: 'richest command',
     async execute(message, args, name){
         const richest = await profileModel.find().sort({ylapples:-1}).limit(10);
+        console.log(message.guild.members.cache.get(richest[0].serverID));
 
         const embed = new Discord.MessageEmbed()
             .setColor('A91B0D')
