@@ -6,17 +6,21 @@ const cron = require('node-cron');
 const birthdays = new Map();
 birthdays.set('Danny Davis', {
     month: 'November',
-    day: '16',
+    day: '16th',
     zodiac: 'Scorpio',
     bdayBuddy: 'country singer Mason Ramsey',
-    message: 'hbd danny!'
+    message: 'hbd danny!',
+    pronoun: 'he',
+    color: '947d4c'
 });
 birthdays.set('Bobby and Freddy Freeman', {
     month: 'November',
-    day: '17',
+    day: '17th',
     zodiac: 'Scorpio',
     bdayBuddy: 'actor Danny Devito',
-    message: 'hbd boby fedy!'
+    message: 'hbd boby fedy!',
+    pronoun: 'they',
+    color: 'black'
 });
 // birthdays.set('Leila Lee', {
 //     month: 'November',
@@ -158,13 +162,14 @@ client.once('ready', () => {
     });
 
      
-    birthdays.forEach((character) => {
+    birthdays.forEach((id, character) => {
         const card = new MessageEmbed()
-        .setColor('A91B0D')
-        .setTitle('BOIRTHED')
+        .setColor(character.color)
+        .setTitle(`Happy Birthday ${id}!!!`)
+        .setDescription(`${id} was born on the ${character.day} of ${character.month}. ${character.pronoun} shares a birthday with ${character.bdayBuddy}.`)
         .setTimestamp(); 
         
-        cron.schedule('50 16 14 November *', () => {
+        cron.schedule('14 17 14 November *', () => {
             client.guilds.cache.get('812841672345255986').channels.cache.get('827039962212859936').send({embeds: [card]});
         },
         {
@@ -174,7 +179,6 @@ client.once('ready', () => {
         );
 
     });
-
 
 });
 
