@@ -6,5 +6,6 @@ module.exports = {
         for (let i = 0; i < 11; i++){
             output += '🦷';
         }
-        message.channel.send(output);    }
+        message.channel.send(output);    
+    }
 }
