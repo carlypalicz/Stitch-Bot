@@ -180,7 +180,7 @@ module.exports = {
 
         tweets.forEach((emote, content) => {
             let face = (emote == 'siggy') ? siggy : (emote == 'covey') ? covey : dan;
-            client.guilds.cache.get('812841672345255986').channels.cache.get('827039962212859936').send(`${face}${content}${face}`);
+            message.channel.send(`${face}${content}${face}`);
         });
 
         // let len = tweets.length;
