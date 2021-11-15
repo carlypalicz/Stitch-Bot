@@ -5,8 +5,8 @@ module.exports = {
         const siggy = '<:Siggy:909631771820326973>';
         const dan = '<:Mr_Nauseous:909631726408581191>';
         const covey = '<:covhappy:826907997682663474>';
-        const danInd = 73;
-        const covInd = 87;
+        const danInd = 72;
+        const covInd = 86;
 
         const tweets = [
             "live laugh ugh",
