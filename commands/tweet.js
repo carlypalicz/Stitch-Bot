@@ -5,8 +5,8 @@ module.exports = {
         const siggy = '<:Siggy:909631771820326973>';
         const dan = '<:Mr_Nauseous:909631726408581191>';
         const covey = '<:covhappy:826907997682663474>';
-        const danInd = 74;
-        const covInd = 88;
+        const danInd = 96;
+        const covInd = 110;
 
         const tweets = [
             "live laugh ugh",
@@ -84,6 +84,29 @@ module.exports = {
             "if i could wake up and do one thing everyday it would be laser tag - instead i sm*ke d*pe, play music, and bang on keyboards",
             "if you eat dry cereal do you reallllly have to clean the bowl? asking for a fwend 🥺",
             "i used to go on twitter dot com and see cats with like 27.3k tweets and be like 😳😳😳 but now i like totalllly get it",
+            
+            "every time i buy an avocado i don't think about the fact that there's a pit inside the avocado",
+            "i am delirious and it's 1:14am and i just used undo send on gmail for the first time ever, 10/10 would recommend",
+            "music idea: taylor swift remix of 'this is me trying' but its 'this is me crying' lol",
+            "i am an elite hacker",
+            "i am very good at coding and i am very good at bass guitar yes i am",
+            "personal brand: unmuting myself in the work video call meeting just to silently nod in agreement",
+            "happy",
+            "whenever its 75 degrees for the first time i somehow seem to remember that i fucking love texting",
+            "website",
+            "the strongest drug known to humans is cleaning your microwave and then immediately cleaning your refrigerator",
+            "teardrops on my guitar but my guitar is actually a WASD Code-87 mechanical keyboard with brown switches w/ all custom keycaps",
+            "deciding between 'haha' and 'hahah' until the end of time",
+            "pretty drunk, gonna watch home alone 2 okay?",
+            "i love throwing my phone on my bed in a decisive act of freeing myself from such a toxic appendage, only to immediately realize i need it to control the lights in my apartment",
+            "i wanna make music that sounds like this 😔😏🥺",
+            "don't underestimate being caffeinated and moisturized",
+            "getting better at feeling the things i don't want to feel",
+            "🚨🚨come werk w me🚨🚨",
+            "startup idea: West Carolina",
+            "okay the real highlight of my year was just now 2:36pm on dec 31 when i put a full caramel ed!ble in my afternoon coffee thank you see you in 2021",
+            "the actual highlight of my year was monday night when the bills buried the patriots and i was p lit drinking m*callen 12",
+            "the highlight of my year was when i told my dentist i'd been flossing and she audibly gasped",
             //end dan tweets, start covey
             "I\'m sorry but if you have to jog to keep up with my normal walking speed, I\'m cutting you from my zombie apocalypse survival team",
             "should we made \"danger five\" themed music video cause i think we should",
@@ -185,7 +208,7 @@ module.exports = {
         let face = (rand <= danInd) ? dan : (rand > covInd) ? siggy : covey;
         message.channel.send(face + "*" + tweets[rand] + "*" + face);
 
-        console.log(tweets[74]);
-        console.log(tweets[88]);
+        console.log(tweets[96]);
+        console.log(tweets[110]);
     }
 }
