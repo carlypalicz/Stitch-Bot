@@ -41,7 +41,7 @@ module.exports = {
             "this is the Diet Coke of vampire movies",
             "low key used to be a little freaked out by my parents basement. now i spent like 14 hours a day there",
             "it's 6:06pm time time to change into my outdoor sweatpants and go outside to look at a tree or something - there's a whole world out there",
-            "i start every video call meeting with a heart \"hey what's up YouTube!?\"",
+            "i start every video call meeting with a hearty \"hey what's up YouTube!?\"",
             "pineappleblueberry",
             "stuff really out here taking time to do",
             "something about being in the suburbs just makes me wanna drink soda idk man",
