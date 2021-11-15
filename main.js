@@ -162,14 +162,14 @@ client.once('ready', () => {
     });
 
      
-    birthdays.forEach((id, character) => {
+    birthdays.forEach((character, id) => {
         const card = new MessageEmbed()
         .setColor(character.color)
         .setTitle(`Happy Birthday ${id}!!!`)
         .setDescription(`${id} was born on the ${character.day} of ${character.month}. ${character.pronoun} shares a birthday with ${character.bdayBuddy}.`)
         .setTimestamp(); 
         
-        cron.schedule('14 17 14 November *', () => {
+        cron.schedule('18 17 14 November *', () => {
             client.guilds.cache.get('812841672345255986').channels.cache.get('827039962212859936').send({embeds: [card]});
         },
         {
