@@ -360,6 +360,9 @@ client.on('message', async (message) => {
     else if (command === 'set-ylapples'){
         client.commands.get('set-ylapples').execute(message, args, profileData);
     }
+    else if (command === 'tweet'){
+        client.commands.get('tweet').execute(message, args, profileData);
+    }
 });
 
 mongoose.connect(process.env.MONGODB_SRV, {
