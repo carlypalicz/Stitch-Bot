@@ -309,6 +309,11 @@ client.on('message', async (message) => {
         client.commands.get('balance').execute(message, args, profileData, name);
     }
 
+    else if (command === 'teeth'){
+        await profileData;
+        client.commands.get('teeth').execute(message, args, profileData, name);
+    }
+
     else if (command === 'daily'){
         client.commands.get('daily').execute(message, args, profileData, name);
     }
