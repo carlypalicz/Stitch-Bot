@@ -5,8 +5,8 @@ module.exports = {
         const siggy = '<:Siggy:909631771820326973>';
         const dan = '<:Mr_Nauseous:909631726408581191>';
         const covey = '<:covhappy:826907997682663474>';
-        const danInd = 72;
-        const covInd = 86;
+        const danInd = 73;
+        const covInd = 87;
 
         const tweets = [
             "live laugh ugh",
@@ -143,7 +143,7 @@ module.exports = {
             "Beeps per minute",
             "Brush your teeth or go to jail",
             "Pirate aesthetic",
-            "Growing out my fingers so I can covid-test myself ",
+            "Growing out my fingers so I can covid-test myself",
             "Transparent toaster",
             "Olive milk",
             "I don\'t even tuck my shirt in anymore idgaf",
@@ -177,12 +177,17 @@ module.exports = {
             "Sliced onions and regular milk",
             "Once upon a time toilet paper didn't exist, now people peel tomatoes",
             "Fingertips in the eyeballs\n\n(This tweet is brought to you in collaboration with Dan Hemerlein)",
-            "Is it not proof of god\'s benevolent tinkering that, of all living creatures, only the human is capable of compl,siggy"
+            "Is it not proof of god\'s benevolent tinkering that, of all living creatures, only the human is capable of complaining"
         ];
 
         let len = tweets.length;
-        let rand = Math.floor(Math.random()*(len));
-        let face = (rand < danInd) ? dan : (rand > covInd) ? siggy : covey;
-        message.channel.send(face + "*" + tweets[rand] + "*" + face);
+        // let rand = Math.floor(Math.random()*(len));
+        // let face = (rand <= danInd) ? dan : (rand > covInd) ? siggy : covey;
+        // message.channel.send(face + "*" + tweets[rand] + "*" + face);
+
+        for (let i = 0; i < len; i++){
+            let face = (i <= danInd) ? dan : (i > covInd) ? siggy : covey;
+            message.channel.send(face + "*" + tweets[i] + "*" + face);
+        }
     }
 }
