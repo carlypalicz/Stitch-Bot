@@ -5,8 +5,8 @@ module.exports = {
         const siggy = '<:Siggy:909631771820326973>';
         const dan = '<:Mr_Nauseous:909631726408581191>';
         const covey = '<:covhappy:826907997682663474>';
-        const danInd = 73;
-        const covInd = 87;
+        const danInd = 74;
+        const covInd = 88;
 
         const tweets = [
             "live laugh ugh",
@@ -181,13 +181,11 @@ module.exports = {
         ];
 
         let len = tweets.length;
-        // let rand = Math.floor(Math.random()*(len));
-        // let face = (rand <= danInd) ? dan : (rand > covInd) ? siggy : covey;
-        // message.channel.send(face + "*" + tweets[rand] + "*" + face);
+        let rand = Math.floor(Math.random()*(len));
+        let face = (rand <= danInd) ? dan : (rand > covInd) ? siggy : covey;
+        message.channel.send(face + "*" + tweets[rand] + "*" + face);
 
-        for (let i = 0; i < len; i++){
-            let face = (i <= danInd) ? dan : (i > covInd) ? siggy : covey;
-            message.channel.send(face + "*" + tweets[i] + "*" + face);
-        }
+        console.log(tweets[74]);
+        console.log(tweets[88]);
     }
 }
