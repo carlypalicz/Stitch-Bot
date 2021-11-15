@@ -8,19 +8,22 @@ birthdays.set('Danny Davis', {
     month: 'November',
     day: '16',
     zodiac: 'Scorpio',
+    bdayBuddy: 'country singer Mason Ramsey',
     message: 'hbd danny!'
 });
 birthdays.set('Bobby and Freddy Freeman', {
     month: 'November',
     day: '17',
     zodiac: 'Scorpio',
+    bdayBuddy: 'actor Danny Devito',
     message: 'hbd boby fedy!'
 });
 birthdays.set('Leila Lee', {
     month: 'November',
     day: '26',
     zodiac: 'Sagittarius',
-    message: 'hbd Leila!'
+    bdayBuddy: 'musicians DJ Khaled and Tina Turner',
+    message: 'hbd Leila!'    
 });
 birthdays.set('Penny Perkins', {
     month: 'December',
@@ -243,7 +246,6 @@ const alphabet={
 client.on('message', async (message) => {
 
     if(!message.content.startsWith(prefix) || message.author.bot){
-        console.log("no command will be executed");
         return; //ensures message is a command, and not sent by a bot
     } 
 
