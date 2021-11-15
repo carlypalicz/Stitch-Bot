@@ -5,8 +5,8 @@ module.exports = {
         const siggy = '<:Siggy:909631771820326973>';
         const dan = '<:Mr_Nauseous:909631726408581191>';
         const covey = '<:covhappy:826907997682663474>';
-        const danInd = 96;
-        const covInd = 110;
+        const danInd = 96; //hard coded cuz im lazy
+        const covInd = 110; //^^
 
         const tweets = [
             "live laugh ugh",
@@ -84,7 +84,6 @@ module.exports = {
             "if i could wake up and do one thing everyday it would be laser tag - instead i sm*ke d*pe, play music, and bang on keyboards",
             "if you eat dry cereal do you reallllly have to clean the bowl? asking for a fwend 🥺",
             "i used to go on twitter dot com and see cats with like 27.3k tweets and be like 😳😳😳 but now i like totalllly get it",
-            
             "every time i buy an avocado i don't think about the fact that there's a pit inside the avocado",
             "i am delirious and it's 1:14am and i just used undo send on gmail for the first time ever, 10/10 would recommend",
             "music idea: taylor swift remix of 'this is me trying' but its 'this is me crying' lol",
@@ -207,8 +206,5 @@ module.exports = {
         let rand = Math.floor(Math.random()*(len));
         let face = (rand <= danInd) ? dan : (rand > covInd) ? siggy : covey;
         message.channel.send(face + "*" + tweets[rand] + "*" + face);
-
-        console.log(tweets[96]);
-        console.log(tweets[110]);
     }
 }
