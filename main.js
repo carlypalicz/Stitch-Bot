@@ -2,8 +2,8 @@ const {Client, Intents, Collection, MessageEmbed, Message} = require('discord.js
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.DIRECT_MESSAGE_REACTIONS]});
 
 const cron = require('node-cron');
-const she = ["She", "her", "Hers"];
-const he = ["He, him, His"];
+const she = ["She", "her", "Her"];
+const he = ["He", "him", "His"];
 
 const birthdays = new Map();
 birthdays.set('Danny Davis', {
@@ -202,9 +202,8 @@ client.once('ready', () => {
             .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
             .setFooter(`"${character.lyric}"`);   
         }
-  
         
-        cron.schedule(`16 19 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`22 19 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
