@@ -2,6 +2,8 @@ const {Client, Intents, Collection, MessageEmbed, Message} = require('discord.js
 const client = new Client({intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.DIRECT_MESSAGE_REACTIONS]});
 
 const cron = require('node-cron');
+const she = ["She", "her", "Hers"];
+const he = ["He, him, His"];
 
 const birthdays = new Map();
 birthdays.set('Danny Davis', {
@@ -10,14 +12,11 @@ birthdays.set('Danny Davis', {
     dayth: '16th',
     zodiac: 'Scorpio',
     bdayBuddy: 'country singer Mason Ramsey',
-    message: 'hbd danny!',
-    pronoun1: 'He',
-    pronoun2: 'him',
-    pronoun3: 'his',
+    pronouns: he,
     stone: 'topaz',
     holiday: 'National Fast Food Day',
     lyric: 'Danny you were always 10 feet from me, laying in your bed',
-    bio: 'Danny is smart and excels in his classes such as math and chemistry. He helped Ray in the creation of fox tears by getting the final ingredient from Tony\'s father (the surgeon). He is also notably is inspired by Covey\'s real-life best friend Danny, whom the song Sound of A Gun is about.',
+    bio: 'Danny is smart and excels in his classes such as math and chemistry. He helped Ray in the creation of fox tears by getting the final ingredient from Tony\'s father (the surgeon). He is also notably inspired by Covey\'s real-life best friend Danny, whom the song Sound of A Gun is about.',
     color: '947d4c'
 });
 birthdays.set('Bobby and Freddy Freeman', {
@@ -26,143 +25,149 @@ birthdays.set('Bobby and Freddy Freeman', {
     dayth: '17th',
     zodiac: 'Scorpio',
     bdayBuddy: 'actor Danny Devito',
-    message: 'hbd boby fedy!',
-    pronoun1: 'they',
-    pronoun2: 'them',
-    pronoun3: 'their',
     stone: 'topaz',
     holiday: 'National Homemade Bread, Baklava, AND Butter Day',
     lyric: 'The fox is looming with intent',
     bio: 'bio goes here heheheheheh',
     color: 'black'
 });
-// birthdays.set('Leila Lee', {
-//     month: 'November',
-//     day: '26',
-//     zodiac: 'Sagittarius',
-//     bdayBuddy: 'musicians DJ Khaled and Tina Turner',
-//     message: 'hbd Leila!'    
-// });
-// birthdays.set('Penny Perkins', {
-//     month: 'December',
-//     day: '11',
-//     zodiac: 'Sagittarius',
-//     message: 'hbd penny!'
-// });
-// birthdays.set('Caleb Cameron', {
-//     month: 'December',
-//     day: '24',
-//     zodiac: 'Capricorn',
-//     message: 'hbd caleb!'
-// });
-// birthdays.set('Brandon Brown', {
-//     month: 'December',
-//     day: '25',
-//     zodiac: 'Capricorn',
-//     message: 'hbd brandon!'
-// });
-// birthdays.set('Jamie Jones', {
-//     month: 'January',
-//     day: '4',
-//     zodiac: 'Capricorn',
-//     message: 'hbd jamie!'
-// });
-// birthdays.set('Benjamin Bork', {
-//     month: 'January',
-//     day: '16',
-//     zodiac: 'Capricorn',
-//     message: 'hbd banjo man!'
-// });
-// birthdays.set('Martha May', {
-//     month: 'February',
-//     day: '3',
-//     zodiac: 'Aquarius',
-//     message: 'hbd martha!'
-// });
-// birthdays.set('Alex Anderson', {
-//     month: 'March',
-//     day: '1',
-//     zodiac: 'Pisces',
-//     message: 'hbd alex!'
-// });
-// birthdays.set('Fence Ferguson', {
-//     month: 'March',
-//     day: '3',
-//     zodiac: 'Pisces',
-//     message: 'hbd fence!'
-// });
-// birthdays.set('Jack and Jake Johnson', {
-//     month: 'May',
-//     day: '20',
-//     zodiac: 'Taurus (cusp of Gemini)',
-//     message: 'hbd twins!'
-// });
-// birthdays.set('Tony Tazzari', {
-//     month: 'May',
-//     day: '28',
-//     zodiac: 'Gemini',
-//     message: 'hbd tony!'
-// });
-// birthdays.set('Henry Haggarty', {
-//     month: 'June',
-//     day: '5',
-//     zodiac: 'Gemini',
-//     message: 'hbd henry!'
-// });
-// birthdays.set('Harris Haggarty', {
-//     month: 'June',
-//     day: '11',
-//     zodiac: 'Gemini',
-//     message: 'hbd harris!'
-// });
-// birthdays.set('Sammy Jammy', {
-//     month: 'June',
-//     day: '27',
-//     zodiac: 'Cancer',
-//     message: 'hbd sammy!'
-// });
-// birthdays.set('Gretta Greene', {
-//     month: 'July',
-//     day: '19',
-//     zodiac: 'Cancer',
-//     message: 'hbd gretta!'
-// });
-// birthdays.set('Lewis Lin', {
-//     month: 'August',
-//     day: '6',
-//     zodiac: 'Leo',
-//     message: 'hbd lewis!'
-// });
-// birthdays.set('Gabe Godman', {
-//     month: 'August',
-//     day: '10',
-//     zodiac: 'Leo',
-//     message: 'hbd gabe!'
-// });
-// birthdays.set('Tevin Thompson', {
-//     month: 'August',
-//     day: '17',
-//     zodiac: 'Leo',
-//     message: 'hbd tevin!'
-// });
-// birthdays.set('Ray Razzi', {
-//     month: 'September',
-//     day: '15',
-//     zodiac: 'Virgo',
-//     message: 'hbd ray!'
-// });
-// birthdays.set('Wade Wallace', {
-//     month: 'October',
-//     day: '4',
-//     zodiac: 'Libra',
-//     message: 'hbd wade!'
-// });
-// birthdays.set('Suzie Simons', {
-//     month: 'October',
-//     day: '29',
-//     zodiac: 'Scorpio',
-//     message: 'hbd suzie!'
-// });
+birthdays.set('Leila Lee', {
+    month: 'November',
+    day: '15',
+    dayth: '26th',
+    zodiac: 'Sagittarius',
+    bdayBuddy: 'musicians DJ Khaled and Tina Turner',
+    pronouns: she,
+    stone: 'topaz',
+    holiday: 'National Cake Day and Black Friday. She\'s also quite full from FEASTing for Thanksgiving yesterday, if you catch my drift.',
+    lyric: 'you can eat me, if you need to',
+    bio: '',
+    color: '00adc4',
+
+});
+
+{/**
+birthdays.set('Penny Perkins', {
+    month: 'December',
+    day: '11',
+    zodiac: 'Sagittarius',
+    message: 'hbd penny!'
+});
+birthdays.set('Caleb Cameron', {
+    month: 'December',
+    day: '24',
+    zodiac: 'Capricorn',
+    message: 'hbd caleb!'
+});
+birthdays.set('Brandon Brown', {
+    month: 'December',
+    day: '25',
+    zodiac: 'Capricorn',
+    message: 'hbd brandon!'
+});
+birthdays.set('Jamie Jones', {
+    month: 'January',
+    day: '4',
+    zodiac: 'Capricorn',
+    message: 'hbd jamie!'
+});
+birthdays.set('Benjamin Bork', {
+    month: 'January',
+    day: '16',
+    zodiac: 'Capricorn',
+    message: 'hbd banjo man!'
+});
+birthdays.set('Martha May', {
+    month: 'February',
+    day: '3',
+    zodiac: 'Aquarius',
+    message: 'hbd martha!'
+});
+birthdays.set('Alex Anderson', {
+    month: 'March',
+    day: '1',
+    zodiac: 'Pisces',
+    message: 'hbd alex!'
+});
+birthdays.set('Fence Ferguson', {
+    month: 'March',
+    day: '3',
+    zodiac: 'Pisces',
+    message: 'hbd fence!'
+});
+birthdays.set('Jack and Jake Johnson', {
+    month: 'May',
+    day: '20',
+    zodiac: 'Taurus (cusp of Gemini)',
+    message: 'hbd twins!'
+});
+birthdays.set('Tony Tazzari', {
+    month: 'May',
+    day: '28',
+    zodiac: 'Gemini',
+    message: 'hbd tony!'
+});
+birthdays.set('Henry Haggarty', {
+    month: 'June',
+    day: '5',
+    zodiac: 'Gemini',
+    message: 'hbd henry!'
+});
+birthdays.set('Harris Haggarty', {
+    month: 'June',
+    day: '11',
+    zodiac: 'Gemini',
+    message: 'hbd harris!'
+});
+birthdays.set('Sammy Jammy', {
+    month: 'June',
+    day: '27',
+    zodiac: 'Cancer',
+    message: 'hbd sammy!'
+});
+birthdays.set('Gretta Greene', {
+    month: 'July',
+    day: '19',
+    zodiac: 'Cancer',
+    message: 'hbd gretta!'
+});
+birthdays.set('Lewis Lin', {
+    month: 'August',
+    day: '6',
+    zodiac: 'Leo',
+    message: 'hbd lewis!'
+});
+birthdays.set('Gabe Godman', {
+    month: 'August',
+    day: '10',
+    zodiac: 'Leo',
+    message: 'hbd gabe!'
+});
+birthdays.set('Tevin Thompson', {
+    month: 'August',
+    day: '17',
+    zodiac: 'Leo',
+    message: 'hbd tevin!'
+});
+birthdays.set('Ray Razzi', {
+    month: 'September',
+    day: '15',
+    zodiac: 'Virgo',
+    message: 'hbd ray!'
+});
+birthdays.set('Wade Wallace', {
+    month: 'October',
+    day: '4',
+    zodiac: 'Libra',
+    message: 'hbd wade!'
+});
+birthdays.set('Suzie Simons', {
+    month: 'October',
+    day: '29',
+    zodiac: 'Scorpio',
+    message: 'hbd suzie!'
+});
+*/}
 
 client.once('ready', () => {
     console.log('Stitch Bot is online');
@@ -178,15 +183,28 @@ client.once('ready', () => {
      
     birthdays.forEach((character, id) => {
         let linkParam = id.toLowerCase().replace(/\s+/g, '');
-        const card = new MessageEmbed()
-        .setColor(character.color)
-        .setTitle(`Happy Birthday ${id}!!!`)
-        .setDescription(`Three cheers for ${id}, whose birthday is today, ${character.month} ${character.dayth}. ${character.bio}`)
-        .addField(`${id} Fun Facts!`, `${character.pronoun3} birthday makes ${character.pronoun2} a ${character.zodiac} with ${character.stone} for a birth stone. ${character.pronoun1} shares ${character.pronoun3} birthday with ${character.bdayBuddy}, which is also ${character.holiday}.`)
-        .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
-        .setFooter(`"${character.lyric}"`);     
+        let card;
+
+        if (id == 'Bobby and Freddy Freeman'){
+            card = new MessageEmbed()
+            .setColor(character.color)
+            .setTitle(`Happy Birthday Bobby and Freddy!!!`)
+            .setDescription('')
+            .addField()
+            .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
+            .setFooter(`"${character.lyric}"`);     
+        } else {
+            card = new MessageEmbed()
+            .setColor(character.color)
+            .setTitle(`Happy Birthday ${id}!!!`)
+            .setDescription(`Three cheers for ${id}, whose birthday is today, ${character.month} ${character.dayth}. ${character.bio}`)
+            .addField(`${id} Fun Facts!`, `${character.pronouns[2]} birthday makes ${character.pronouns[1]} a ${character.zodiac} with ${character.stone} for a birth stone. ${character.pronouns[0]} shares ${character.pronouns[2]} birthday with ${character.bdayBuddy}, which is also ${character.holiday}.`)
+            .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
+            .setFooter(`"${character.lyric}"`);   
+        }
+  
         
-        cron.schedule(`21 18 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`13 19 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
