@@ -10,9 +10,9 @@ birthdays.set('Danny Davis', {
     zodiac: 'Scorpio',
     bdayBuddy: 'country singer Mason Ramsey',
     message: 'hbd danny!',
-    pronoun1: 'he',
+    pronoun1: 'He',
     pronoun2: 'him',
-    pronouns3: 'his',
+    pronoun3: 'his',
     stone: 'topaz',
     holiday: 'National Fast Food Day',
     lyric: 'Danny you were always 10 feet from me, laying in your bed',
@@ -179,12 +179,12 @@ client.once('ready', () => {
         const card = new MessageEmbed()
         .setColor(character.color)
         .setTitle(`Happy Birthday ${id}!!!`)
-        .setDescription(`Three cheers for ${id}, who's birthday is today, the ${character.day} of ${character.month}. ${character.bio}`)
-        .addField('fun facts!', `Did you know ${character.pronoun1} is a ${character.zodiac} and shares a birthday with ${character.bdayBuddy}, which is also ${character.holiday}? Also, ${character.pronoun3} birth stone is ${character.stone}.`)
+        .setDescription(`Three cheers for ${id}, who's birthday is today, ${character.month} ${character.day}. ${character.bio}`)
+        .addField(`${id} Fun Facts!`, `Did you know ${character.pronoun3} birthday makes ${character.pronoun2} a ${character.zodiac} with ${character.stone} as a birth stone. ${character.pronoun1} also shares ${character.pronoun3} birthday with ${character.bdayBuddy} and ${character.holiday}.`)
         .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
-        .setFooter(character.lyric)     
+        .setFooter(`"${character.lyric}"`);     
         
-        cron.schedule('01 18 15 November *', () => {
+        cron.schedule('11 18 15 November *', () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
