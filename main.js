@@ -22,13 +22,7 @@ birthdays.set('Danny Davis', {
 birthdays.set('Bobby and Freddy Freeman', {
     month: 'November',
     day: '15',
-    dayth: '17th',
-    zodiac: 'Scorpio',
-    bdayBuddy: 'actor Danny Devito',
-    stone: 'topaz',
-    holiday: 'National Homemade Bread, Baklava, AND Butter Day',
     lyric: 'The fox is looming with intent',
-    bio: 'bio goes here heheheheheh',
     color: 'black'
 });
 birthdays.set('Leila Lee', {
@@ -189,8 +183,8 @@ client.once('ready', () => {
             card = new MessageEmbed()
             .setColor(character.color)
             .setTitle(`Happy Birthday Bobby and Freddy!!!`)
-            .setDescription('dsfsdfsdf')
-            .addField('oops', 'da doops')
+            .setDescription('Everyone say happy birthday to Bobby and Freddy, who we celebrate today, November 17th. Bobby and Freddy are brothers who were abandoned as children and taken in by the family that found them. They complement each other as near perfect opposites, both in color and personality. Bobby has a beautifully chaotic mind, while Freddy is known for his beautifully structured mind. Bobby and Freddy notably first appeared as paper mache heads on the cover of Some Cats Live, Some Cats Die, and share a last name with Covey themself. Covey has said that they consider Bobby to be similar to their own, whereas Freddy\'s personality more mirrors that of drummer Dillon.')
+            .addField('Boby Fedy Fun Facts', 'Their birthday makes Bobby and Freddy Scorpios, and their birthstone is topaz. They share their birthday today with actor Danny Devito, which is also National Homemade Bread, Baklava, AND Butter Day.')
             .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
             .setFooter(`"${character.lyric}"`);     
         } else {
@@ -198,12 +192,12 @@ client.once('ready', () => {
             .setColor(character.color)
             .setTitle(`Happy Birthday ${id}!!!`)
             .setDescription(`Three cheers for ${id}, whose birthday is today, ${character.month} ${character.dayth}. ${character.bio}`)
-            .addField(`${id} Fun Facts!`, `${character.pronouns[2]} birthday makes ${character.pronouns[1]} a ${character.zodiac} with ${character.stone} for a birth stone. ${character.pronouns[0]} shares ${character.pronouns[2]} birthday with ${character.bdayBuddy}, which is also ${character.holiday}.`)
+            .addField(`${id} Fun Facts!`, `${character.pronouns[2]} birthday makes ${character.pronouns[1]} a ${character.zodiac} with ${character.stone} for a birth stone. ${character.pronouns[0]} shares ${character.pronouns[2].toLowerCase()} birthday today with ${character.bdayBuddy}, and it's also ${character.holiday}.`)
             .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`22 19 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`44 19 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
