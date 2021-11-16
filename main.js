@@ -196,12 +196,12 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`07 20 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`10 23 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
             scheduled: true,
-            timezone: 'America/Los_Angeles'
+            timezone: 'America/New_York'
         }
         );
 
