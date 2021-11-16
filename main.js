@@ -6,7 +6,8 @@ const cron = require('node-cron');
 const birthdays = new Map();
 birthdays.set('Danny Davis', {
     month: 'November',
-    day: '16th',
+    day: '15',
+    dayth: '16th',
     zodiac: 'Scorpio',
     bdayBuddy: 'country singer Mason Ramsey',
     message: 'hbd danny!',
@@ -16,12 +17,13 @@ birthdays.set('Danny Davis', {
     stone: 'topaz',
     holiday: 'National Fast Food Day',
     lyric: 'Danny you were always 10 feet from me, laying in your bed',
-    bio: 'Danny is smart and excels in his classes such as math and chemistry. He helped Ray in the creation of fox tears by getting the final ingredient from Tony\'s father (the surgeon). He is inspired by Covey\'s real-life best friend Danny, whom Sound of A Gun is about.',
+    bio: 'Danny is smart and excels in his classes such as math and chemistry. He helped Ray in the creation of fox tears by getting the final ingredient from Tony\'s father (the surgeon). He is also notably is inspired by Covey\'s real-life best friend Danny, whom the song Sound of A Gun is about.',
     color: '947d4c'
 });
 birthdays.set('Bobby and Freddy Freeman', {
     month: 'November',
-    day: '17th',
+    day: '15',
+    dayth: '17th',
     zodiac: 'Scorpio',
     bdayBuddy: 'actor Danny Devito',
     message: 'hbd boby fedy!',
@@ -30,7 +32,7 @@ birthdays.set('Bobby and Freddy Freeman', {
     pronoun3: 'their',
     stone: 'topaz',
     holiday: 'National Homemade Bread, Baklava, AND Butter Day',
-    lyric: 'The fox is looming with intent and sinking deeper into everything I do',
+    lyric: 'The fox is looming with intent',
     bio: 'bio goes here heheheheheh',
     color: 'black'
 });
@@ -179,12 +181,12 @@ client.once('ready', () => {
         const card = new MessageEmbed()
         .setColor(character.color)
         .setTitle(`Happy Birthday ${id}!!!`)
-        .setDescription(`Three cheers for ${id}, who's birthday is today, ${character.month} ${character.day}. ${character.bio}`)
-        .addField(`${id} Fun Facts!`, `Did you know ${character.pronoun3} birthday makes ${character.pronoun2} a ${character.zodiac} with ${character.stone} as a birth stone. ${character.pronoun1} also shares ${character.pronoun3} birthday with ${character.bdayBuddy} and ${character.holiday}.`)
+        .setDescription(`Three cheers for ${id}, whose birthday is today, ${character.month} ${character.dayth}. ${character.bio}`)
+        .addField(`${id} Fun Facts!`, `${character.pronoun3} birthday makes ${character.pronoun2} a ${character.zodiac} with ${character.stone} for a birth stone. ${character.pronoun1} shares ${character.pronoun3} birthday with ${character.bdayBuddy}, which is also ${character.holiday}.`)
         .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
         .setFooter(`"${character.lyric}"`);     
         
-        cron.schedule('11 18 15 November *', () => {
+        cron.schedule(`21 18 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
