@@ -8,7 +8,7 @@ const he = ["He", "him", "His"];
 const birthdays = new Map();
 birthdays.set('Danny Davis', {
     month: 'November',
-    day: '15',
+    day: '16',
     dayth: '16th',
     zodiac: 'Scorpio',
     bdayBuddy: 'country singer Mason Ramsey',
@@ -197,7 +197,7 @@ client.once('ready', () => {
         }
         
         cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
+            client.guilds.cache.get('812841672345255986').channels.cache.get('813212394414931988').send({embeds: [card]});
         },
         {
             scheduled: true,
