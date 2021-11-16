@@ -12,8 +12,11 @@ birthdays.set('Danny Davis', {
     message: 'hbd danny!',
     pronoun1: 'he',
     pronoun2: 'him',
+    pronouns3: 'his',
+    stone: 'topaz',
+    holiday: 'National Fast Food Day',
     lyric: 'Danny you were always 10 feet from me, laying in your bed',
-    bio: 'Danny is smart and excels in his classes such as math and chemistry, and helped Ray in the creation of fox tears by getting the final ingredient from Tony\'s father (the surgeon). He is inspired by Covey\'s real-life best friend Danny, whom Sound of A Gun is about.',
+    bio: 'Danny is smart and excels in his classes such as math and chemistry. He helped Ray in the creation of fox tears by getting the final ingredient from Tony\'s father (the surgeon). He is inspired by Covey\'s real-life best friend Danny, whom Sound of A Gun is about.',
     color: '947d4c'
 });
 birthdays.set('Bobby and Freddy Freeman', {
@@ -24,7 +27,10 @@ birthdays.set('Bobby and Freddy Freeman', {
     message: 'hbd boby fedy!',
     pronoun1: 'they',
     pronoun2: 'them',
-    lyric: 'The fox is looming with intent',
+    pronoun3: 'their',
+    stone: 'topaz',
+    holiday: 'National Homemade Bread, Baklava, AND Butter Day',
+    lyric: 'The fox is looming with intent and sinking deeper into everything I do',
     bio: 'bio goes here heheheheheh',
     color: 'black'
 });
@@ -173,12 +179,12 @@ client.once('ready', () => {
         const card = new MessageEmbed()
         .setColor(character.color)
         .setTitle(`Happy Birthday ${id}!!!`)
-        .setDescription(`${id} was born on the ${character.day} of ${character.month}, making ${character.pronoun2} a ${character.zodiac}. ${character.bio} Fun fact - ${character.pronoun1} shares a birthday with ${character.bdayBuddy}.`)
+        .setDescription(`Three cheers for ${id}, who's birthday is today, the ${character.day} of ${character.month}. ${character.bio}`)
+        .addField('fun facts!', `Did you know ${character.pronoun1} is a ${character.zodiac} and shares a birthday with ${character.bdayBuddy}, which is also ${character.holiday}? Also, ${character.pronoun3} birth stone is ${character.stone}.`)
         .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
-        .setFooter(`*${character.lyric}*`)     
-        .setTimestamp(); 
+        .setFooter(character.lyric)     
         
-        cron.schedule('49 17 15 November *', () => {
+        cron.schedule('01 18 15 November *', () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
