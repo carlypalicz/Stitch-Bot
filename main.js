@@ -189,8 +189,8 @@ client.once('ready', () => {
             card = new MessageEmbed()
             .setColor(character.color)
             .setTitle(`Happy Birthday Bobby and Freddy!!!`)
-            .setDescription('')
-            .addField()
+            .setDescription('dsfsdfsdf')
+            .addField('oops', 'da doops')
             .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
             .setFooter(`"${character.lyric}"`);     
         } else {
@@ -204,7 +204,7 @@ client.once('ready', () => {
         }
   
         
-        cron.schedule(`13 19 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`16 19 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
