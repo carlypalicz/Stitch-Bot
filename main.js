@@ -163,13 +163,15 @@ client.once('ready', () => {
 
      
     birthdays.forEach((character, id) => {
+        let linkParam = id.toLowerCase().replace(/\s+/g, '');
         const card = new MessageEmbed()
         .setColor(character.color)
         .setTitle(`Happy Birthday ${id}!!!`)
         .setDescription(`${id} was born on the ${character.day} of ${character.month}. ${character.pronoun} shares a birthday with ${character.bdayBuddy}.`)
+        .setImage(`https://github.com/carlypalicz/Stitch-Bot/blob/master/students/${linkParam}.png?raw=true`)
         .setTimestamp(); 
         
-        cron.schedule('11 17 15 November *', () => {
+        cron.schedule('21 17 15 November *', () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
