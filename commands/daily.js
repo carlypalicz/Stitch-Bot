@@ -11,8 +11,6 @@ module.exports = {
         let streak = profileData.dailyStreak;
 
         //calculate streak bonus
-        console.log(current_time - profileData.lastDaily);
-        console.log(streak_limit);
         if (current_time - profileData.lastDaily < streak_limit){ //streak !
             streak++;
         }
@@ -22,7 +20,7 @@ module.exports = {
 
         if (current_time < profileData.lastDaily+cooldown_amount){
             const time_left = (expiration_time - current_time);
-            return message.channel.send(`Please wait ${convert_ms(time_left)} before using this command again.`);
+            return message.channel.send(`Sorry, you have to wait ${convert_ms(time_left)} before your next check in!`);
         }
 
         const reward = 11 + streak-1;
