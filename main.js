@@ -35,7 +35,7 @@ birthdays.set('Leila Lee', {
     stone: 'topaz',
     holiday: 'National Cake Day and Black Friday. She\'s also quite full from FEASTing for Thanksgiving yesterday, if you catch my drift.',
     lyric: 'You can eat me, if you need to',
-    bio: '',
+    bio: 'Leila is a loyal friend, and is usually seen with her best friends Martha and Gretta, whom she\'s known since she was 5 and works with at the local ice cream parlor. Her story, along with the story of the songs "You Can Eat Me" and "Plane Crash", are notably inspired by the lateral thinking puzzle known as Albatross Soup.',
     color: '00adc4',
 
 });
