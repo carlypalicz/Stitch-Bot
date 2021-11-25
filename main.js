@@ -37,16 +37,22 @@ birthdays.set('Leila Lee', {
     lyric: 'You can eat me, if you need to',
     bio: 'Leila is a loyal friend, and is usually seen with her best friends Martha and Gretta, whom she\'s known since she was 5 and works with at the local ice cream parlor. Her story, along with the story of the songs "You Can Eat Me" and "Plane Crash", are notably inspired by the lateral thinking puzzle known as Albatross Soup.',
     color: '00adc4',
-
 });
-
-{/**
 birthdays.set('Penny Perkins', {
     month: 'December',
     day: '11',
+    dayth: '11th',
     zodiac: 'Sagittarius',
-    message: 'hbd penny!'
+    bdayBuddy: 'Hailee Steinfeld and Rita Moreno',
+    pronouns: she,
+    stone: 'Turquoise',
+    holiday: 'National App and National Noodle Ring Day',
+    lyric: 'Flashes of pulling the trigger will flicker',
+    bio: 'Penny is one of the best people to talk if you have a problem, and is very close with her parents. She\'s dating Alex Anderson, and the two of them often get ice cream together and walk around town. She\'s also shown wearing a Covey shirt, and has been confirmed as a fan of Covey\'s music, which Alex introduced her to.',
+    color: '#0b0a3b',
 });
+
+{/**
 birthdays.set('Caleb Cameron', {
     month: 'December',
     day: '24',
