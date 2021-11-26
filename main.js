@@ -17,7 +17,7 @@ birthdays.set('Danny Davis', {
     holiday: 'National Fast Food Day',
     lyric: 'Danny you were always 10 feet from me, laying in your bed',
     bio: 'Danny is smart and excels in his classes such as math and chemistry. He helped Ray in the creation of fox tears by getting the final ingredient from Tony\'s father (the surgeon). He is also notably inspired by Covey\'s real-life best friend Danny, whom the song Sound of A Gun is about.',
-    color: '947d4c'
+    color: '#947d4c'
 });
 birthdays.set('Bobby and Freddy Freeman', {
     month: 'November',
@@ -210,7 +210,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`57 16 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`59 16 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
