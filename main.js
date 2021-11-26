@@ -210,8 +210,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`11 20 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
+        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get('812841672345255986').channels.cache.get('813212394414931988').send({embeds: [card]});
         },
         {
             scheduled: true,
