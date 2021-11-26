@@ -62,7 +62,7 @@ birthdays.set('Caleb Cameron', {
     holiday: 'Turquoise',
     lyric: 'Let\'s sit down and have ourselves a fucked up family dinner',
     bio: 'hbd caleb!',
-    color: '',
+    color: 'blue',
 });
 
 {/**
@@ -210,7 +210,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`59 16 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`01 17 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
