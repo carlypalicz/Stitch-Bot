@@ -27,7 +27,7 @@ birthdays.set('Bobby and Freddy Freeman', {
 });
 birthdays.set('Leila Lee', {
     month: 'November',
-    day: '25',
+    day: '26',
     dayth: '26th',
     zodiac: 'Sagittarius',
     bdayBuddy: 'musicians DJ Khaled and Tina Turner',
@@ -210,7 +210,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`5 0 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get('812841672345255986').channels.cache.get('813212394414931988').send({embeds: [card]});
         },
         {
