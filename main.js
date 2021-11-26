@@ -27,7 +27,7 @@ birthdays.set('Bobby and Freddy Freeman', {
 });
 birthdays.set('Leila Lee', {
     month: 'November',
-    day: '26',
+    day: '25',
     dayth: '26th',
     zodiac: 'Sagittarius',
     bdayBuddy: 'musicians DJ Khaled and Tina Turner',
@@ -51,14 +51,22 @@ birthdays.set('Penny Perkins', {
     bio: 'Penny is one of the best people to talk if you have a problem, and is very close with her parents. She\'s dating Alex Anderson, and the two of them often get ice cream together and walk around town. She\'s also shown wearing a Covey shirt, and has been confirmed as a fan of Covey\'s music, which Alex introduced her to.',
     color: '#0b0a3b',
 });
-
-{/**
 birthdays.set('Caleb Cameron', {
     month: 'December',
     day: '24',
+    dayth: '24th',
     zodiac: 'Capricorn',
-    message: 'hbd caleb!'
+    bdayBuddy: 'Louis Tomlinson and Ricky Martin',
+    pronouns: he,
+    stone: '',
+    holiday: 'Turquoise',
+    lyric: 'Let\'s sit down and have ourselves a fucked up family dinner',
+    bio: 'hbd caleb!',
+    color: '',
 });
+
+{/**
+
 birthdays.set('Brandon Brown', {
     month: 'December',
     day: '25',
@@ -202,8 +210,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get('812841672345255986').channels.cache.get('813212394414931988').send({embeds: [card]});
+        cron.schedule(`55 16 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get('822718971311685633').channels.cache.get('831039144398028841').send({embeds: [card]});
         },
         {
             scheduled: true,
