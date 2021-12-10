@@ -53,7 +53,7 @@ birthdays.set('Penny Perkins', {
     holiday: 'National App and National Noodle Ring Day',
     lyric: 'Flashes of pulling the trigger will flicker',
     bio: 'Penny is one of the best people to talk if you have a problem, and is very close with her parents. She\'s dating Alex Anderson, and the two of them often get ice cream together and walk around town together. She\'s shown wearing a Covey shirt, and has been confirmed as a fan of their music, which Alex introduced her to. Covey has said that writing Penny\'s story and plot twist was one of his favorite moments whilst creating CCS.',
-    color: '#0b0a3b',
+    color: '#262a61',
 });
 birthdays.set('Caleb Cameron', {
     month: 'December',
@@ -214,7 +214,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`32 2 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`38 2 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
@@ -225,13 +225,14 @@ client.once('ready', () => {
     });
 
     let annivCard = new MessageEmbed()
-        .setColor('#262a61')
-        .setTitle('Happy 1 year of Cut on the Crease!')
+        .setColor('#d61c1c')
+        .setTitle('Happy 1 Year of Cut on the Crease!')
         .setDescription('A year ago today, Cut on the Crease was released as the debut single for Covey\'s junior record Class of Cardinal Sin. The music video features the stories of Benjamin Bork, Gabe Godman, The Haggartys, and Suzie Simons, and the song already has nearly a million streams on Spotify.')
         .setImage('https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/cotc.jpg')
-        .setFooter('it\'s overwhelming in a subtle kind of way');
+        .addField('[Listen on Spotify!](https://open.spotify.com/track/7oUM16pcpcD75ifrqwMCay?si=17c978c27461496f)')
+        .setFooter('\"it\'s overwhelming in a subtle kind of way\"');
 
-    cron.schedule('32 2 10 December *', () => {
+    cron.schedule('38 2 10 December *', () => {
         client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [annivCard]});
     },
     {
