@@ -6,6 +6,7 @@ const she = ["She", "her", "Her"];
 const he = ["He", "him", "His"];
 const guildID = '812841672345255986';
 const bdayChannelID = '813212394414931988';
+const musicChannelID = '812902219077910579';
 const testGuildID = '822718971311685633';
 const testChannelID = '831039144398028841';
 
@@ -44,7 +45,7 @@ birthdays.set('Leila Lee', {
 });
 birthdays.set('Penny Perkins', {
     month: 'December',
-    day: '10',
+    day: '11',
     dayth: '11th',
     zodiac: 'Sagittarius',
     bdayBuddy: 'Hailee Steinfeld and Rita Moreno',
@@ -214,8 +215,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`59 2 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
+        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
@@ -232,8 +233,8 @@ client.once('ready', () => {
         .addField('Celebrate by Streaming:', '[Listen on Spotify!](https://open.spotify.com/track/7oUM16pcpcD75ifrqwMCay?si=17c978c27461496f)')
         .setFooter('\"it\'s overwhelming in a subtle kind of way\"');
 
-    cron.schedule('59 2 10 December *', () => {
-        client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [annivCard]});
+    cron.schedule('0 0 11 December *', () => {
+        client.guilds.cache.get(guildID).channels.cache.get(musicChannelID).send({embeds: [annivCard]});
     },
     {
         scheduled: true,
