@@ -214,7 +214,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`2 30 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`32 2 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
@@ -231,7 +231,7 @@ client.once('ready', () => {
         .setImage('https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/cotc.jpg')
         .setFooter('it\'s overwhelming in a subtle kind of way');
 
-    cron.schedule('2 30 10 December *', () => {
+    cron.schedule('32 2 10 December *', () => {
         client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [annivCard]});
     },
     {
