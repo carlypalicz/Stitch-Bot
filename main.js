@@ -214,7 +214,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`38 2 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`40 2 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
@@ -229,10 +229,10 @@ client.once('ready', () => {
         .setTitle('Happy 1 Year of Cut on the Crease!')
         .setDescription('A year ago today, Cut on the Crease was released as the debut single for Covey\'s junior record Class of Cardinal Sin. The music video features the stories of Benjamin Bork, Gabe Godman, The Haggartys, and Suzie Simons, and the song already has nearly a million streams on Spotify.')
         .setImage('https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/cotc.jpg')
-        .addField('[Listen on Spotify!](https://open.spotify.com/track/7oUM16pcpcD75ifrqwMCay?si=17c978c27461496f)')
+        .addField('Celebrate by Streaming:', '[Listen on Spotify!](https://open.spotify.com/track/7oUM16pcpcD75ifrqwMCay?si=17c978c27461496f)')
         .setFooter('\"it\'s overwhelming in a subtle kind of way\"');
 
-    cron.schedule('38 2 10 December *', () => {
+    cron.schedule('40 2 10 December *', () => {
         client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [annivCard]});
     },
     {
