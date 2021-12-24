@@ -66,7 +66,7 @@ birthdays.set('Caleb Cameron', {
     stone: 'Turquoise',
     holiday: 'Christmas Eve and National Eggnog Day',
     lyric: 'I learned to live without dependency',
-    bio: 'Caleb is a high-energy party kid who loves to socialize with his classmates, and is particularly close with his friend Tevin Thompson. Some fun facts about Caleb include that both the CCS book and the pink orb can be seen in his house, and his parents are noted alumni of the school who attended Baxterban\'s feasts. Covey has also said that he has terrible handwriting, and he has a pet dog. ',
+    bio: 'Caleb is a high-energy party kid who loves to socialize with his classmates, and is particularly close with his friend Tevin Thompson. Some fun facts about Caleb include that both the CCS book and the pink orb can be seen in his house, and his parents are alumni of the school who attend Baxterban\'s feasts. Covey has also said that Caleb has terrible handwriting, and a pet dog. ',
     color: '#21a9ad',
 });
 
@@ -222,7 +222,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`46 23 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`49 23 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
