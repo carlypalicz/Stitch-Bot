@@ -58,7 +58,7 @@ birthdays.set('Penny Perkins', {
 });
 birthdays.set('Caleb Cameron', {
     month: 'December',
-    day: '23',
+    day: '24',
     dayth: '24th',
     zodiac: 'Capricorn',
     bdayBuddy: 'Louis Tomlinson, Dr. Fauci, and Ricky Martin',
@@ -222,8 +222,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`49 23 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
+        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
