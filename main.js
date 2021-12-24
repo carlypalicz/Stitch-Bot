@@ -69,7 +69,10 @@ birthdays.set('Caleb Cameron', {
     bio: 'Caleb is a high-energy party kid who loves to socialize with his classmates, and is particularly close with his friend Tevin Thompson. Some fun facts about Caleb include that both the CCS book and the pink orb can be seen in his house, and his parents are noted alumni of the school who attended Baxterban\'s feasts. Covey has also said that he has terrible handwriting, and he has a pet dog. ',
     color: '#21a9ad',
 });
-birthdays.set('Brandon Brown', {
+
+
+{/**
+    birthdays.set('Brandon Brown', {
     month: 'December',
     day: '25',
     dayth: '25th',
@@ -82,8 +85,6 @@ birthdays.set('Brandon Brown', {
     bio: '',
     color: '',
 });
-
-{/**
 birthdays.set('Jamie Jones', {
     month: 'January',
     day: '4',
@@ -221,7 +222,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`43 11 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`45 11 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
