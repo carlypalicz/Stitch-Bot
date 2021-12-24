@@ -58,26 +58,32 @@ birthdays.set('Penny Perkins', {
 });
 birthdays.set('Caleb Cameron', {
     month: 'December',
-    day: '24',
+    day: '23',
     dayth: '24th',
     zodiac: 'Capricorn',
-    bdayBuddy: 'Louis Tomlinson and Ricky Martin',
+    bdayBuddy: 'Louis Tomlinson, Dr. Fauci, and Ricky Martin',
     pronouns: he,
-    stone: '',
-    holiday: 'Turquoise',
-    lyric: 'Let\'s sit down and have ourselves a fucked up family dinner',
-    bio: 'hbd caleb!',
-    color: 'blue',
+    stone: 'Turquoise',
+    holiday: 'Christmas Eve and National Eggnog Day',
+    lyric: 'I learned to live without dependency',
+    bio: 'Caleb is a high-energy party kid who loves to socialize with his classmates, and is particularly close with his friend Tevin Thompson. Some fun facts about Caleb include that both the CCS book and the pink orb can be seen in his house, and his parents are noted alumni of the school who attended Baxterban\'s feasts. Covey has also said that he has terrible handwriting, and he has a pet dog. ',
+    color: '#21a9ad',
 });
-
-{/**
-
 birthdays.set('Brandon Brown', {
     month: 'December',
     day: '25',
+    dayth: '25th',
     zodiac: 'Capricorn',
-    message: 'hbd brandon!'
+    bdayBuddy: '',
+    pronouns: he,
+    stone: '',
+    holiday: 'Christmas Day',
+    lyric: 'the water rising for the kill',
+    bio: '',
+    color: '',
 });
+
+{/**
 birthdays.set('Jamie Jones', {
     month: 'January',
     day: '4',
@@ -88,97 +94,97 @@ birthdays.set('Benjamin Bork', {
     month: 'January',
     day: '16',
     zodiac: 'Capricorn',
-    message: 'hbd banjo man!'
+    lyric: 'I'd tell my parents not to stick it out for us'
 });
 birthdays.set('Martha May', {
     month: 'February',
     day: '3',
     zodiac: 'Aquarius',
-    message: 'hbd martha!'
+    lyric: 'I see what looks like you digging into me'
 });
 birthdays.set('Alex Anderson', {
     month: 'March',
     day: '1',
     zodiac: 'Pisces',
-    message: 'hbd alex!'
+    lyric: 'that\'s another sleepless night from all my sleep hallucinations'
 });
 birthdays.set('Fence Ferguson', {
     month: 'March',
     day: '3',
     zodiac: 'Pisces',
-    message: 'hbd fence!'
+    lyric: 'I remember local anesthesia surgery'
 });
 birthdays.set('Jack and Jake Johnson', {
     month: 'May',
     day: '20',
     zodiac: 'Taurus (cusp of Gemini)',
-    message: 'hbd twins!'
+    lyric: 'a clash of personalities, if you wanna call it that'
 });
 birthdays.set('Tony Tazzari', {
     month: 'May',
     day: '28',
     zodiac: 'Gemini',
-    message: 'hbd tony!'
+    lyric: 'as I\'m forced through the incinerator'
 });
 birthdays.set('Henry Haggarty', {
     month: 'June',
     day: '5',
     zodiac: 'Gemini',
-    message: 'hbd henry!'
+    lyric: 'old and alone - filled with regret'
 });
 birthdays.set('Harris Haggarty', {
     month: 'June',
     day: '11',
     zodiac: 'Gemini',
-    message: 'hbd harris!'
+    lyric: 'you\'ve got stories to tell the world, don't be so scared to tell them'
 });
 birthdays.set('Sammy Jammy', {
     month: 'June',
     day: '27',
     zodiac: 'Cancer',
-    message: 'hbd sammy!'
+    lyric: 'fuck that guy I hope he\'s dead'
 });
 birthdays.set('Gretta Greene', {
     month: 'July',
     day: '19',
     zodiac: 'Cancer',
-    message: 'hbd gretta!'
+    lyric: 'now you're crying with a stiff mouth that still tastes like the last bite'
 });
 birthdays.set('Lewis Lin', {
     month: 'August',
     day: '6',
     zodiac: 'Leo',
-    message: 'hbd lewis!'
+    lyric: 'this hollow home that creaked and splintered with every step I took'
 });
 birthdays.set('Gabe Godman', {
     month: 'August',
     day: '10',
     zodiac: 'Leo',
-    message: 'hbd gabe!'
+    lyric: 'this coiled up double S is creeping in more every day'
 });
 birthdays.set('Tevin Thompson', {
     month: 'August',
     day: '17',
     zodiac: 'Leo',
-    message: 'hbd tevin!'
+    lyric: 'I keep my distance from strangers'
 });
 birthdays.set('Ray Razzi', {
     month: 'September',
     day: '15',
     zodiac: 'Virgo',
-    message: 'hbd ray!'
+    lyric: 'what an aberration this all turned out to be'
 });
 birthdays.set('Wade Wallace', {
     month: 'October',
     day: '4',
     zodiac: 'Libra',
-    message: 'hbd wade!'
+    lyric: 'let\'s sit down and have ourselves a fucked up family dinner'
 });
 birthdays.set('Suzie Simons', {
     month: 'October',
     day: '29',
     zodiac: 'Scorpio',
-    message: 'hbd suzie!'
+    message: 'the open wound that begs for salt'
 });
 */}
 
@@ -215,30 +221,14 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
+        cron.schedule(`23 35 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
             timezone: 'America/New_York'
         }
         );
-    });
-
-    let annivCard = new MessageEmbed()
-        .setColor('#d61c1c')
-        .setTitle('Happy 1 Year of Cut on the Crease!')
-        .setDescription('A year ago today, Cut on the Crease was released as the debut single for Covey\'s junior record Class of Cardinal Sin. The music video features the stories of Benjamin Bork, Gabe Godman, The Haggartys, and Suzie Simons, and the song already has nearly a million streams on Spotify.')
-        .setImage('https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/cotc.jpg')
-        .addField('Celebrate by Streaming:', '[Listen on Spotify!](https://open.spotify.com/track/7oUM16pcpcD75ifrqwMCay?si=17c978c27461496f)')
-        .setFooter('\"it\'s overwhelming in a subtle kind of way\"');
-
-    cron.schedule('0 0 11 December *', () => {
-        client.guilds.cache.get(guildID).channels.cache.get(musicChannelID).send({embeds: [annivCard]});
-    },
-    {
-        scheduled: true,
-        timezone: 'America/New_York'
     });
 });
 
