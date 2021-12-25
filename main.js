@@ -78,8 +78,8 @@ birthdays.set('Brandon Brown', {
     pronouns: he,
     stone: 'Turquoise',
     holiday: 'Christmas Day and National Pumpkin Pie Day',
-    lyric: 'the water rising for the kill',
-    bio: 'Brandon Brown is the class clown, and loves making people love. He also loves the outdoors, and often goes out exploring. He loves to give items he finds to friends as gifts - it\'s even implied that he gave Ben the knife. He\'s also one of the only characters who has read the CCS book.',
+    lyric: 'The water rising for the kill',
+    bio: 'Brandon Brown is the class clown, and loves making people laugh. He also loves the outdoors, and often goes out exploring. He has a tendency to give items that he finds to friends as gifts - it\'s even implied that he gave Ben the knife. He\'s also one of the only characters who has read the CCS book.',
     color: '#3d2d01',
 });
 
@@ -223,7 +223,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`51 23 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`55 23 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
