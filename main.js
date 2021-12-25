@@ -69,22 +69,23 @@ birthdays.set('Caleb Cameron', {
     bio: 'Caleb is a high-energy party kid who loves to socialize with his classmates, and is particularly close with his friend Tevin Thompson. Some fun facts about Caleb include that both the CCS book and the pink orb can be seen in his house, and his parents are alumni of the school who attend Baxterban\'s feasts. Covey has also said that Caleb has terrible handwriting, and a pet dog. ',
     color: '#21a9ad',
 });
+birthdays.set('Brandon Brown', {
+    month: 'December',
+    day: '24',
+    dayth: '25th',
+    zodiac: 'Capricorn',
+    bdayBuddy: 'Jimmy Buffet',
+    pronouns: he,
+    stone: 'Turquoise',
+    holiday: 'Christmas Day and National Pumpkin Pie Day',
+    lyric: 'the water rising for the kill',
+    bio: 'Brandon Brown is the class clown, and loves making people love. He also loves the outdoors, and often goes out exploring. He loves to give items he finds to friends as gifts - it\'s even implied that he gave Ben the knife. He\'s also one of the only characters who has read the CCS book.',
+    color: '#3d2d01',
+});
 
 
 {/**
-    birthdays.set('Brandon Brown', {
-    month: 'December',
-    day: '25',
-    dayth: '25th',
-    zodiac: 'Capricorn',
-    bdayBuddy: '',
-    pronouns: he,
-    stone: '',
-    holiday: 'Christmas Day',
-    lyric: 'the water rising for the kill',
-    bio: '',
-    color: '',
-});
+    
 birthdays.set('Jamie Jones', {
     month: 'January',
     day: '4',
@@ -222,8 +223,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
+        cron.schedule(`51 23 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
