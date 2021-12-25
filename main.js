@@ -71,7 +71,7 @@ birthdays.set('Caleb Cameron', {
 });
 birthdays.set('Brandon Brown', {
     month: 'December',
-    day: '24',
+    day: '25',
     dayth: '25th',
     zodiac: 'Capricorn',
     bdayBuddy: 'Jimmy Buffet',
@@ -223,8 +223,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`55 23 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
+        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
