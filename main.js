@@ -85,15 +85,15 @@ birthdays.set('Brandon Brown', {
 birthdays.set('Jamie Jones', {
     month: 'January',
     day: '3',
-    dayth: '3rd',
+    dayth: '4th',
     zodiac: 'Capricorn',
     bdayBuddy: 'Isaac Newton and D\'Arcy Carden',
     pronouns: he,
     stone: 'garnet',
     holiday: 'National Spaghetti Day and National Trivia Day',
-    lyric: 'you have left me alone - deep underground - you will find that i was proud',
+    lyric: 'you have left me alone deep underground - you will find that i was proud',
     bio: 'Jamie Jones is a caring friend, son, and partner, with a deep love for all living things from growing up around animals. He has amazingly supportive parents, and passes that support on to his partner, Harris, helping him gain the courage to come out. Jamie was also notably on the way to a Covey concert when he died.',
-    color: '#5f8767',
+    color: '##446943',
 });
 
 
@@ -231,7 +231,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`7 23 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`11 23 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
