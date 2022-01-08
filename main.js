@@ -423,6 +423,9 @@ client.on('message', async (message) => {
     else if (command === 'tweet'){
         client.commands.get('tweet').execute(message, args, profileData);
     }
+    else if (command === 'wk'){
+        client.commands.get('wk').execute(message);
+    }
 });
 
 mongoose.connect(process.env.MONGODB_SRV, {
