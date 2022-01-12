@@ -23,6 +23,7 @@ module.exports = {
     description: 'initiates scavenger hunt',
     execute(message){
         curStep=0;
+        gameOver=false;
         const embed = new Discord.MessageEmbed()
             .setColor('#429196')
             .setTitle('Happy Birthday Covey!')
@@ -34,16 +35,18 @@ module.exports = {
             const collector = msg.createReactionCollector(filter);
             collector.on('collect', (reaction, user) => {
                 let emojiname = reaction.emoji.name;
-                if (emojiname == steps[curStep].react){
-                    nextClue(message);
+
+                if (gameOver){
+                    return;
+                }
+                else if (emojiname == steps[curStep].react){
+                    msg.edit({embeds: nextClue()});
                 }
                 else if (emojiname == qmark){
-                    giveHint(message);
+                    msg.edit({embeds: giveHint()});
                 }
-                else {
-                    reaction.remove()
+                reaction.remove()
                     .catch (err => console.log('failed to remove reaction'));
-                }
                 console.log(emojiname);
             })
             collector.on('end', collected => {
@@ -57,10 +60,25 @@ function filter(reaction, user){
     return (!user.bot);
 }
 
-function nextClue(message){
-    message.reply('ill handle right answers eventually:)');
+function nextClue(){
+    if (curStep == steps.length){
+        gameOver=true;
+        return new Discord.MessageEmbed()
+            .setColor('#429196')
+            .setTitle('Happy Birthday Covey ~ You Won!')
+            .setDescription('woohooooo');
+    }
+    curStep++;
+    return new Discord.MessageEmbed()
+        .setColor('#429196')
+        .setTitle(`Happy Birthday Covey ~ Step ${curStep}`)
+        .setDescription(steps[curStep].text);
 }
 
-function giveHint(message){
-    message.reply('ill give a hint eventually');
+function giveHint(){
+    return new Discord.MessageEmbed()
+        .setColor('#429196')
+        .setTitle(`Happy Birthday Covey ~ Step ${curStep}`)
+        .setDescription(steps[curStep].text)
+        .setField('Hint', steps[curStep].hint);
 }
