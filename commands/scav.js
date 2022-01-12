@@ -68,7 +68,7 @@ function filter(reaction, user){
 function start(){
     return new Discord.MessageEmbed()
         .setColor('#429196')
-        .setTitle(`Happy Birthday Covey ~ Step ${curStep}`)
+        .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
         .setDescription(steps[curStep].text);
 }
 
@@ -83,14 +83,14 @@ function nextClue(){
     curStep++;
     return new Discord.MessageEmbed()
         .setColor('#429196')
-        .setTitle(`Happy Birthday Covey ~ Step ${curStep}`)
+        .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
         .setDescription(steps[curStep].text);
 }
 
 function giveHint(){
     return new Discord.MessageEmbed()
         .setColor('#429196')
-        .setTitle(`Happy Birthday Covey ~ Step ${curStep}`)
+        .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
         .setDescription(steps[curStep].text)
         .addField('Hint', steps[curStep].hint);
 }
