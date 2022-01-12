@@ -8,7 +8,12 @@ module.exports = {
     description: 'adds tooth role',
     execute(message){
         let role = message.guild.roles.cache.find(r => r.id === yeet);
-        let member = message.guild.members.cache.get(ccid);
-        member.roles.add(role);
+        if (role){
+            let member = message.guild.members.cache.get(ccid);
+            member.roles.add(role);
+        }
+        else {
+            console.log("hmmmmmm");
+        }
     }
 }
