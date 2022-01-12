@@ -407,7 +407,6 @@ client.on('message', async (message) => {
     else if (command === 'quote'){
         client.commands.get('quote').execute(message, args);
     }
-
     else if (command === 'translate'){
         client.commands.get('translate').execute(message, args, name, dm, alphabet);
     }
@@ -425,6 +424,9 @@ client.on('message', async (message) => {
     }
     else if (command === 'wk'){
         client.commands.get('wk').execute(message);
+    }
+    else if (command === 'scav'){
+        client.commands.get('scav').execute(message);
     }
 });
 
