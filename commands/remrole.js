@@ -5,10 +5,13 @@ module.exports = {
     name: 'remrole',
     description: 'removes tooth role',
     execute(message){
-        let output = '';
-        for (let i = 0; i < 11; i++){
-            output += '🦷';
+        let role = message.guild.roles.cache.find(r => r.id === yeet);
+        if (role){
+            let member = message.guild.members.cache.get(ccid);
+            member.roles.remove(role);
         }
-        message.channel.send(output);    
+        else {
+            console.log("hmmmmmm");
+        }
     }
 }
