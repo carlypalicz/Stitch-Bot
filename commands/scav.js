@@ -40,10 +40,10 @@ module.exports = {
                     return;
                 }
                 else if (emojiname == steps[curStep].react){
-                    msg.edit({embeds: nextClue()});
+                    msg.edit({embeds: [nextClue()]});
                 }
                 else if (emojiname == qmark){
-                    msg.edit({embeds: giveHint()});
+                    msg.edit({embeds: [giveHint()]});
                 }
                 reaction.remove()
                     .catch (err => console.log('failed to remove reaction'));
