@@ -30,7 +30,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setColor('#429196')
             .setTitle('Happy Birthday Covey!')
-            .setDescription('intro to the hunt will go here!')
+            .setDescription('intro to the hunt will go here!');
 
         message.channel.send({embeds: [embed]})    
 
@@ -55,7 +55,7 @@ module.exports = {
             collector.on('end', collected => {
                 //collector will end when he wins the hunt
                 console.log(`Collected ${collected.size} items`);
-            })
+            });
         });
     }
 }
@@ -65,7 +65,7 @@ function filter(reaction, user){
 }
 
 function nextClue(message){
-    message.reply('ill handle right answers eventually');
+    message.reply('ill handle right answers eventually:)');
 }
 
 function giveHint(message){
