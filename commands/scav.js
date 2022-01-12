@@ -41,7 +41,7 @@ module.exports = {
                 if (gameOver){
                     return;
                 }
-                else if ((curStep == 0 && emojiname == 'thumbsup') || (emojiname == steps[curStep].react)){
+                else if ((curStep == 0 && emojiname == '👍') || (emojiname == steps[curStep].react)){
                     msg.edit({embeds: [nextClue()]});
 
                 }
