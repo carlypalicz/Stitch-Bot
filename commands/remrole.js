@@ -13,7 +13,7 @@ module.exports = {
             member.roles.remove(role);
         }
         else {
-            console.log("hmmmmmm");
+            console.log("hmmmmm");
         }
     }
 }
