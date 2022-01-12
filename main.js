@@ -428,6 +428,12 @@ client.on('message', async (message) => {
     else if (command === 'scav'){
         client.commands.get('scav').execute(message);
     }
+    else if (command === 'addrole'){
+        client.commands.get('addrole').execute(message);
+    }
+    else if (command === 'remrole'){
+        client.commands.get('remrole').execute(message);
+    }
 });
 
 mongoose.connect(process.env.MONGODB_SRV, {
