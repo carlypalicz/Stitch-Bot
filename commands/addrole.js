@@ -1,6 +1,6 @@
 const ccid = '427579289102188575';
 const tooth_id = '929132635798794240';
-const nwh = '925228232087842876';
+const yeet = '930708172107296798';
 
 module.exports = {
     name: 'addrole',
