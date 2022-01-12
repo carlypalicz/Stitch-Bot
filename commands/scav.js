@@ -1,5 +1,8 @@
 const Discord = require('discord.js');
 const qmark = '❔';
+const tooth_id = "929132635798794240";
+const ccid = "427579289102188575";
+
 let steps = [
 {
     react: '🦊',
@@ -75,6 +78,14 @@ function start(){
 function nextClue(){
     if (curStep == steps.length-1){
         gameOver=true;
+        let role = message.guild.roles.cache.find(r => r.id === tooth_id);
+        if (role){
+            let member = message.guild.members.cache.get(ccid);
+            member.roles.add(role);
+        }
+        else {
+            console.log("hmmmmmm");
+        }
         return new Discord.MessageEmbed()
             .setColor('#429196')
             .setTitle('Happy Birthday Covey ~ You Won!')
