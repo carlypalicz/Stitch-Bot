@@ -27,7 +27,9 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setColor('#429196')
             .setTitle('Happy Birthday Covey!')
-            .setDescription('intro to the hunt will go here!');
+            .setDescription('something something happy birthday, we made a little scavenger hunt for u bc uno reverse...ill make this better later lolz')
+            .addField('How to Play', 'Once you begin, this message will be edited to contain various clues relating to you, your incredible accomplishments, and the people who love you. Follow the clues correctly, and you should find that an emoji has been left where it leads. React to this message with the correct emoji to move on to the next hint! If you\'re really stumped, instead react with ❔ to receive a helpful hint. To get started, react with 👍. ')
+
 
         message.channel.send({embeds: [embed]})    
 
@@ -39,8 +41,9 @@ module.exports = {
                 if (gameOver){
                     return;
                 }
-                else if (emojiname == steps[curStep].react){
+                else if ((curStep == 0 && emojiname == 'thumbsup') || (emojiname == steps[curStep].react)){
                     msg.edit({embeds: [nextClue()]});
+
                 }
                 else if (emojiname == qmark){
                     msg.edit({embeds: [giveHint()]});
@@ -61,7 +64,7 @@ function filter(reaction, user){
 }
 
 function nextClue(){
-    if (curStep == steps.length-1){
+    if (curStep == steps.length){
         gameOver=true;
         return new Discord.MessageEmbed()
             .setColor('#429196')
