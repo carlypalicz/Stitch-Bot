@@ -9,6 +9,6 @@ module.exports = {
             .setTitle('Happy Birthday Covey!')
             .setDescription('intro to the hunt will go here!')
 
-        message.channel.send(embed);    
+        message.channel.send({embeds: [embed]});    
     }
 }
