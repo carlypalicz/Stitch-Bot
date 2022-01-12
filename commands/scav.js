@@ -80,5 +80,5 @@ function giveHint(){
         .setColor('#429196')
         .setTitle(`Happy Birthday Covey ~ Step ${curStep}`)
         .setDescription(steps[curStep].text)
-        .setField('Hint', steps[curStep].hint);
+        .addField('Hint', steps[curStep].hint);
 }
