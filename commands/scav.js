@@ -61,7 +61,7 @@ function filter(reaction, user){
 }
 
 function nextClue(){
-    if (curStep == steps.length){
+    if (curStep == steps.length-1){
         gameOver=true;
         return new Discord.MessageEmbed()
             .setColor('#429196')
