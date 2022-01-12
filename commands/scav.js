@@ -61,7 +61,7 @@ module.exports = {
         });
     }
 }
-function filter(reaction, user){
+function filter(user){
     return (!user.bot);
 }
 
