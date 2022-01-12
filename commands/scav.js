@@ -48,7 +48,7 @@ module.exports = {
                     msg.edit({embeds: [start()]});
                 }
                 else if (emojiname == steps[curStep].react){
-                    msg.edit({embeds: [nextClue()]});
+                    msg.edit({embeds: [nextClue(message)]});
                 }
                 else if (emojiname == qmark){
                     msg.edit({embeds: [giveHint()]});
@@ -75,7 +75,7 @@ function start(){
         .setDescription(steps[curStep].text);
 }
 
-function nextClue(){
+function nextClue(message){
     if (curStep == steps.length-1){
         gameOver=true;
         let role = message.guild.roles.cache.find(r => r.id === tooth_id);
