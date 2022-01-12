@@ -41,9 +41,11 @@ module.exports = {
                 if (gameOver){
                     return;
                 }
-                else if ((curStep == 0 && emojiname == '👍') || (emojiname == steps[curStep].react)){
+                else if (curStep == 0 && emojiname == '👍'){
+                    msg.edit({embeds: [start()]});
+                }
+                else if (emojiname == steps[curStep].react){
                     msg.edit({embeds: [nextClue()]});
-
                 }
                 else if (emojiname == qmark){
                     msg.edit({embeds: [giveHint()]});
@@ -61,6 +63,13 @@ module.exports = {
 }
 function filter(reaction, user){
     return (!user.bot);
+}
+
+function start(){
+    return new Discord.MessageEmbed()
+        .setColor('#429196')
+        .setTitle(`Happy Birthday Covey ~ Step ${curStep}`)
+        .setDescription(steps[curStep].text);
 }
 
 function nextClue(){
