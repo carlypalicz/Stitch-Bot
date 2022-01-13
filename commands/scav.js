@@ -58,6 +58,8 @@ module.exports = {
                     msg.react('❔');
                 }
                 else if (emojiname == qmark && user == ccid){
+                    reaction.remove()
+                        .catch (err => console.log('failed to remove reaction'));
                     msg.edit({embeds: [giveHint()]});
                 }
                 console.log(emojiname);
