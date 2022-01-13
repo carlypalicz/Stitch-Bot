@@ -33,11 +33,13 @@ module.exports = {
             .setDescription('something something happy birthday, we made a little scavenger hunt for u bc uno reverse...ill make this better later lolz')
             .addField('How to Play', 'Once you begin, this message will be edited to contain various clues relating to you, your incredible accomplishments, and the people who love you. Follow the clues correctly, and you should find that an emoji has been left where it leads. React to this message with the correct emoji to move on to the next hint! If you\'re really stumped, instead react with ❔ to receive a helpful hint. To get started, react with 👍. ')
 
-
         message.channel.send({embeds: [embed]})    
 
         .then(function (msg) {
             const collector = msg.createReactionCollector(filter);
+            
+            msg.react('👍');
+
             collector.on('collect', (reaction, user) => {
                 let emojiname = reaction.emoji.name;
 
@@ -45,18 +47,19 @@ module.exports = {
                     return;
                 }
                 else if (curStep == 0 && emojiname == '👍' && user.id == ccid){
+                    reaction.remove()
+                        .catch (err => console.log('failed to remove reaction'));
                     msg.edit({embeds: [start()]});
-                    msg.react('👍');
                 }
                 else if (emojiname == steps[curStep].react && user.id == ccid){
+                    reaction.remove()
+                        .catch (err => console.log('failed to remove reaction'));
                     msg.edit({embeds: [nextClue(message)]});
                     msg.react('❔');
                 }
                 else if (emojiname == qmark && user == ccid){
                     msg.edit({embeds: [giveHint()]});
                 }
-                reaction.remove()
-                    .catch (err => console.log('failed to remove reaction'));
                 console.log(emojiname);
             })
             collector.on('end', collected => {
