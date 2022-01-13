@@ -50,6 +50,7 @@ module.exports = {
                     reaction.remove()
                         .catch (err => console.log('failed to remove reaction'));
                     msg.edit({embeds: [start()]});
+                    msg.react('❔');
                 }
                 else if (emojiname == steps[curStep].react && user.id == ccid){
                     reaction.remove()
