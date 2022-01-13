@@ -44,13 +44,15 @@ module.exports = {
                 if (gameOver){
                     return;
                 }
-                else if (curStep == 0 && emojiname == '👍'){
+                else if (curStep == 0 && emojiname == '👍' && user.id == ccid){
                     msg.edit({embeds: [start()]});
+                    msg.react('👍');
                 }
-                else if (emojiname == steps[curStep].react){
+                else if (emojiname == steps[curStep].react && user.id == ccid){
                     msg.edit({embeds: [nextClue(message)]});
+                    msg.react('❔');
                 }
-                else if (emojiname == qmark){
+                else if (emojiname == qmark && user == ccid){
                     msg.edit({embeds: [giveHint()]});
                 }
                 reaction.remove()
