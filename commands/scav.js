@@ -17,8 +17,15 @@ let steps = [
 {
     react: '💀',
     text: 'Now he\'ll TARTS the next clue as only he can\nHe pets a horse, he NAGS A RAM\nBut if he wants to PEAR what he wins\nHe\'ll find the next clue when he CHICKEN SPINS\n',
-    hint: '<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750> | <:holder:881755396686110750><:holder:881755396686110750> | <:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>',
-}];
+    hint: 'ch<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750> | i<:holder:881755396686110750> | p<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>',
+},
+{
+    react: '💯',
+    text: 'your friend has helped with this next clue\nyou need only what he has left for you\na front end coder and man of taste\nhe wears converse and plays the bass\nit\'s with a driver who should be more cautious\nboth of them are young & nauseous',
+    hint: 'what is Caleb watching? try change the channel',
+    editHint: 'your **fr**iend has h**e**lpe**d** with this next clue\nyou nee**d** only what he has left for **y**ou\na **fr**ont **e**nd cod**e**r and **m**an of taste\nhe we**a**rs co**n**verse and plays the bass\nit\'s with a driver who should be more cautious\nboth of them are young & nauseous',
+}
+];
 let curStep;
 let gameOver;
 module.exports = {
@@ -102,7 +109,7 @@ function nextClue(message){
             member.roles.add(role);
         }
         else {
-            console.log("hmmmmmm");
+            console.log("failed to find role");
         }
         return new Discord.MessageEmbed()
             .setColor('#429196')
@@ -117,9 +124,18 @@ function nextClue(message){
 }
 
 function giveHint(){
-    return new Discord.MessageEmbed()
-        .setColor('#429196')
-        .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
-        .setDescription(steps[curStep].text)
-        .addField('Hint', steps[curStep].hint);
+    if (steps[curStep].editHint){
+        return new Discord.MessageEmbed()
+            .setColor('#429196')
+            .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
+            .setDescription(steps[curStep].editHint)
+            .addField('Hint', steps[curStep].hint); 
+    }
+    else {
+        return new Discord.MessageEmbed()
+            .setColor('#429196')
+            .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
+            .setDescription(steps[curStep].text)
+            .addField('Hint', steps[curStep].hint);   
+    }
 }
