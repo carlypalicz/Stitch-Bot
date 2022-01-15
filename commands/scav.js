@@ -9,9 +9,16 @@ let steps = [
     hint: 'TOMMY used hint - it\'s super effective! What? TOMMY is evolving! TOMMY evolved into COVEYSUX',
 },
 {
-    react: '🌙',
-    text: 'We know you don\'t like math\nSo rather than stats or counts\nIn order to reveal your path\nConsider these *numbers* - they\'re not amounts\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 1\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
-    hint: 'The first in a row has the work you need\nWhich piece within it then proceeds\nAs for the numbers in part three\nA compliment we give to thee:\n\nA man of many words are you\nWe hope it\'s alright we\'ve borrowed a few\n',
+    react: '🐸',
+    text: 'You sung in places node one goes\nSharing songs of lonely prose\nDocumented day by day\nJust on a trip to get away',
+    hint: 'September 2020\nDuring the peak of quarantine',
+},
+
+{
+    react: '💯',
+    text: 'your friend has helped with this next clue\nyou need only what he has left for you\na front end coder and man of taste\nhe wears converse and plays the bass\nit\'s with a driver who should be more cautious\nboth of them are young & nauseous',
+    hint: 'what is Caleb watching? try changing the channel',
+    editHint: 'your **fr**iend has h**e**lpe**d** with this next clue\nyou nee**d** only what he has left for **y**ou\na **fr**ont **e**nd cod**e**r and **m**an of taste\nhe we**a**rs co**n**verse and plays the bass\nit\'s with a driver who should be more cautious\nboth of them are young & nauseous',
 },
 {
     react: '🍌',
@@ -19,11 +26,10 @@ let steps = [
     hint: 'ch<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750> | i<:holder:881755396686110750> | p<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>',
 },
 {
-    react: '💯',
-    text: 'your friend has helped with this next clue\nyou need only what he has left for you\na front end coder and man of taste\nhe wears converse and plays the bass\nit\'s with a driver who should be more cautious\nboth of them are young & nauseous',
-    hint: 'what is Caleb watching? try changing the channel',
-    editHint: 'your **fr**iend has h**e**lpe**d** with this next clue\nyou nee**d** only what he has left for **y**ou\na **fr**ont **e**nd cod**e**r and **m**an of taste\nhe we**a**rs co**n**verse and plays the bass\nit\'s with a driver who should be more cautious\nboth of them are young & nauseous',
-}
+    react: '🌙',
+    text: 'We know you don\'t like math\nSo rather than stats or counts\nIn order to reveal your path\nConsider these *numbers* - they\'re not amounts\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 1\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
+    hint: 'The first in a row has the work you need\nWhich piece within it then proceeds\nAs for the numbers in part three\nA compliment we give to thee:\n\nA man of many words are you\nWe hope it\'s alright we\'ve borrowed a few\n',
+},
 ];
 
 let curStep;
