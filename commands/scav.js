@@ -6,13 +6,13 @@ const ccid = "427579289102188575";
 let steps = [
 {
     react: '🦊',
-    text: 'the first puzzle to solve will go here. react with a fox emoji to move to clue 2, or a question mark for a hint',
+    text: 'This is your *Starter* 4 the scavenger hunt\nHe is captured in an old self you must now confront\nHis body parts you stuck together\nAnd need protection from cloudy eyes\' weather',
     hint: 'u received a clue for puzzle 1',
 },
 {
     react: '🐀',
-    text: 'the second puzzle to solve will go here. react with a rat emoji to move to clue 3, or a question mark for a hint',
-    hint: 'u received a clue for puzzle 2',
+    text: 'We know you don\'t like math\nSo rather than stats or counts\nIn order to reveal your path\nConsider your other *numbers*\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 1\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
+    hint: 'Works 1 and 3\nContain 10 each\nAnd there\'s 12 in  number 2\nThe first per row\nIs which work you need\nThe *number* then proceeds\nA man of many words are you\nI hope it\'s okay we borrowed a few',
 },
 {
     react: '💀',
