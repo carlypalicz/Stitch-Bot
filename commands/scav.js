@@ -10,7 +10,7 @@ let steps = [
 },
 {
     react: '🐸',
-    text: 'You sung in places node one goes\nSharing songs of lonely prose\nDocumented day by day\nJust on a trip to get away',
+    text: 'You sung in places no one goes\nSharing songs of lonely prose\nDocumented day by day\nJust on a trip to get away',
     hint: 'September 2020\nDuring the peak of quarantine',
 },
 
@@ -27,8 +27,8 @@ let steps = [
 },
 {
     react: '🌙',
-    text: 'We know you don\'t like math\nSo rather than stats or counts\nIn order to reveal your path\nConsider these *numbers* - they\'re not amounts\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 1\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
-    hint: 'The first in a row has the work you need\nWhich piece within it then proceeds\nAs for the numbers in part three\nA compliment we give to thee:\n\nA man of many words are you\nWe hope it\'s alright we\'ve borrowed a few\n',
+    text: 'We know you\'re not a fan of math\nSo rather than stats and counts accrued\nTo reveal the next step of your path\nYour other numbers you must pursue\n\nThe first in a row has the work you need\nWhich piece within it then proceeds\nAs for the numbers in part three\nA compliment we give to thee:\n\nA man of many words are you\nWe hope it\'s alright we borrowed a few\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 1\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
+    hint: 'new hint goes here',
 },
 ];
 
