@@ -10,12 +10,12 @@ let steps = [
     hint: 'TOMMY used hint - it\'s super effective! What? TOMMY is evolving! TOMMY evolved into COVEYSUX',
 },
 {
-    react: '🐀',
+    react: '🌙',
     text: 'We know you don\'t like math\nSo rather than stats or counts\nIn order to reveal your path\nConsider these *numbers* - they\'re not amounts\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 1\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
     hint: 'The first in a row has the work you need\nWhich piece within it then proceeds\nAs for the numbers in part three\nA compliment we give to thee:\n\nA man of many words are you\nWe hope it\'s alright we\'ve borrowed a few\n',
 },
 {
-    react: '💀',
+    react: '🍌',
     text: 'Now he\'ll TARTS the next clue as only he can\nHe pets a horse, he NAGS A RAM\nBut if he wants to PEAR what he wins\nHe\'ll find the next clue when he CHICKEN SPINS\n',
     hint: 'ch<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750> | i<:holder:881755396686110750> | p<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>',
 },
@@ -26,6 +26,7 @@ let steps = [
     editHint: 'your **fr**iend has h**e**lpe**d** with this next clue\nyou nee**d** only what he has left for **y**ou\na **fr**ont **e**nd cod**e**r and **m**an of taste\nhe we**a**rs co**n**verse and plays the bass\nit\'s with a driver who should be more cautious\nboth of them are young & nauseous',
 }
 ];
+
 let curStep;
 let gameOver;
 module.exports = {
@@ -113,8 +114,8 @@ function nextClue(message){
         }
         return new Discord.MessageEmbed()
             .setColor('#429196')
-            .setTitle('Happy Birthday Covey ~ You Won!')
-            .setDescription('woohooooo');
+            .setTitle('🎉 Happy Birthday Covey ~ You Won! 🎉')
+            .setDescription('Congratulations on completing the scavenger hunt! The #happy-birthday-covey channel has been unlocked - feel free to peruse the messages and art people have left for you, and thanks so much for playing.');
     }
     curStep++;
     return new Discord.MessageEmbed()
