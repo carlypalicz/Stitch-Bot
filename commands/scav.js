@@ -12,12 +12,12 @@ let steps = [
 {
     react: '🐀',
     text: 'We know you don\'t like math\nSo rather than stats or counts\nIn order to reveal your path\nConsider these *numbers* - they\'re not amounts\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 1\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
-    hint: 'The first in a row has the work you need\nWhich piece within it then proceeds\nAs for the numbers in part three\nA compliment we give to thee:\n\nA man of many words are you\nWe hope it\'s alright we\'ve borrowed a few',
+    hint: 'The first in a row has the work you need\nWhich piece within it then proceeds\nAs for the numbers in part three\nA compliment we give to thee:\n\nA man of many words are you\nWe hope it\'s alright we\'ve borrowed a few\n',
 },
 {
     react: '💀',
-    text: 'the third puzzle to solve will go here. react with a skull emoji to win, or a question mark for a hint',
-    hint: 'u received a clue for puzzle 3',
+    text: 'Now he\'ll TARTS the next clue as only he can\nHe pets a horse, he NAGS A RAM\nBut if he wants to PEAR what he wins\nHe\'ll find the next clue when he CHICKEN SPINS\n',
+    hint: '<:blank:881814718917001237><:blank:881814718917001237><:blank:881814718917001237><:blank:881814718917001237><:blank:881814718917001237><:blank:881814718917001237> | <:blank:881814718917001237><:blank:881814718917001237> | <:blank:881814718917001237><:blank:881814718917001237><:blank:881814718917001237><:blank:881814718917001237>',
 }];
 let curStep;
 let gameOver;
