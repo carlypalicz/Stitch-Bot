@@ -80,7 +80,8 @@ module.exports = {
                         .catch (err => console.log('failed to remove reaction'));
                     msg.edit({embeds: [giveHint()]});
                 }
-                console.log(emojiname);
+                msg.reactions.removeAll()
+                .catch (err => console.log('failed to remove reaction'));
             })
             collector.on('end', collected => {
                 //collector will end when he wins the hunt
