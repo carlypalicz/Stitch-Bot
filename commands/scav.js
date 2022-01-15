@@ -115,7 +115,7 @@ function nextClue(message){
         return new Discord.MessageEmbed()
             .setColor('#429196')
             .setTitle('🎉 Happy Birthday Covey ~ You Won! 🎉')
-            .setDescription('Congratulations on completing the scavenger hunt! The #happy-birthday-covey channel has been unlocked - feel free to peruse the messages and art people have left for you, and thanks so much for playing.');
+            .setDescription('Congratulations on completing the scavenger hunt! The <#837742717961371729> channel has been unlocked - feel free to peruse the messages and art people have left for you, and thanks so much for playing.');
     }
     curStep++;
     return new Discord.MessageEmbed()
