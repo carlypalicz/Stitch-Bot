@@ -7,7 +7,7 @@ let steps = [
 {
     react: '🦊',
     text: 'This is your *Starter* 4 the scavenger hunt\nHe is captured in an old self you must now confront\nHis body parts you stuck together\nAnd need protection from cloudy eyes\' weather',
-    hint: 'u received a clue for puzzle 1',
+    hint: 'TOMMY used hint - it\'s super effective! What? TOMMY is evolving! TOMMY evolved into COVEYSUX',
 },
 {
     react: '🐀',
