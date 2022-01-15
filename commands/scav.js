@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const qmark = '❔';
 const tooth_id = "929132635798794240";
 const ccid = "427579289102188575";
 
@@ -76,7 +75,7 @@ module.exports = {
                         msg.react('❔');
                     }
                 }
-                else if (emojiname == qmark && user == ccid){
+                else if (emojiname == '❔' && user == ccid){
                     msg.reactions.removeAll()
                         .catch (err => console.log('failed to remove reaction'));
                     msg.edit({embeds: [giveHint()]});
