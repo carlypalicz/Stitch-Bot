@@ -80,7 +80,7 @@ module.exports = {
                         .catch (err => console.log('failed to remove reaction'));
                     msg.edit({embeds: [giveHint()]});
                 }
-                else if (!user.bot){
+                else if (!user.bot && emojiname !== '👍' && emojiname !== '❔'){
                     reaction.remove();
                 }
             })
