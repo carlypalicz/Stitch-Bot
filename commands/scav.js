@@ -55,7 +55,11 @@ module.exports = {
                     reaction.remove()
                         .catch (err => console.log('failed to remove reaction'));
                     msg.edit({embeds: [nextClue(message)]});
+                    console.log(curStep);
+                    console.log(steps.length);
+                    console.log(gameOver);
                     if (!gameOver){
+                        console.log('in the if statement');
                         msg.react('❔');
                     }
                 }
