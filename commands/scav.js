@@ -11,7 +11,7 @@ let steps = [
 },
 {
     react: '🐀',
-    text: 'We know you don\'t like math\nSo rather than stats or counts\nIn order to reveal your path\nConsider your other *numbers*\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 1\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
+    text: 'We know you don\'t like math\nSo rather than stats or counts\nIn order to reveal your path\nConsider these *numbers*; they\'re not amounts\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 1\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
     hint: 'Works 1 and 3\nContain 10 each\nAnd there\'s 12 in  number 2\nThe first per row\nIs which work you need\nThe *number* then proceeds\nA man of many words are you\nI hope it\'s okay we borrowed a few',
 },
 {
