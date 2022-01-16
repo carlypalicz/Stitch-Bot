@@ -32,7 +32,7 @@ let steps = [
 },
 {
     react: '🌙',
-    text: 'We know you\'re not a fan of math\nSo rather than stats and counts accrued\nTo reveal the next step of your path\nYour *other* numbers you must pursue\n\nThe first in each row is the work you need\nWhich piece within it then proceeds\n\nAs for what comes from column three\nA compliment we give to thee:\nA man of many **words** are you\nWe hope it\'s alright we borrowed a few\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 3\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
+    text: 'We know you\'re not a fan of math\nSo rather than stats and counts accrued\nTo reveal the last step of your path\nYour *other* numbers you must pursue\n\nThe first in each row is the work you need\nWhich piece within it then proceeds\n\nAs for what comes from column three\nA compliment we give to thee:\nA man of many **words** are you\nWe hope it\'s alright we borrowed a few\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 3\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
     hint: 'works 1 and 3\ncontain 10 each\nthere\'s 12 in number 2\nthe prose within\nyou do not need\njust from the titles will do',
 },
 ];
@@ -49,7 +49,7 @@ module.exports = {
             .setColor('#429196')
             .setTitle('Happy Birthday Covey!')
             .setDescription('Happy Birthday homie - we figured it was time the roles got reversed - so we put together a scavenger hunt for you to solve.')
-            .addField('How to Play', 'Once you begin, this message will be edited to contain various clues relating to you, your incredible accomplishments, and the people who love you.\n\nInterpreting each clue correctly should point you somewhere online, be it in the server, on social media, etc.\n\nIf you find the right location, you should see that **an emoji has been left for you to find.**\n\n**React to this message with the correct emoji to move on to the next hint!**\n\nIf you\'re stumped, react to any clue with ❔ to receive a helpful hint.\n\nTo get started, react with 👍. ')
+            .addField('How to Play', 'Once you begin, this message will be edited to contain various clues relating to you, your incredible accomplishments, and the people who love you.\n\nInterpreting each clue correctly should point you somewhere online, be it in the server, on social media, etc.\n\nIf you find the right location, you should see that **an emoji has been placed there for you to find.**\n\n**React to this message with the correct emoji to move on to the next clue!**\n\nIf you\'re stumped, react to any clue with ❔ to receive a helpful hint.\n\nTo get started, react with 👍. ')
 
         message.channel.send({embeds: [embed]})    
 
