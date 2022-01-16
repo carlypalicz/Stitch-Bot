@@ -143,7 +143,7 @@ function giveHint(){
         return new Discord.MessageEmbed()
             .setColor('#429196')
             .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
-            .addField("Reminders", "React with the '❔' for an additional hint. React with the emoji left at the hinted destination to move on to the next clue.")
+            .addField("Reminders", "React with the emoji left at the hinted destination to move on to the next clue.")
             .addField("Clue", steps[curStep].editHint)
             .addField('Hint', steps[curStep].hint); 
     }
@@ -151,7 +151,7 @@ function giveHint(){
         return new Discord.MessageEmbed()
             .setColor('#429196')
             .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
-            .addField("Reminders", "React with the '❔' for an additional hint. React with the emoji left at the hinted destination to move on to the next clue.")
+            .addField("Reminders", "React with the emoji left at the hinted destination to move on to the next clue.")
             .addField("Clue", steps[curStep].text)
             .addField('Hint', steps[curStep].hint);   
     }
