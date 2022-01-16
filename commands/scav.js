@@ -25,6 +25,12 @@ let steps = [
     hint: 'cut on the crease -> cancerous teeth\n\nch<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750> | i<:holder:881755396686110750> | p<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>',
 },
 {
+    react: '👺',
+    text: 'It\'s no secret to anyone this year was significant\nNew days were filled with sights so magnificent\nSigned records were bought - the new album dropped\nTell-tale distress signals made live streams get stopped\nAll theorists sighed learning the Y was a fox\nBones in the attic signified a team\'s loss\nIn search of signs to uncover what\'s next\nOne must catch sight of the pattern we left',
+    hint: '1 19 19 1 19 19 9 14 15 6 25 15 21 20 8',
+    editHint:'It\'s no secret to anyone this year was **significant**\nNew days were filled with **sights** so magnificent\n**Signed** records were bought - the new album dropped\nTell-tale distress **signals** made live streams get stopped\nAll theorists **sighed** learning the Y was a fox\nBones in the attic **signified** a team\'s loss\nIn search of **signs** to uncover what\'s next\nOne must catch **sight** of the pattern we **left**',
+},
+{
     react: '🌙',
     text: 'We know you\'re not a fan of math\nSo rather than stats and counts accrued\nTo reveal the next step of your path\nYour *other* numbers you must pursue\n\nThe first in each row is the work you need\nWhich piece within it then proceeds\n\nAs for what comes from column three\nA compliment we give to thee:\nA man of many **words** are you\nWe hope it\'s alright we borrowed a few\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 3\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
     hint: 'works 1 and 3\ncontain 10 each\nthere\'s 12 in number 2\nthe prose within\nyou do not need\njust from the titles will do',
