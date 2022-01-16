@@ -105,7 +105,7 @@ birthdays.set('Benjamin Bork', {
     stone: 'garnet',
     holiday: 'National Nothing Day, National Fig Newton Day, and Appreciate a Dragon Day,',
     lyric: 'I\'d tell my parents not to stick it out for us',
-    bio: 'Benjman is a quiet kid at school, who loves drawing and music as a form of escapism. He\'s best friends with Gabe Godman, and the two of them grew up as close as brothers. He was the first student posted in the TikTok series, and the most successful at 1.9M likes.',
+    bio: 'Benjamin is a quiet kid at school, who loves drawing and music as a form of escapism. He\'s best friends with Gabe Godman, and the two of them grew up as close as brothers. He was the first student posted in the TikTok series, and the most successful video at 1.9M likes.',
     color: '#faf8c5',
 });
 
