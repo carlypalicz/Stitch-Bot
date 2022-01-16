@@ -26,7 +26,7 @@ let steps = [
 },
 {
     react: '🌙',
-    text: 'We know you\'re not a fan of math\nSo rather than stats and counts accrued\nTo reveal the next step of your path\nYour *other* numbers you must pursue\n\nThe first in each row is the work you need\nWhich piece within it then proceeds\nAs for what comes from column three\nA compliment we give to thee:\n\nA man of many **words** are you\nWe hope it\'s alright we borrowed a few\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 3\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
+    text: 'We know you\'re not a fan of math\nSo rather than stats and counts accrued\nTo reveal the next step of your path\nYour *other* numbers you must pursue\n\nThe first in each row is the work you need\nWhich piece within it then proceeds\n\nAs for what comes from column three\nA compliment we give to thee:\nA man of many **words** are you\nWe hope it\'s alright we borrowed a few\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 3\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
     hint: 'works 1 and 3\ncontain 10 each\nthere\'s 12 in number 2\nthe prose within\nyou do not need\njust from the titles will do',
 },
 ];
