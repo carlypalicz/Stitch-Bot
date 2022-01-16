@@ -134,7 +134,8 @@ function nextClue(message){
     return new Discord.MessageEmbed()
         .setColor('#429196')
         .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
-        .setDescription(steps[curStep].text);
+        .addField("Reminders", "React with the '❔' for an additional hint. React with the emoji left at the hinted destination to move on to the next clue.")
+        .addField("Clue", steps[curStep].text);
 }
 
 function giveHint(){
@@ -142,7 +143,8 @@ function giveHint(){
         return new Discord.MessageEmbed()
             .setColor('#429196')
             .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
-            .setDescription(steps[curStep].editHint)
+            .addField("Reminders", "React with the '❔' for an additional hint. React with the emoji left at the hinted destination to move on to the next clue.")
+            .addField("Clue", steps[curStep].text)
             .addField('Hint', steps[curStep].hint); 
     }
     else {
