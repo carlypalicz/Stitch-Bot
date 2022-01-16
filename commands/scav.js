@@ -15,7 +15,7 @@ let steps = [
 },
 {
     react: '💯',
-    text: 'your friend has helped with this next clue\nyou need only what he has left for you\na front end coder and man of taste\nhe wears converse and plays the bass\nit\'s with a driver who should be more cautious\nboth of them are young & nauseous',
+    text: 'your friend has helped with this next clue\nyou need only what he has left for you\na front end coder and man of taste\nhe wears converse and plays the bass\nhe left it with a driver who should be more cautious\nboth of them are young & *nauseous*',
     hint: 'what is Caleb watching? try changing the #channel',
     editHint: 'your **fr**iend has h**e**lpe**d** with this next clue\nyou nee**d** only what he has left for **y**ou\na **fr**ont **e**nd cod**e**r and **m**an of taste\nhe we**a**rs co**n**verse and plays the bass\nit\'s with a driver who should be more cautious\nboth of them are young & nauseous',
 },
