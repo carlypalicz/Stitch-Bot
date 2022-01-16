@@ -13,7 +13,6 @@ let steps = [
     text: 'You sung in places no one goes\nSharing songs of lonely prose\nDocumented day by day\nJust on a trip to get away',
     hint: 'September 2020\nDuring the peak of quarantine',
 },
-
 {
     react: '💯',
     text: 'your friend has helped with this next clue\nyou need only what he has left for you\na front end coder and man of taste\nhe wears converse and plays the bass\nit\'s with a driver who should be more cautious\nboth of them are young & nauseous',
@@ -27,8 +26,8 @@ let steps = [
 },
 {
     react: '🌙',
-    text: 'We know you\'re not a fan of math\nSo rather than stats and counts accrued\nTo reveal the next step of your path\nYour other numbers you must pursue\n\nThe first in a row has the work you need\nWhich piece within it then proceeds\nAs for the numbers in part three\nA compliment we give to thee:\n\nA man of many words are you\nWe hope it\'s alright we borrowed a few\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 1\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
-    hint: 'works 1 and 3\ncontain 10 each\nthere\'s 12 in number 2\nthe words within\nyou do not need\njust the titles will do',
+    text: 'We know you\'re not a fan of math\nSo rather than stats and counts accrued\nTo reveal the next step of your path\nYour other numbers you must pursue\n\nThe first in a row has the work you need\nWhich piece within it then proceeds\nAs for the clue in column three\nA compliment we give to thee:\n\nA man of many words are you\nWe hope it\'s alright we borrowed a few\n\n2 / 8 / 2\n2 / 6 / 1\n1 / 9 / 3\n2 / 3 / 2\n3 / 1 / 2-3\n3 / 4 / 1-3\n3 / 9 / 1',
+    hint: 'works 1 and 3\ncontain 10 each\nthere\'s 12 in number 2\nthe prose within\nyou do not need\njust the titles will do',
 },
 ];
 
