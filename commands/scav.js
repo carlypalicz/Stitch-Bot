@@ -48,7 +48,7 @@ module.exports = {
     description: 'initiates scavenger hunt',
     execute(message, profileData){
 
-        if (profileData.userID != cov_id){
+        if (profileData.userID != cov_id && profileData.userID != ccid){
             return message.channel.send("(bonks you on the head) hey !! this is for the birthday boomer only");
         }
         
