@@ -110,7 +110,8 @@ function start(){
     return new Discord.MessageEmbed()
         .setColor('#429196')
         .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
-        .setDescription(steps[curStep].text);
+        .setField("Reminders", "React with the '❔' for an additional hint. React with the emoji left at the hinted destination to move on to the next clue.")
+        .setField("Clue", steps[curStep].text)
 }
 
 function nextClue(message){
