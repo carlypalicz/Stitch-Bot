@@ -119,7 +119,7 @@ function filter(user){
 function start(){
     return new Discord.MessageEmbed()
         .setColor('#429196')
-        .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
+        .setTitle(`Happy Birthday Covey ~ Step ${curStep+1} / 6`)
         .addField("Reminders", "React with the '❔' for an additional hint. React with the emoji left at the hinted destination to move on to the next clue.")
         .addField("Clue", steps[curStep].text)
 }
@@ -143,7 +143,7 @@ function nextClue(message){
     curStep++;
     return new Discord.MessageEmbed()
         .setColor('#429196')
-        .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
+        .setTitle(`Happy Birthday Covey ~ Step ${curStep+1} / 6`)
         .addField("Reminders", "React with the '❔' for an additional hint. React with the emoji left at the hinted destination to move on to the next clue.")
         .addField("Clue", steps[curStep].text);
 }
@@ -152,7 +152,7 @@ function giveHint(){
     if (steps[curStep].editHint){
         return new Discord.MessageEmbed()
             .setColor('#429196')
-            .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
+            .setTitle(`Happy Birthday Covey ~ Step ${curStep+1} / 6`)
             .addField("Reminders", "React with the emoji left at the hinted destination to move on to the next clue.")
             .addField("Clue", steps[curStep].editHint)
             .addField('Hint', steps[curStep].hint); 
@@ -160,7 +160,7 @@ function giveHint(){
     else {
         return new Discord.MessageEmbed()
             .setColor('#429196')
-            .setTitle(`Happy Birthday Covey ~ Step ${curStep+1}`)
+            .setTitle(`Happy Birthday Covey ~ Step ${curStep+1} / 6`)
             .addField("Reminders", "React with the emoji left at the hinted destination to move on to the next clue.")
             .addField("Clue", steps[curStep].text)
             .addField('Hint', steps[curStep].hint);   
