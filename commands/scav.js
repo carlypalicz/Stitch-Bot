@@ -49,7 +49,7 @@ module.exports = {
     execute(message, profileData){
 
         if (profileData.userID != cov_id){
-            return message.channel.send("(bonks you on the head) hey !! you do not have permission to use this command.");
+            return message.channel.send("(bonks you on the head) hey !! this is for the birthday boomer only");
         }
         
         curStep=0;
