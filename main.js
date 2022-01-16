@@ -260,7 +260,7 @@ client.once('ready', () => {
         .setTitle('🎈 Happy Birthday 🎈!')
         .addField('Please read below for a surprise! :)', 'Happy birthday Covey!!! Some people in the discord have arranged a small interactive gift in celebration of you!\n\nPlease note that it\'ll take an amount of time + attention to complete, so save it for when you\'re feeling up to it!\n\nOnce ready, simply type "!unwrap" **in this channel** to kick it off.')
         
-    cron.schedule('54 9 16 January *', () => {
+    cron.schedule('57 9 16 January *', () => {
         client.guilds.cache.get(guildID).channels.cache.get(ccsTestChannelID).send({embeds: [scavInstruc]});
     },
     {
