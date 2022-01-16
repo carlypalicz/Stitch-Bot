@@ -45,7 +45,7 @@ let curStep;
 let gameOver;
 
 module.exports = {
-    name: 'scav',
+    name: 'unwrap',
     description: 'initiates scavenger hunt',
     execute(message, profileData){
 
