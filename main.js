@@ -97,7 +97,7 @@ birthdays.set('Jamie Jones', {
 });
 birthdays.set('Benjamin Bork', {
     month: 'January',
-    day: '15',
+    day: '16',
     dayth: '16th',
     zodiac: 'Capricorn',
     bdayBuddy: 'Lin Manuel Miranda and our very own COVEY',
@@ -244,8 +244,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`38 23 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
+        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
