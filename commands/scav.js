@@ -1,6 +1,9 @@
 const Discord = require('discord.js');
+const profileModel = require('../models/profileSchema');
+
 const tooth_id = "929132635798794240";
 const ccid = "427579289102188575";
+const cov_id = "780316257638940674";
 
 let steps = [
 {
@@ -39,10 +42,16 @@ let steps = [
 
 let curStep;
 let gameOver;
+
 module.exports = {
     name: 'scav',
     description: 'initiates scavenger hunt',
-    execute(message){
+    execute(message, profileData){
+
+        if (profileData.userID != cov_id){
+            return message.channel.send("(bonks you on the head) hey !! you do not have permission to use this command.");
+        }
+        
         curStep=0;
         gameOver=false;
         const embed = new Discord.MessageEmbed()

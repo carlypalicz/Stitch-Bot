@@ -218,7 +218,7 @@ client.once('ready', () => {
         status: 'online',
         activities: [{
             name: '🎈',
-            type: 'WATCHING',
+            type: 'PLAYING',
         }]
     });
 
@@ -439,7 +439,7 @@ client.on('message', async (message) => {
         client.commands.get('wk').execute(message);
     }
     else if (command === 'scav'){
-        client.commands.get('scav').execute(message);
+        client.commands.get('scav').execute(message, profileData);
     }
     else if (command === 'addrole'){
         client.commands.get('addrole').execute(message);
