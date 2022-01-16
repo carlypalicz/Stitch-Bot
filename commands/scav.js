@@ -4,7 +4,7 @@ const ccid = "427579289102188575";
 
 let steps = [
 {
-    react: '',
+    react: '🦭',
     text: 'This is your *Starter* 4 the scavenger hunt\nHe is captured in an old self you must now confront\nHis body parts you stuck together\nAnd need protection from cloudy eyes\' weather',
     hint: 'TOMMY used hint - it\'s super effective! What? TOMMY is evolving! TOMMY evolved into BOBBY',
 },
