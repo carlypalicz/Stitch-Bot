@@ -100,12 +100,12 @@ birthdays.set('Benjamin Bork', {
     day: '15',
     dayth: '16th',
     zodiac: 'Capricorn',
-    bdayBuddy: 'Lin Manuel Miranda and our very own COVEY!!!!!!',
+    bdayBuddy: 'Lin Manuel Miranda and our very own COVEY',
     pronouns: he,
     stone: 'garnet',
     holiday: 'National Nothing Day, National Fig Newton Day, and Appreciate a Dragon Day,',
     lyric: 'I\'d tell my parents not to stick it out for us',
-    bio: 'Benjmain is a quiet kid at school, who loves drawing and music as a form of escapism. He\'s best friends with Gabe Godman, and the two of them grew up as close as brothers. He was the first student posted in the TikTok series, and the most successful at 1.9M likes.',
+    bio: 'Benjman is a quiet kid at school, who loves drawing and music as a form of escapism. He\'s best friends with Gabe Godman, and the two of them grew up as close as brothers. He was the first student posted in the TikTok series, and the most successful at 1.9M likes.',
     color: '#faf8c5',
 });
 
@@ -244,7 +244,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`31 23 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`36 23 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
