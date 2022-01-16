@@ -22,7 +22,7 @@ let steps = [
 {
     react: '🍌',
     text: 'Now he\'ll TARTS the next clue as only he can\nHe pets a horse, he NAGS A RAM\nBut if he wants to PEAR what he wins\nHe\'ll find the next clue when he CHICKEN SPINS\n',
-    hint: 'ch<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750> | i<:holder:881755396686110750> | p<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>',
+    hint: 'cut on the crease -> cancerous teeth\n\nch<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750> | i<:holder:881755396686110750> | p<:holder:881755396686110750><:holder:881755396686110750><:holder:881755396686110750>',
 },
 {
     react: '🌙',
