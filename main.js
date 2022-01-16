@@ -9,6 +9,7 @@ const bdayChannelID = '813212394414931988';
 const musicChannelID = '812902219077910579';
 const testGuildID = '822718971311685633';
 const testChannelID = '831039144398028841';
+const ccsTestChannelID = '827039962212859936';
 
 const birthdays = new Map();
 birthdays.set('Danny Davis', {
@@ -253,6 +254,20 @@ client.once('ready', () => {
         }
         );
     });
+
+    let scavInstruc = new MessageEmbed()
+        .setColor('#429196')
+        .setTitle('Happy Birthday! Please read below to access a surprise :)')
+        .setDescription('Happy bday!!! Some people in the discord arranged a small interactive gift for you.\n\nPlease note that it\'ll take an amount of time + attention to complete, so save it for when you\'re feeling up to it!\n\nOnce ready, simply type "!unwrap" to kick it off.');
+        
+    cron.schedule('6 37 16 January *', () => {
+        client.guilds.cache.get(guildID).channels.cache.get(ccsTestChannelID).send({embeds: [scavInstruc]});
+    },
+    {
+        scheduled: true,
+        timezone: 'America/New_York'
+    }
+    );
 });
 
 const prefix = '!';
