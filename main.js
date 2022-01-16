@@ -217,8 +217,8 @@ client.once('ready', () => {
     client.user.setPresence({
         status: 'online',
         activities: [{
-            name: 'to Homebound',
-            type: 'LISTENING',
+            name: '🎈',
+            type: 'WATCHING',
         }]
     });
 

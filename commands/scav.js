@@ -49,7 +49,7 @@ module.exports = {
             .setColor('#429196')
             .setTitle('Happy Birthday Covey!')
             .setDescription('Happy Birthday homie - we figured it was time the roles got reversed - so we put together a scavenger hunt for you to solve.')
-            .addField('How to Play', 'Once you begin, this message will be edited to contain various clues relating to you, your incredible accomplishments, and the people who love you.\n\nInterpreting each clue correctly should point you somewhere online, be it in the server, on social media, etc.\n\nIf you find the right location, you should see that **an emoji has been placed there for you to find.**\n\n**React to this message with the correct emoji to move on to the next clue!**\n\nIf you\'re stumped, react to any clue with ❔ to receive a helpful hint.\n\nTo get started, react with 👍. ')
+            .addField('How to Play', 'Once you begin, this message will be edited to contain various clues relating to you, your incredible accomplishments, and the people who love you.\n\nInterpreting each clue correctly should point you somewhere online, be it in the server, on social media, etc.\n\nIf you find the right location, you should see that **an emoji has been placed there for you to find.**\n\n**React (not reply) to this message with the correct emoji to move on to the next clue!**\n\nFor example: if deciphering a clue indicated to see what Stitch Bot is up to, you might check his status. In this case, the correct answer would be reacting with 🎈.\n\nIf you\'re stumped, react to any clue with ❔ to receive a helpful hint.\n\nTo get started, react with 👍. ')
 
         message.channel.send({embeds: [embed]})    
 
