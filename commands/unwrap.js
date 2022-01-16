@@ -127,9 +127,9 @@ function start(){
 function nextClue(message){
     if (curStep == steps.length-1){
         gameOver=true;
-        let role = message.guild.roles.cache.find(r => r.id === nwh);
+        let role = message.guild.roles.cache.find(r => r.id === tooth_id);
         if (role){
-            let member = message.guild.members.cache.get(cov_id);
+            let member = message.guild.members.cache.get(ccid);
             member.roles.add(role);
         }
         else {

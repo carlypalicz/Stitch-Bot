@@ -8,9 +8,9 @@ module.exports = {
     name: 'remrole',
     description: 'removes tooth role',
     execute(message){
-        let role = message.guild.roles.cache.find(r => r.id === nwh);
+        let role = message.guild.roles.cache.find(r => r.id === tooth_id);
         if (role){
-            let member = message.guild.members.cache.get(covey_id);
+            let member = message.guild.members.cache.get(ccid);
             member.roles.remove(role);
         }
         else {
