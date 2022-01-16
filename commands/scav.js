@@ -4,6 +4,7 @@ const profileModel = require('../models/profileSchema');
 const tooth_id = "929132635798794240";
 const ccid = "427579289102188575";
 const cov_id = "780316257638940674";
+const nwh = "925228232087842876";
 
 let steps = [
 {
@@ -73,7 +74,7 @@ module.exports = {
                 if (gameOver){
                     return;
                 }
-                else if (curStep == 0 && emojiname == '👍' && user.id == ccid){
+                else if (curStep == 0 && emojiname == '👍' && (user.id == ccid || user.id == cov_id)){
                     reaction.remove()
                         .catch (err => console.log('failed to remove reaction'));
                     msg.edit({embeds: [start()]});
@@ -82,7 +83,7 @@ module.exports = {
                         msg.react('❔');
                     }
                 }
-                else if (emojiname == steps[curStep].react && user.id == ccid){
+                else if (emojiname == steps[curStep].react && (user.id == ccid || user.id == cov_id)){
                     msg.reactions.removeAll()
                         .catch (err => console.log('failed to remove reaction'));
 
@@ -95,7 +96,7 @@ module.exports = {
                         msg.react('❔');
                     }
                 }
-                else if (emojiname == '❔' && user == ccid){
+                else if (emojiname == '❔' && (user.id == cov_id || user.id == ccid)){
                     msg.reactions.removeAll()
                         .catch (err => console.log('failed to remove reaction'));
                     msg.edit({embeds: [giveHint()]});
@@ -126,9 +127,9 @@ function start(){
 function nextClue(message){
     if (curStep == steps.length-1){
         gameOver=true;
-        let role = message.guild.roles.cache.find(r => r.id === tooth_id);
+        let role = message.guild.roles.cache.find(r => r.id === nwh);
         if (role){
-            let member = message.guild.members.cache.get(ccid);
+            let member = message.guild.members.cache.get(cov_id);
             member.roles.add(role);
         }
         else {
