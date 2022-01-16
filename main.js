@@ -10,6 +10,7 @@ const musicChannelID = '812902219077910579';
 const testGuildID = '822718971311685633';
 const testChannelID = '831039144398028841';
 const ccsTestChannelID = '827039962212859936';
+const msgsForCovID = '813916802483617862';
 
 const birthdays = new Map();
 birthdays.set('Danny Davis', {
@@ -258,10 +259,10 @@ client.once('ready', () => {
     let scavInstruc = new MessageEmbed()
         .setColor('#429196')
         .setTitle('🎈 Happy Birthday!!! 🎈')
-        .addField('Please read for a surprise! :)', 'Happy birthday Covey!!! Some people in the discord have arranged a small interactive gift in celebration of you!\n\nPlease note that it\'ll take an amount of time + attention to complete, so save it for when you\'re feeling up to it - it\'s not going anywhere! :)\n\nOnce ready, simply type "!unwrap" **in this channel** to open up your surprise :).')
+        .addField('Please read for a surprise! :)', 'Happy birthday Covey!!! Some people in the discord have arranged a small interactive gift in celebration of you!\n\nPlease note that it\'ll take an amount of time + attention to complete, so save it for when you\'re feeling up to it - it\'s not going anywhere! :)\n\nOnce ready, simply type "!unwrap" **in this channel** to open up your surprise :)')
         
-    cron.schedule('21 15 16 January *', () => {
-        client.guilds.cache.get(guildID).channels.cache.get(ccsTestChannelID).send({embeds: [scavInstruc]});
+    cron.schedule('40 15 16 January *', () => {
+        client.guilds.cache.get(guildID).channels.cache.get(msgsForCovID).send({embeds: [scavInstruc]});
     },
     {
         scheduled: true,
