@@ -110,36 +110,51 @@ birthdays.set('Benjamin Bork', {
     bio: 'Benjamin is a quiet kid at school, who loves drawing and music as a form of escapism. He\'s best friends with Gabe Godman, and the two of them grew up as close as brothers. He was the first student posted in the TikTok series, and the most successful video at 1.9M likes.',
     color: '#faf8c5',
 });
+birthdays.set('Martha May', {
+    month: 'January',
+    day: '28',
+    dayth: '3rd',
+    zodiac: 'Aquarius',
+    bdayBuddy: 'Norman Rockwell and Elmo',
+    pronouns: 'she',
+    stone: 'amethyst',
+    holiday: 'National Carrot Cake Day and International Golden Retriever\'s Day',
+    lyric: 'I see what looks like you digging into me',
+    bio: 'Martha is a loyal friend, and is usually seen with her best friends Leila and Gretta, whom she\'s known since she was 5 and works with at the local ice cream parlor. Among the 3 of them, Martha is sort of the \'leader\' of the group, and all 3 take school seriously. Her story, along with the songs "You Can Eat Me" and "Plane Crash", are notably inspired by the lateral thinking puzzle known as Albatross Soup.',
+    color: '#92869c'
+});
+birthdays.set('Alex Anderson', {
+    month: 'January',
+    day: '28',
+    dayth: '29th',
+    zodiac: 'Pisces',
+    bdayBuddy: 'Superman',
+    pronouns: 'her',
+    stone: 'amethyst',
+    holiday: 'World Music Therapy Day and National Horse Protection Day',
+    lyric: 'That\'s another sleepless night from all my sleep hallucinations',
+    bio: '',
+    color: '#cbb4fa'
+});
+birthdays.set('Fence Ferguson', {
+    month: 'January',
+    day: '28',
+    dayth: '3rd',
+    zodiac: 'Pisces',
+    bdayBuddy: 'Camila Cabello and Alexander Graham Bell',
+    pronouns: he,
+    stone: 'aquamarine',
+    holiday: 'National If Pets Had Thumbs Day and National I Want You To Be Happy Day',
+    lyric: 'I remember local anesthesia surgery',
+    bio: '',
+    color: '#8a7101'
+});
 
 
 {/**
+    #f6ff94 - alex yellow
     
-
-birthdays.set('Benjamin Bork', {
-    month: 'January',
-    day: '16',
-    zodiac: 'Capricorn',
-    lyric: 'I'd tell my parents not to stick it out for us'
-});
-birthdays.set('Martha May', {
-    month: 'February',
-    day: '3',
-    zodiac: 'Aquarius',
-    lyric: 'I see what looks like you digging into me'
-});
-birthdays.set('Alex Anderson', {
-    month: 'March',
-    day: '1',
-    zodiac: 'Pisces',
-    lyric: 'that\'s another sleepless night from all my sleep hallucinations'
-});
-birthdays.set('Fence Ferguson', {
-    month: 'March',
-    day: '3',
-    zodiac: 'Pisces',
-    lyric: 'I remember local anesthesia surgery'
-});
-birthdays.set('Jack and Jake Johnson', {
+    birthdays.set('Jack and Jake Johnson', {
     month: 'May',
     day: '20',
     zodiac: 'Taurus (cusp of Gemini)',
@@ -241,13 +256,13 @@ client.once('ready', () => {
             .setColor(character.color)
             .setTitle(`Happy Birthday ${id}!!!`)
             .setDescription(`Three cheers for ${id}, whose birthday is today, ${character.month} ${character.dayth}. ${character.bio}`)
-            .addField(`${id} Fun Facts!`, `${character.pronouns[2]} birthday makes ${character.pronouns[1]} a ${character.zodiac} with ${character.stone} for a birth stone. ${character.pronouns[0]} shares ${character.pronouns[2].toLowerCase()} birthday today with ${character.bdayBuddy}, and it's also ${character.holiday}.`)
+            .addField(`${id} Fun Facts!`, `${character.pronouns[2]} birthday makes ${character.pronouns[1]} a ${character.zodiac} with ${character.stone} for a birth stone. ${character.pronouns[0]} shares ${character.pronouns[2].toLowerCase()} birthday with ${character.bdayBuddy}, and it's also ${character.holiday}.`)
             .setImage(`https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/students/${linkParam}.png`)
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
+        cron.schedule(`5 2 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(guildID).channels.cache.get(ccsTestChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
