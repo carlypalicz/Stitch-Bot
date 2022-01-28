@@ -111,8 +111,8 @@ birthdays.set('Benjamin Bork', {
     color: '#faf8c5',
 });
 birthdays.set('Martha May', {
-    month: 'January',
-    day: '28',
+    month: 'February',
+    day: '3',
     dayth: '3rd',
     zodiac: 'Aquarius',
     bdayBuddy: 'Norman Rockwell and Elmo',
@@ -124,8 +124,8 @@ birthdays.set('Martha May', {
     color: '#92869c'
 });
 birthdays.set('Alex Anderson', {
-    month: 'January',
-    day: '28',
+    month: 'March',
+    day: '1',
     dayth: '29th',
     zodiac: 'Pisces',
     bdayBuddy: 'Superman',
@@ -137,8 +137,8 @@ birthdays.set('Alex Anderson', {
     color: '#beb4d9'
 });
 birthdays.set('Fence Ferguson', {
-    month: 'January',
-    day: '28',
+    month: 'March',
+    day: '3',
     dayth: '3rd',
     zodiac: 'Pisces',
     bdayBuddy: 'Camila Cabello and Alexander Graham Bell',
@@ -261,8 +261,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`18 2 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(guildID).channels.cache.get(ccsTestChannelID).send({embeds: [card]});
+        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
