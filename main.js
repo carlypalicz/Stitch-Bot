@@ -134,7 +134,7 @@ birthdays.set('Alex Anderson', {
     holiday: 'World Music Therapy Day and National Horse Protection Day',
     lyric: 'That\'s another sleepless night from all my sleep hallucinations',
     bio: '',
-    color: '#cbb4fa'
+    color: '#beb4d9'
 });
 birthdays.set('Fence Ferguson', {
     month: 'January',
@@ -147,7 +147,7 @@ birthdays.set('Fence Ferguson', {
     holiday: 'National If Pets Had Thumbs Day and National I Want You To Be Happy Day',
     lyric: 'I remember local anesthesia surgery',
     bio: '',
-    color: '#8a7101'
+    color: '#695105'
 });
 
 
@@ -261,7 +261,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`12 2 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`18 2 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(guildID).channels.cache.get(ccsTestChannelID).send({embeds: [card]});
         },
         {
