@@ -116,11 +116,11 @@ birthdays.set('Martha May', {
     dayth: '3rd',
     zodiac: 'Aquarius',
     bdayBuddy: 'Norman Rockwell and Elmo',
-    pronouns: 'she',
+    pronouns: she,
     stone: 'amethyst',
     holiday: 'National Carrot Cake Day and International Golden Retriever\'s Day',
     lyric: 'I see what looks like you digging into me',
-    bio: 'Martha is a loyal friend, and is usually seen with her best friends Leila and Gretta, whom she\'s known since she was 5 and works with at the local ice cream parlor. Among the 3 of them, Martha is sort of the \'leader\' of the group, and all 3 take school seriously. Her story, along with the songs "You Can Eat Me" and "Plane Crash", are notably inspired by the lateral thinking puzzle known as Albatross Soup.',
+    bio: 'Martha is a loyal friend, and is usually seen with her best friends Leila and Gretta, whom she\'s known since she was 5 and works with at the local ice cream parlor. Among the 3 of them, Martha is sort of the \'leader\' of the group. Her story, along with the songs "You Can Eat Me" and "Plane Crash", are notably inspired by the lateral thinking puzzle known as Albatross Soup.',
     color: '#92869c'
 });
 birthdays.set('Alex Anderson', {
@@ -129,7 +129,7 @@ birthdays.set('Alex Anderson', {
     dayth: '29th',
     zodiac: 'Pisces',
     bdayBuddy: 'Superman',
-    pronouns: 'her',
+    pronouns: she,
     stone: 'amethyst',
     holiday: 'World Music Therapy Day and National Horse Protection Day',
     lyric: 'That\'s another sleepless night from all my sleep hallucinations',
@@ -261,7 +261,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`5 2 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`12 2 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(guildID).channels.cache.get(ccsTestChannelID).send({embeds: [card]});
         },
         {
