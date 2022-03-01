@@ -261,12 +261,12 @@ client.once('ready', () => {
     let alexBday = new MessageEmbed()
         .setColor('#beb4d9')
         .setTitle(`Happy Birthday Alex Anderson!!!`)
-        .setDescription('Everyone say happy birthday to Alex Anderson - well, sorta. Alex was born on February 29th, a Leap Day, so this year we celebrate her today, the day after the 28th - aka March 1st. Alex is an indie kid who loves being the first person to find a new band that she truly connects with. She frequents a local ice cream parlor with Penny, who she is dating and often takes walks around town with. Alex is a Covey fan and introduced Penny to their music, and according to Covey gives the best hugs.')
-        .addField('Alex Anderson Fun Facts!', 'Her birthday makes her a pisces with amethyst for a birth stone. She shares her Leap Day Birthday with Superman as well as Hiccup from How To Train Your Dragon, and while it\'s usually Leap Day, today (March 1st) is also Mardi Gras (Fat Tuesday) and World Music Therapy Day.')
+        .setDescription('Everyone say happy birthday to Alex Anderson - well, sorta. Alex was born on February 29th, or Leap Day, so this year we celebrate her today, the day after the 28th - or March 1st. Alex is an indie kid who loves being the first person to find a new band that she truly connects with. She frequents the local ice cream parlor with Penny, who she is dating and often takes walks around town with. Alex is a Covey fan and even introduced Penny to their music, and according to Covey, Alex gives the best hugs.')
+        .addField('Alex Anderson Fun Facts!', 'Her birthday makes her a pisces with amethyst for a birth stone. She shares her unique February 29th birthday with Superman as well as Hiccup from How To Train Your Dragon, and while it\'s usually Leap Day, today (March 1st) is also Mardi Gras (Fat Tuesday) and, appropriately, World Music Therapy Day.')
         .setImage('https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/students/alexanderson.png')
         .setFooter('that\'s another sleepless night from all my sleep hallucinations')
 
-    cron.schedule('49 23 28 February *', () => {
+    cron.schedule('55 23 28 February *', () => {
         client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [alexBday]});
     },
     {
