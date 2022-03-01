@@ -266,8 +266,8 @@ client.once('ready', () => {
         .setImage('https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/students/alexanderson.png')
         .setFooter('that\'s another sleepless night from all my sleep hallucinations')
 
-    cron.schedule('55 23 28 February *', () => {
-        client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [alexBday]});
+    cron.schedule('0 0 1 March *', () => {
+        client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [alexBday]});
     },
     {
         scheduled: true,
