@@ -123,19 +123,6 @@ birthdays.set('Martha May', {
     bio: 'Martha is a loyal friend, and is usually seen with her best friends Leila and Gretta, whom she\'s known since she was 5 and works with at the local ice cream parlor. Among the 3 of them, Martha is sort of the \'leader\' of the group. Her story, along with the songs "You Can Eat Me" and "Plane Crash", are notably inspired by the lateral thinking puzzle known as Albatross Soup.',
     color: '#92869c'
 });
-birthdays.set('Alex Anderson', {
-    month: 'March',
-    day: '1',
-    dayth: '29th',
-    zodiac: 'Pisces',
-    bdayBuddy: 'Superman',
-    pronouns: she,
-    stone: 'amethyst',
-    holiday: 'World Music Therapy Day and National Horse Protection Day',
-    lyric: 'That\'s another sleepless night from all my sleep hallucinations',
-    bio: '',
-    color: '#beb4d9'
-});
 birthdays.set('Fence Ferguson', {
     month: 'March',
     day: '3',
@@ -269,6 +256,22 @@ client.once('ready', () => {
             timezone: 'America/New_York'
         }
         );
+    });
+
+    let alexBday = new MessageEmbed()
+        .setColor('#beb4d9')
+        .setTitle(`Happy Birthday Alex Anderson!!!`)
+        .setDescription('Everyone say happy birthday to Alex Anderson - well, sorta. Alex was born on February 29th, a Leap Day, so this year we celebrate her today, the day after the 28th - aka March 1st. Alex is an indie kid who loves being the first person to find a new band that she truly connects with. She frequents a local ice cream parlor with Penny, who she is dating and often takes walks around town with. Alex is a Covey fan and introduced Penny to their music, and according to Covey gives the best hugs.')
+        .addField('Alex Anderson Fun Facts!', 'Her birthday makes her a pisces with amethyst for a birth stone. She shares her Leap Day Birthday with Superman as well as Hiccup from How To Train Your Dragon, and while it\'s usually Leap Day, today (March 1st) is also Mardi Gras (Fat Tuesday) and World Music Therapy Day.')
+        .setImage('https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/students/alexanderson.png')
+        .setFooter('that\'s another sleepless night from all my sleep hallucinations')
+
+    cron.schedule('49 23 28 February *', () => {
+        client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [alexBday]});
+    },
+    {
+        scheduled: true,
+        timezone: 'America/New_York'
     });
 
     let scavInstruc = new MessageEmbed()
