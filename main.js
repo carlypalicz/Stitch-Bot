@@ -125,7 +125,7 @@ birthdays.set('Martha May', {
 });
 birthdays.set('Fence Ferguson', {
     month: 'March',
-    day: '2',
+    day: '3',
     dayth: '3rd',
     zodiac: 'Pisces',
     bdayBuddy: 'Camila Cabello and Alexander Graham Bell',
@@ -248,8 +248,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`39 13 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
+        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
