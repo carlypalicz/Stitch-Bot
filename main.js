@@ -125,7 +125,7 @@ birthdays.set('Martha May', {
 });
 birthdays.set('Fence Ferguson', {
     month: 'March',
-    day: '3',
+    day: '2',
     dayth: '3rd',
     zodiac: 'Pisces',
     bdayBuddy: 'Camila Cabello and Alexander Graham Bell',
@@ -133,7 +133,7 @@ birthdays.set('Fence Ferguson', {
     stone: 'aquamarine',
     holiday: 'National If Pets Had Thumbs Day and National I Want You To Be Happy Day',
     lyric: 'I remember local anesthesia surgery',
-    bio: '',
+    bio: 'Fence is a star student and athlete, and played alongside Jack and Jake Johnson on the school\'s football team. He was also acquainted with former student Ray Razzi, and notably given his name by a TikTok commenter who asked Covey to name a character Fence. Fence\'s jersey number in the 1991 Music Video references his death order in relation to the class, and Covey has said that the Fence hit in that video was one of his favorite parts.',
     color: '#695105'
 });
 
@@ -248,8 +248,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
+        cron.schedule(`39 13 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
