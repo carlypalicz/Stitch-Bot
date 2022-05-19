@@ -32,6 +32,12 @@ birthdays.set('Bobby and Freddy Freeman', {
     lyric: 'The fox is looming with intent',
     color: 'black'
 });
+birthdays.set('Jack and Jake Johnson', {
+    month: 'May',
+    day: '19',
+    lyric: 'a clash of personalities if you wanna call it that',
+    color: '#1f1163'
+});
 birthdays.set('Leila Lee', {
     month: 'November',
     day: '26',
@@ -238,6 +244,16 @@ client.once('ready', () => {
             .addField('Boby Fedy Fun Facts', 'Their birthday makes Bobby and Freddy Scorpios, and their birthstone is topaz. They share their birthday today with Danny Devito, and it\'s also National Homemade Bread, Baklava, AND Butter Day.')
             .setImage(`https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/students/${linkParam}.png`)
             .setFooter(`"${character.lyric}"`);     
+        } 
+        
+        else if (id == 'Jack and Jake Johnson') {
+            card = new MessageEmbed()
+            .setColor(character.color)
+            .setTitle(`Happy Birthday Jack and Jake!!!`)
+            .setDescription('Everyone say happy birthday to Jack and Jake Johnson, who we celebrate today, May 20th. Jack and Jake are twin brothers (orange is Jake, blue is Jack), and both play on the school football team and participate in other sports. They are gentle and caring friends, often checking in on those who need it most. In the 1991 music video, Covey himself is playing Jack and Jake!')
+            .addField('Jack and Jake Fun Facts', 'Their birthday makes Jack and Jake Tauruses, and their birthstone is emerald. They share their birthday today with Cher and Bustarhymes, and it\'s also National Rescue Dog Day.')
+            .setImage(`https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/students/${linkParam}.png`)
+            .setFooter(`"${character.lyric}"`);   
         } else {
             card = new MessageEmbed()
             .setColor(character.color)
@@ -248,8 +264,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`0 0 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
+        cron.schedule(`57 19 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
