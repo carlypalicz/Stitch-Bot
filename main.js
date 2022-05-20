@@ -34,7 +34,7 @@ birthdays.set('Bobby and Freddy Freeman', {
 });
 birthdays.set('Jack and Jake Johnson', {
     month: 'May',
-    day: '19',
+    day: '20',
     lyric: 'a clash of personalities if you wanna call it that',
     color: '#1f1163'
 });
@@ -264,7 +264,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`15 20 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`47 3 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
