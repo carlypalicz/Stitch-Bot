@@ -250,8 +250,8 @@ client.once('ready', () => {
             card = new MessageEmbed()
             .setColor(character.color)
             .setTitle(`Happy Birthday Jack and Jake!!!`)
-            .setDescription('Everyone say happy birthday to Jack and Jake Johnson, who we celebrate today, May 20th. Jack and Jake are twin brothers (orange is Jake, blue is Jack), and both play on the school football team and participate in other sports. They are gentle and caring friends, often checking in on those who need it most. In the 1991 music video, Covey himself is playing Jack and Jake!')
-            .addField('Jack and Jake Fun Facts', 'Their birthday makes Jack and Jake Tauruses, and their birthstone is emerald. They share their birthday today with Cher and Bustarhymes, and it\'s also National Rescue Dog Day.')
+            .setDescription('Everyone say happy birthday to Jack and Jake Johnson, who we celebrate today, May 20th. Jack and Jake are twin brothers and are both on the school football team. They each play other sports as well and are known for being gentle and caring friends, often checking in on those who need it most. They notably are played by Covey himself in the 1991 music video!')
+            .addField('Jack and Jake Fun Facts', 'Their birthday makes Jack and Jake Tauruses, and their birthstone is emerald. They share their birthday today with Cher and Busta Rhymes, and it\'s also National Rescue Dog Day.')
             .setImage(`https://raw.githubusercontent.com/carlypalicz/Stitch-Bot/master/students/${linkParam}.png`)
             .setFooter(`"${character.lyric}"`);   
         } else {
@@ -264,7 +264,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`47 3 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`58 3 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
