@@ -264,7 +264,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`58 3 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`08 4 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
