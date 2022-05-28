@@ -152,7 +152,7 @@ birthdays.set('Tony Tazzari', {
     stone: 'emerald',
     holiday: 'International Jazz Day and International Hamburger Day',
     lyric: 'As I\'m forced through the incinerator',
-    bio: 'Tony is a kind and caring friend and cousin - he\'s popular in school, but always keeps an eye out for his cousin, Lewis Lin, and is good friends with Freddy Freeman. After Lewis is removed from his home, Tony and him have a nice time living together. He is notably the son of the surgeon, and spent his final moments trying to help his cousin Lewis.',
+    bio: 'Tony is a kind and caring friend and cousin - he\'s popular in school, but always keeps an eye out for his cousin, Lewis Lin, and is good friends with Freddy Freeman. After Lewis is removed from his home, Tony and him have a nice time living together. He is notably the son of the surgeon, Dr. Tazzari, and spent his final moments trying to help his cousin Lewis out of a fire.',
     color: '#6f7378'
 });
 
@@ -276,7 +276,7 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`33 2 ${character.day} ${character.month} *`, () => {
+        cron.schedule(`37 2 ${character.day} ${character.month} *`, () => {
             client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
