@@ -142,7 +142,19 @@ birthdays.set('Fence Ferguson', {
     bio: 'Fence is a star student and athlete, and played alongside Jack and Jake Johnson on the school\'s football team. He was also acquainted with former student Ray Razzi, and notably given his name by a TikTok commenter who asked Covey to name a character Fence. Fence\'s jersey number in the 1991 Music Video references his death order in relation to the class, and Covey has said that the Fence hit in that video was one of his favorite parts.',
     color: '#695105'
 });
-
+birthdays.set('Tony Tazzari', {
+    month: 'May',
+    day: '28',
+    dayth: '28th',
+    zodiac: 'Gemini',
+    bdayBuddy: 'John Fogerty and Jerry Douglas',
+    pronouns: he,
+    stone: 'emerald',
+    holiday: 'International Jazz Day and International Hamburger Day',
+    lyric: 'As I\'m forced through the incinerator',
+    bio: 'Tony is a kind and caring friend and cousin - he\'s popular in school, but always keeps an eye out for his cousin, Lewis Lin, and is good friends with Freddy Freeman. After Lewis is removed from his home, Tony and him have a nice time living together. He is notably the son of the surgeon, and spent his final moments trying to help his cousin Lewis.',
+    color: '#6f7378'
+});
 
 {/**
     #f6ff94 - alex yellow
@@ -264,8 +276,8 @@ client.once('ready', () => {
             .setFooter(`"${character.lyric}"`);   
         }
         
-        cron.schedule(`0 10 ${character.day} ${character.month} *`, () => {
-            client.guilds.cache.get(guildID).channels.cache.get(bdayChannelID).send({embeds: [card]});
+        cron.schedule(`33 2 ${character.day} ${character.month} *`, () => {
+            client.guilds.cache.get(testGuildID).channels.cache.get(testChannelID).send({embeds: [card]});
         },
         {
             scheduled: true,
